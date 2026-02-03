@@ -1,0 +1,3530 @@
+[
+    {
+        "id": "1",
+        "name": "Afourar",
+        "nameAr": "أفورار",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "2",
+        "name": "Agadir",
+        "nameAr": "أكادير",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "3",
+        "name": "Agdz",
+        "nameAr": "أكدز",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "4",
+        "name": "Aghbala",
+        "nameAr": "أغبالة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "5",
+        "name": "Agni Izimmer",
+        "nameAr": "أكني إزيمر",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "6",
+        "name": "Agourai",
+        "nameAr": "أكوراي",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "7",
+        "name": "Ahfir",
+        "nameAr": "أحفير",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "8",
+        "name": "Ain El Aouda",
+        "nameAr": "عين العودة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "9",
+        "name": "Ain Taoujdate",
+        "nameAr": "عين تاوجطات",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "10",
+        "name": "Aïn Bni Mathar",
+        "nameAr": "عين بني مطهر",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "11",
+        "name": "Aïn Cheggag",
+        "nameAr": "عين شگاگ",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "12",
+        "name": "Aïn Dorij",
+        "nameAr": "عين دريج",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "13",
+        "name": "Aïn Erreggada",
+        "nameAr": "عين الركادة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "14",
+        "name": "Aïn Harrouda",
+        "nameAr": "عين حرودة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "15",
+        "name": "Aïn Jemaa",
+        "nameAr": "عين جماعة",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "16",
+        "name": "Aïn Karma",
+        "nameAr": "عين كرمة",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "17",
+        "name": "Aïn Leuh",
+        "nameAr": "عين اللوح",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "18",
+        "name": "Ait Daoud",
+        "nameAr": "آيت داود",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "19",
+        "name": "Aït Attab",
+        "nameAr": "آيت عطاب",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "20",
+        "name": "Aït Baha",
+        "nameAr": "آيت باها",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "21",
+        "name": "Aït Boubidmane",
+        "nameAr": "آيت بوبيدمان",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "22",
+        "name": "Aït Hichem",
+        "nameAr": "آيت هشام",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "23",
+        "name": "Aït Iaâza",
+        "nameAr": "آيت اعزة",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "24",
+        "name": "Aït Ishaq",
+        "nameAr": "آيت إسحاق",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "25",
+        "name": "Aït Majden",
+        "nameAr": "آيت ماجدن",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "26",
+        "name": "Aït Melloul",
+        "nameAr": "آيت ملول",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "27",
+        "name": "Aït Ourir",
+        "nameAr": "آيت ورير",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "28",
+        "name": "Aït Yalla",
+        "nameAr": "آيت يلا",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "29",
+        "name": "Ajdir",
+        "nameAr": "أجدير",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "30",
+        "name": "Akchour",
+        "nameAr": "أكشور",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "31",
+        "name": "Akka",
+        "nameAr": "أقا",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "32",
+        "name": "Aklim",
+        "nameAr": "أكليم",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "33",
+        "name": "Aknoul",
+        "nameAr": "أكنول",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "34",
+        "name": "Al Aroui",
+        "nameAr": "العروي",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "35",
+        "name": "Al Hoceïma",
+        "nameAr": "الحسيمة",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "36",
+        "name": "Alnif",
+        "nameAr": "ألنيف",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "37",
+        "name": "Amalou Ighriben",
+        "nameAr": "أمالو إغريبن",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "38",
+        "name": "Amizmiz",
+        "nameAr": "أمزميز",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "39",
+        "name": "Anzi",
+        "nameAr": "أنزي",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "40",
+        "name": "Aoulouz",
+        "nameAr": "أولوز",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "41",
+        "name": "Aourir",
+        "nameAr": "أوريور",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "42",
+        "name": "Aoufous",
+        "nameAr": "أوفوس",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "43",
+        "name": "Arazane",
+        "nameAr": "أرزان",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "44",
+        "name": "Arbaoua",
+        "nameAr": "عرباوة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "45",
+        "name": "Arfoud",
+        "nameAr": "الرشيدية",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "46",
+        "name": "Assa",
+        "nameAr": "أسا",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "47",
+        "name": "Assahrij",
+        "nameAr": "السهريج",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "48",
+        "name": "Assilah",
+        "nameAr": "أصيلة",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "49",
+        "name": "Awsard",
+        "nameAr": "أوسرد",
+        "region": {
+            "id": "12",
+            "name": "Dakhla-Oued Ed Dahab"
+        }
+    },
+    {
+        "id": "50",
+        "name": "Azemmour",
+        "nameAr": "أزمور",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "51",
+        "name": "Azilal",
+        "nameAr": "أزيلال",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "52",
+        "name": "Azrou",
+        "nameAr": "أزرو",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "53",
+        "name": "Bab Berred",
+        "nameAr": "باب برد",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "54",
+        "name": "Bab Taza",
+        "nameAr": "باب تازة",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "55",
+        "name": "Bejaâd",
+        "nameAr": "بجعد",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "56",
+        "name": "Ben Ahmed",
+        "nameAr": "بن أحمد",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "57",
+        "name": "Ben Guerir",
+        "nameAr": "بن جرير",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "58",
+        "name": "Ben Sergao",
+        "nameAr": "بن سركاو",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "59",
+        "name": "Ben Taïeb",
+        "nameAr": "بن الطيب",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "60",
+        "name": "Ben Yakhlef",
+        "nameAr": "بن يخلف",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "61",
+        "name": "Beni Ayat",
+        "nameAr": "بني عياط",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "62",
+        "name": "Benslimane",
+        "nameAr": "بن سليمان",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "63",
+        "name": "Berkane",
+        "nameAr": "بركان",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "64",
+        "name": "Berrechid",
+        "nameAr": "برشيد",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "65",
+        "name": "Béni Mellal",
+        "nameAr": "بني ملال",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "66",
+        "name": "Bhalil",
+        "nameAr": "البهاليل",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "67",
+        "name": "Bin elouidane",
+        "nameAr": "بين الويدان",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "68",
+        "name": "Biougra",
+        "nameAr": "بيوكرة",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "69",
+        "name": "Bir Jdid",
+        "nameAr": "البير الجديد",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "70",
+        "name": "Bni Ansar",
+        "nameAr": "بني انصار",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "71",
+        "name": "Bni Bouayach",
+        "nameAr": "بني بوعياش",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "72",
+        "name": "Bni Chiker",
+        "nameAr": "بني شيكر",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "73",
+        "name": "Bni Drar",
+        "nameAr": "بني درار",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "74",
+        "name": "Bni Hadifa",
+        "nameAr": "بني حديفة",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "75",
+        "name": "Bni Tadjite",
+        "nameAr": "بني تادجيت",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "76",
+        "name": "Bouanane",
+        "nameAr": "بوعنان",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "77",
+        "name": "Bouarfa",
+        "nameAr": "بوعرفة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "78",
+        "name": "Boudnib",
+        "nameAr": "بودنيب",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "79",
+        "name": "Boufakrane",
+        "nameAr": "بوفقران",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "80",
+        "name": "Bouguedra",
+        "nameAr": "بوݣدرة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "81",
+        "name": "Bouhdila",
+        "nameAr": "بوحديلة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "82",
+        "name": "Bouizakarne",
+        "nameAr": "بويزكارن",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "83",
+        "name": "Boujdour",
+        "nameAr": "بوجدور",
+        "region": {
+            "id": "11",
+            "name": "Laâyoune-Sakia El Hamra"
+        }
+    },
+    {
+        "id": "84",
+        "name": "Boujniba",
+        "nameAr": "بوجنيبة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "85",
+        "name": "Boulanouare",
+        "nameAr": "بولانوار",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "86",
+        "name": "Boulemane",
+        "nameAr": "بولمان",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "87",
+        "name": "Boumalne-Dadès",
+        "nameAr": "بومالن دادس",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "88",
+        "name": "Boumia",
+        "nameAr": "بوميا",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "89",
+        "name": "Bouskoura",
+        "nameAr": "بوسكورة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "90",
+        "name": "Bouznika",
+        "nameAr": "بوزنيقة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "91",
+        "name": "Bradia",
+        "nameAr": "براضية",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "92",
+        "name": "Brikcha",
+        "nameAr": "بريكشة",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "93",
+        "name": "Bzou",
+        "nameAr": "بزو",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "94",
+        "name": "Casablanca",
+        "nameAr": "الدار البيضاء",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "95",
+        "name": "Chefchaouen",
+        "nameAr": "شفشاون",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "96",
+        "name": "Chichaoua",
+        "nameAr": "شيشاوة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "97",
+        "name": "Dar Bni Karrich",
+        "nameAr": "دار بني كريش",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "98",
+        "name": "Dar Chaoui",
+        "nameAr": "دار شاوي",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "99",
+        "name": "Dar El Kebdani",
+        "nameAr": "دار الكبداني",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "100",
+        "name": "Dar Gueddari",
+        "nameAr": "دار الكداري",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "101",
+        "name": "Dar Oulad Zidouh",
+        "nameAr": "دار أولاد زيدوح",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "102",
+        "name": "Dcheira El Jihadia",
+        "nameAr": "دشيرة الجهادية",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "103",
+        "name": "Debdou",
+        "nameAr": "دبدو",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "104",
+        "name": "Demnate",
+        "nameAr": "دمنات",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "105",
+        "name": "Deroua",
+        "nameAr": "دروة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "106",
+        "name": "Douar Kannine",
+        "nameAr": "دوار كنين",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "107",
+        "name": "Dra'a",
+        "nameAr": "درعة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "108",
+        "name": "Drargua",
+        "nameAr": "درارگة",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "109",
+        "name": "Driouch",
+        "nameAr": "دريوش",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "110",
+        "name": "Echemmaia",
+        "nameAr": "الشماعية",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "111",
+        "name": "El Aïoun Sidi Mellouk",
+        "nameAr": "العيون سيدي ملوك",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "112",
+        "name": "El Borouj",
+        "nameAr": "البروج",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "113",
+        "name": "El Gara",
+        "nameAr": "الكارة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "114",
+        "name": "El Guerdane",
+        "nameAr": "الگردان",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "115",
+        "name": "El Hajeb",
+        "nameAr": "الحاجب",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "116",
+        "name": "El Hanchane",
+        "nameAr": "الحنشان",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "117",
+        "name": "El Jadida",
+        "nameAr": "الجديدة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "118",
+        "name": "El Kelaâ des Sraghna",
+        "nameAr": "قلعة السراغنة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "119",
+        "name": "El Ksiba",
+        "nameAr": "القصيبة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "120",
+        "name": "El Marsa",
+        "nameAr": "المرسى",
+        "region": {
+            "id": "11",
+            "name": "Laâyoune-Sakia El Hamra"
+        }
+    },
+    {
+        "id": "121",
+        "name": "El Menzel",
+        "nameAr": "المنزل",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "122",
+        "name": "El Ouatia",
+        "nameAr": "الوطية",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "123",
+        "name": "Elkbab",
+        "nameAr": "القباب",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "124",
+        "name": "Er-Rich",
+        "nameAr": "الريش",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "125",
+        "name": "Errachidia",
+        "nameAr": "الرشيدية",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "126",
+        "name": "Es-Semara",
+        "nameAr": "السمارة",
+        "region": {
+            "id": "11",
+            "name": "Laâyoune-Sakia El Hamra"
+        }
+    },
+    {
+        "id": "127",
+        "name": "Essaouira",
+        "nameAr": "الصويرة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "128",
+        "name": "Fam El Hisn",
+        "nameAr": "فم الحصن",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "129",
+        "name": "Farkhana",
+        "nameAr": "فرخانة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "130",
+        "name": "Fès",
+        "nameAr": "فاس",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "131",
+        "name": "Figuig",
+        "nameAr": "فجيج",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "132",
+        "name": "Fnideq",
+        "nameAr": "الفنيدق",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "133",
+        "name": "Foum Jamaa",
+        "nameAr": "فم جمعة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "134",
+        "name": "Foum Zguid",
+        "nameAr": "فم زگيد",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "135",
+        "name": "Fquih Ben Salah",
+        "nameAr": "الفقيه بن صالح",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "136",
+        "name": "Fraïta",
+        "nameAr": "فرايطة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "137",
+        "name": "Gardmit",
+        "nameAr": "ڭردميت",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "138",
+        "name": "Ghafsai",
+        "nameAr": "غفساي",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "139",
+        "name": "Ghmate",
+        "nameAr": "غمات",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "140",
+        "name": "Goulmima",
+        "nameAr": "ڭولميمة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "141",
+        "name": "Gourrama",
+        "nameAr": "ڭرامة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "142",
+        "name": "Guelmim",
+        "nameAr": "گلميم",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "143",
+        "name": "Guercif",
+        "nameAr": "جرسيف",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "144",
+        "name": "Gueznaia",
+        "nameAr": "گزناية",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "145",
+        "name": "Guigou",
+        "nameAr": "كيكو",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "146",
+        "name": "Guisser",
+        "nameAr": "كيسر",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "147",
+        "name": "Had Bouhssoussen",
+        "nameAr": "حد بوحسوسن",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "148",
+        "name": "Had Kourt",
+        "nameAr": "حد كورت",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "149",
+        "name": "Haj Kaddour",
+        "nameAr": "الحاج قدور",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "150",
+        "name": "Harhoura",
+        "nameAr": "هرهورة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "151",
+        "name": "Harte Lyamine",
+        "nameAr": "حارت ليامين",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "152",
+        "name": "Hattane",
+        "nameAr": "حطان",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "153",
+        "name": "Hrara",
+        "nameAr": "حرارة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "154",
+        "name": "Ida Ougnidif",
+        "nameAr": "إدا وگنيديف",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "155",
+        "name": "Ifrane",
+        "nameAr": "إفران",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "156",
+        "name": "Ifri",
+        "nameAr": "إفري",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "157",
+        "name": "Igdamen",
+        "nameAr": "إگدامن",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "158",
+        "name": "Ighil n'Oumgoun",
+        "nameAr": "إغيل نومگون",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "159",
+        "name": "Ighoud",
+        "nameAr": "إغود",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "160",
+        "name": "Ighounane",
+        "nameAr": "إغونان",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "161",
+        "name": "Ihddaden",
+        "nameAr": "إحدادن",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "162",
+        "name": "Imassine",
+        "nameAr": "إماسين",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "163",
+        "name": "Imintanoute",
+        "nameAr": "إمنتانوت",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "164",
+        "name": "Imouzzer Kandar",
+        "nameAr": "إموزار كندر",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "165",
+        "name": "Imouzzer Marmoucha",
+        "nameAr": "إموزار مرموشة",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "166",
+        "name": "Imzouren",
+        "nameAr": "إمزورن",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "167",
+        "name": "Inahnahen",
+        "nameAr": "انحناحن",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "168",
+        "name": "Inezgane",
+        "nameAr": "إنزگان",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "169",
+        "name": "Irherm",
+        "nameAr": "إرحرم",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "170",
+        "name": "Issaguen (Ketama)",
+        "nameAr": "إساگن (كتامة)",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "171",
+        "name": "Itzer",
+        "nameAr": "إيتزر",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "172",
+        "name": "Jaâdar",
+        "nameAr": "جعدار",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "173",
+        "name": "Jamâat Shaim",
+        "nameAr": "جمعة سحيم",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "174",
+        "name": "Jebha",
+        "nameAr": "جبهة",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "175",
+        "name": "Jerada",
+        "nameAr": "جرادة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "176",
+        "name": "Jorf",
+        "nameAr": "الجرف",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "177",
+        "name": "Jorf El Melha",
+        "nameAr": "جرف الملحة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "178",
+        "name": "Jorf Lasfar",
+        "nameAr": "الجرف الأصفر",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "179",
+        "name": "Karia",
+        "nameAr": "قرية",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "180",
+        "name": "Karia (El Jadida)",
+        "nameAr": "قرية (الجديدة)",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "181",
+        "name": "Karia Ba Mohamed",
+        "nameAr": "قرية با محمد",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "182",
+        "name": "Kariat Arekmane",
+        "nameAr": "قرية أركمان",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "183",
+        "name": "Kasba Tadla",
+        "nameAr": "قصبة تادلة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "184",
+        "name": "Kassita",
+        "nameAr": "قاسيطة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "185",
+        "name": "Kattara",
+        "nameAr": "قطارة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "186",
+        "name": "Kehf Nsour",
+        "nameAr": "كهف نسور",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "187",
+        "name": "Kelaat-M'Gouna",
+        "nameAr": "قلعة مكونة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "188",
+        "name": "Kerouna",
+        "nameAr": "كرونة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "189",
+        "name": "Kerrouchen",
+        "nameAr": "كروشن",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "190",
+        "name": "Kénitra",
+        "nameAr": "القنيطرة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "191",
+        "name": "Khemis Zemamra",
+        "nameAr": "خميس زمامرة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "192",
+        "name": "Khémis Sahel",
+        "nameAr": "خميس الساحل",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "193",
+        "name": "Khémisset",
+        "nameAr": "الخميسات",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "194",
+        "name": "Khenichet",
+        "nameAr": "الخنيشات",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "195",
+        "name": "Khénifra",
+        "nameAr": "خنيفرة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "196",
+        "name": "Khouribga",
+        "nameAr": "خريبكة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "197",
+        "name": "Ksar El Kébir",
+        "nameAr": "القصر الكبير",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "198",
+        "name": "Laayoune",
+        "nameAr": "العيون",
+        "region": {
+            "id": "11",
+            "name": "Laâyoune-Sakia El Hamra"
+        }
+    },
+    {
+        "id": "199",
+        "name": "Laaounate",
+        "nameAr": "العونات",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "200",
+        "name": "Laâtamna",
+        "nameAr": "لعتامنة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "201",
+        "name": "Lakhsas",
+        "nameAr": "لخصاص",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "202",
+        "name": "Lakhsass",
+        "nameAr": "لخصاص",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "203",
+        "name": "Lalla Mimouna",
+        "nameAr": "لالة ميمونة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "204",
+        "name": "Lalla Takerkoust",
+        "nameAr": "لالة تاكركوست",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "205",
+        "name": "Larache",
+        "nameAr": "العرائش",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "206",
+        "name": "Loudaya",
+        "nameAr": "لوداية",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "207",
+        "name": "Loulad",
+        "nameAr": "لولاد",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "208",
+        "name": "Lqliâa",
+        "nameAr": "لقليعة",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "209",
+        "name": "Lâattaouia",
+        "nameAr": "لعطاوية",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "210",
+        "name": "M'diq",
+        "nameAr": "المضيق",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "211",
+        "name": "M'haya",
+        "nameAr": "مهاية",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "212",
+        "name": "M'rirt",
+        "nameAr": "مريرت",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "213",
+        "name": "M'semrir",
+        "nameAr": "مسمرير",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "214",
+        "name": "Madagh",
+        "nameAr": "مداغ",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "215",
+        "name": "Marrakech",
+        "nameAr": "مراكش",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "216",
+        "name": "Martil",
+        "nameAr": "مرتيل",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "217",
+        "name": "Massa (Maroc)",
+        "nameAr": "ماسة",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "218",
+        "name": "Mechra Bel Ksiri",
+        "nameAr": "مشرع بلقصيري",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "219",
+        "name": "Megousse",
+        "nameAr": "مگوس",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "220",
+        "name": "Mehdia",
+        "nameAr": "المهدية",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "221",
+        "name": "Meknès",
+        "nameAr": "مكناس",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "222",
+        "name": "Midar",
+        "nameAr": "ميضار",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "223",
+        "name": "Midelt",
+        "nameAr": "ميدلت",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "224",
+        "name": "Missour",
+        "nameAr": "ميسور",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "225",
+        "name": "Mohammadia",
+        "nameAr": "المحمدية",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "226",
+        "name": "Moqrisset",
+        "nameAr": "مقريسات",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "227",
+        "name": "Moulay Abdallah",
+        "nameAr": "مولاي عبد الله",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "228",
+        "name": "Moulay Ali Cherif",
+        "nameAr": "مولاي علي الشريف",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "229",
+        "name": "Moulay Bouazza",
+        "nameAr": "مولاي بوعزة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "230",
+        "name": "Moulay Bousselham",
+        "nameAr": "مولاي بوسلهام",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "231",
+        "name": "Moulay Brahim",
+        "nameAr": "مولاي ابراهيم",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "232",
+        "name": "Moulay Idriss Zerhoun",
+        "nameAr": "مولاي إدريس زرهون",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "233",
+        "name": "Moulay Yaâcoub",
+        "nameAr": "مولاي يعقوب",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "234",
+        "name": "Moussaoua",
+        "nameAr": "موساوة",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "235",
+        "name": "MyAliCherif",
+        "nameAr": "مولاي علي الشريف",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "236",
+        "name": "Mzouda",
+        "nameAr": "مزودة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "237",
+        "name": "Médiouna",
+        "nameAr": "مديونة",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "238",
+        "name": "N'Zalat Bni Amar",
+        "nameAr": "نزالة بني عمار",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "239",
+        "name": "Nador",
+        "nameAr": "الناظور",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "240",
+        "name": "Naima",
+        "nameAr": "نعيمة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "241",
+        "name": "Oualidia",
+        "nameAr": "الوليدية",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "242",
+        "name": "Ouaouizeght",
+        "nameAr": "واويزغت",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "243",
+        "name": "Ouaoumana",
+        "nameAr": "وَوْمانة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "244",
+        "name": "Ouarzazate",
+        "nameAr": "ورزازات",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "245",
+        "name": "Ouazzane",
+        "nameAr": "وزان",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "246",
+        "name": "Oued Amlil",
+        "nameAr": "وادي أمليل",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "247",
+        "name": "Oued Heimer",
+        "nameAr": "وادي حمير",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "248",
+        "name": "Oued Ifrane",
+        "nameAr": "وادي إفران",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "249",
+        "name": "Oued Laou",
+        "nameAr": "وادي لاو",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "250",
+        "name": "Oued Rmel",
+        "nameAr": "وادي الرمل",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "251",
+        "name": "Oued Zem",
+        "nameAr": "وادي زم",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "252",
+        "name": "Oued-Eddahab",
+        "nameAr": "وادي الذهب",
+        "region": {
+            "id": "12",
+            "name": "Dakhla-Oued Ed Dahab"
+        }
+    },
+    {
+        "id": "253",
+        "name": "Oujda",
+        "nameAr": "وجدة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "254",
+        "name": "Oulad Abbou",
+        "nameAr": "أولاد عبو",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "255",
+        "name": "Oulad Amrane",
+        "nameAr": "أولاد عمران",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "256",
+        "name": "Oulad Ayad",
+        "nameAr": "أولاد عياد",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "257",
+        "name": "Oulad Berhil",
+        "nameAr": "أولاد برحيل",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "258",
+        "name": "Oulad Frej",
+        "nameAr": "أولاد فرج",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "259",
+        "name": "Oulad Ghadbane",
+        "nameAr": "أولاد غدبان",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "260",
+        "name": "Oulad H'Riz Sahel",
+        "nameAr": "أولاد حريز الساحل",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "261",
+        "name": "Oulad M'Barek",
+        "nameAr": "أولاد مبارك",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "262",
+        "name": "Oulad M'rah",
+        "nameAr": "أولاد امراح",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "263",
+        "name": "Oulad Saïd",
+        "nameAr": "أولاد سعيد",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "264",
+        "name": "Oulad Sidi Ben Daoud",
+        "nameAr": "أولاد سيدي بن داود",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "265",
+        "name": "Oulad Teïma",
+        "nameAr": "أولاد تايمة",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "266",
+        "name": "Oulad Yaich",
+        "nameAr": "أولاد يعيش",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "267",
+        "name": "Oulad Zbair",
+        "nameAr": "أولاد زبير",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "268",
+        "name": "Oulmès",
+        "nameAr": "ولماس",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "269",
+        "name": "Ounagha",
+        "nameAr": "وناغة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "270",
+        "name": "Ouled Tayeb",
+        "nameAr": "اولاد الطيب",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "271",
+        "name": "Outat El Haj",
+        "nameAr": "أوطاط الحاج",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "272",
+        "name": "Point Cires",
+        "nameAr": "بونتا سيريس",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "273",
+        "name": "Rabat",
+        "nameAr": "الرباط",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "274",
+        "name": "Ras El Aïn",
+        "nameAr": "رأس العين",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "275",
+        "name": "Ras El Ma",
+        "nameAr": "رأس الماء",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "276",
+        "name": "Ribate El Kheir",
+        "nameAr": "رباط الخير",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "277",
+        "name": "Rissani",
+        "nameAr": "الريصاني",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "278",
+        "name": "Rommani",
+        "nameAr": "الرماني",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "279",
+        "name": "Sabaa Aiyoun",
+        "nameAr": "سبع عيون",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "280",
+        "name": "Safi",
+        "nameAr": "آسفي",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "281",
+        "name": "Saïdia",
+        "nameAr": "السعيدية",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "282",
+        "name": "Salé",
+        "nameAr": "سلا",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "283",
+        "name": "Sarghine",
+        "nameAr": "سرغين",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "284",
+        "name": "Sebt El Maârif",
+        "nameAr": "سبت المعاريف",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "285",
+        "name": "Sebt Gzoula",
+        "nameAr": "سبت كزولة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "286",
+        "name": "Sebt Jahjouh",
+        "nameAr": "سبت جحجوح",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "287",
+        "name": "Selouane",
+        "nameAr": "سلوان",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "288",
+        "name": "Settat",
+        "nameAr": "سطات",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "289",
+        "name": "Séfrou",
+        "nameAr": "صفرو",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "290",
+        "name": "Sid L'Mokhtar",
+        "nameAr": "سيدي المختار",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "291",
+        "name": "Sid Zouin",
+        "nameAr": "سيدي زوين",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "292",
+        "name": "Sidi Abdallah Ghiat",
+        "nameAr": "سيدي عبد الله غيات",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "293",
+        "name": "Sidi Addi",
+        "nameAr": "سيدي عدي",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "294",
+        "name": "Sidi Ahmed",
+        "nameAr": "سيدي أحمد",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "295",
+        "name": "Sidi Ali Ban Hamdouche",
+        "nameAr": "سيدي علي بن حمدوش",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "296",
+        "name": "Sidi Allal El Bahraoui",
+        "nameAr": "سيدي علال البحراوي",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "297",
+        "name": "Sidi Allal Tazi",
+        "nameAr": "سيدي علال التازي",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "298",
+        "name": "Sidi Bennour",
+        "nameAr": "سيدي بنور",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "299",
+        "name": "Sidi Bou Othmane",
+        "nameAr": "سيدي بوعثمان",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "300",
+        "name": "Sidi Boubker",
+        "nameAr": "سيدي بوبكر",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "301",
+        "name": "Sidi Bouknadel",
+        "nameAr": "سيدي بوقنادل",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "302",
+        "name": "Sidi Bouzid",
+        "nameAr": "سيدي بوزيد",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "303",
+        "name": "Sidi Ifni",
+        "nameAr": "سيدي إفني",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "304",
+        "name": "Sidi Jaber",
+        "nameAr": "سيدي جابر",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "305",
+        "name": "Sidi Kacem",
+        "nameAr": "سيدي قاسم",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "306",
+        "name": "Sidi Lyamani",
+        "nameAr": "سيدي اليماني",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "307",
+        "name": "Sidi Mohamed ben Abdallah el-Raisuni",
+        "nameAr": "سيدي محمد بن عبد الله الريسوني",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "308",
+        "name": "Sidi Rahhal",
+        "nameAr": "سيدي رحال",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "309",
+        "name": "Sidi Rahhal Chataï",
+        "nameAr": "سيدي رحال الشاطئ",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "310",
+        "name": "Sidi Slimane",
+        "nameAr": "سيدي سليمان",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "311",
+        "name": "Sidi Slimane Echcharaa",
+        "nameAr": "سيدي سليمان الشراعة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "312",
+        "name": "Sidi Smaïl",
+        "nameAr": "سيدي اسماعيل",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "313",
+        "name": "Sidi Taibi",
+        "nameAr": "سيدي الطيبي",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "314",
+        "name": "Sidi Yahya El Gharb",
+        "nameAr": "سيدي يحيى الغرب",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "315",
+        "name": "Skhinate",
+        "nameAr": "السخينات",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "316",
+        "name": "Skhirate",
+        "nameAr": "الصخيرات",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "317",
+        "name": "Skhour Rehamna",
+        "nameAr": "صخور الرحامنة",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "318",
+        "name": "Skoura",
+        "nameAr": "صقورة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "319",
+        "name": "Smimou",
+        "nameAr": "سميمو",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "320",
+        "name": "Soualem",
+        "nameAr": "سوالم",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "321",
+        "name": "Souk El Arbaa",
+        "nameAr": "سوق الأربعاء",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "322",
+        "name": "Souk Sebt Oulad Nemma",
+        "nameAr": "سوق السبت أولاد النمة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "323",
+        "name": "Stehat",
+        "nameAr": "السطيحات",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "324",
+        "name": "Tabounte",
+        "nameAr": "تابونت",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "325",
+        "name": "Tafajight",
+        "nameAr": "تافجيغت",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "326",
+        "name": "Tafetachte",
+        "nameAr": "تفتاشت",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "327",
+        "name": "Tafraout",
+        "nameAr": "تافراوت",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "328",
+        "name": "Taghazout",
+        "nameAr": "تغازوت",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "329",
+        "name": "Taghjijt",
+        "nameAr": "تاغجيجت",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "330",
+        "name": "Tagzen",
+        "nameAr": "تاگزن",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "331",
+        "name": "Tahannaout",
+        "nameAr": "تحناوت",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "332",
+        "name": "Tahla",
+        "nameAr": "تاهلة",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "333",
+        "name": "Taïnaste",
+        "nameAr": "تاينست",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "334",
+        "name": "Tala Tazegwaght",
+        "nameAr": "تالة تازگواغت",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "335",
+        "name": "Taliouine",
+        "nameAr": "تالوين",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "336",
+        "name": "Talmest",
+        "nameAr": "تالمست",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "337",
+        "name": "Talsint",
+        "nameAr": "تالسينت",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "338",
+        "name": "Tamallalt",
+        "nameAr": "تامالالت",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "339",
+        "name": "Tamanar",
+        "nameAr": "تمنار",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "340",
+        "name": "Tamansourt",
+        "nameAr": "تامنصورت",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "341",
+        "name": "Tamegroute",
+        "nameAr": "تامگروت",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "342",
+        "name": "Tameslout",
+        "nameAr": "تمصلوحت",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "343",
+        "name": "Tamraght",
+        "nameAr": "تمراغت",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "344",
+        "name": "Tamassint",
+        "nameAr": "تاماسينت",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "345",
+        "name": "Tamesna",
+        "nameAr": "تامسنا",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "346",
+        "name": "Tanalt",
+        "nameAr": "تَانَلْت",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "347",
+        "name": "Tanger",
+        "nameAr": "طنجة",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "348",
+        "name": "Tanoumrite Nkob Zagora",
+        "nameAr": "تانومريت نكوب زاگورة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "349",
+        "name": "Tan-Tan",
+        "nameAr": "طانطان",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "350",
+        "name": "Taounate",
+        "nameAr": "تاونات",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "351",
+        "name": "Taourirt",
+        "nameAr": "تاوريرت",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "352",
+        "name": "Taourirt ait zaghar",
+        "nameAr": "تاوريرت آيت زاغار",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "353",
+        "name": "Tarfaya",
+        "nameAr": "طرفاية",
+        "region": {
+            "id": "11",
+            "name": "Laâyoune-Sakia El Hamra"
+        }
+    },
+    {
+        "id": "354",
+        "name": "Targuist",
+        "nameAr": "تارگيست",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "355",
+        "name": "Taroudannt",
+        "nameAr": "تارودانت",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "356",
+        "name": "Tata",
+        "nameAr": "طاطا",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "357",
+        "name": "Taza",
+        "nameAr": "تازة",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "358",
+        "name": "Temsia",
+        "nameAr": "تمسية",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "359",
+        "name": "Tendrara",
+        "nameAr": "تندرارة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "360",
+        "name": "Témara",
+        "nameAr": "تمارة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "361",
+        "name": "Tétouan",
+        "nameAr": "تطوان",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    },
+    {
+        "id": "362",
+        "name": "Thar Es-Souk",
+        "nameAr": "ثار السوق",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "363",
+        "name": "Tichoute",
+        "nameAr": "تيشوت",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "364",
+        "name": "Tiddas",
+        "nameAr": "تيداس",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "365",
+        "name": "Tiflet",
+        "nameAr": "تيفلت",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "366",
+        "name": "Tifnit",
+        "nameAr": "تيفنيت",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "367",
+        "name": "Tighassaline",
+        "nameAr": "تيغسالين",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "368",
+        "name": "Tighza",
+        "nameAr": "تيغزة",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "369",
+        "name": "Timahdite",
+        "nameAr": "تيمحضيت",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "370",
+        "name": "Tinejdad",
+        "nameAr": "تنجداد",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "371",
+        "name": "Tisgdal",
+        "nameAr": "تيسگدال",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "372",
+        "name": "Tissa",
+        "nameAr": "تيسة",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "373",
+        "name": "Tit Mellil",
+        "nameAr": "تيط مليل",
+        "region": {
+            "id": "6",
+            "name": "Casablanca-Settat"
+        }
+    },
+    {
+        "id": "374",
+        "name": "Tizi Ouasli",
+        "nameAr": "تيزي واسلي",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "375",
+        "name": "Tizguite",
+        "nameAr": "تيزگيت",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "376",
+        "name": "Tiznit",
+        "nameAr": "تزنيت",
+        "region": {
+            "id": "9",
+            "name": "Souss-Massa"
+        }
+    },
+    {
+        "id": "377",
+        "name": "Tiztoutine",
+        "nameAr": "تيزتوتين",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "378",
+        "name": "Touarga",
+        "nameAr": "تواركة",
+        "region": {
+            "id": "4",
+            "name": "Rabat-Salé-Kénitra"
+        }
+    },
+    {
+        "id": "379",
+        "name": "Touima",
+        "nameAr": "تويمة",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "380",
+        "name": "Touissit",
+        "nameAr": "تويسيت",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "381",
+        "name": "Toulal",
+        "nameAr": "تولال",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "382",
+        "name": "Toundoute",
+        "nameAr": "توندوت",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "383",
+        "name": "Tounfite",
+        "nameAr": "تونفيت",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "384",
+        "name": "Youssoufia",
+        "nameAr": "اليوسفية",
+        "region": {
+            "id": "7",
+            "name": "Marrakech-Safi"
+        }
+    },
+    {
+        "id": "385",
+        "name": "Zag",
+        "nameAr": "زاگ",
+        "region": {
+            "id": "10",
+            "name": "Guelmim-Oued Noun"
+        }
+    },
+    {
+        "id": "386",
+        "name": "Zagora",
+        "nameAr": "زاگورة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "387",
+        "name": "Zaïda",
+        "nameAr": "زايدة",
+        "region": {
+            "id": "8",
+            "name": "Drâa-Tafilalet"
+        }
+    },
+    {
+        "id": "388",
+        "name": "Zaïo",
+        "nameAr": "زايو",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "389",
+        "name": "Zaouia d'Ifrane",
+        "nameAr": "زاوية إفران",
+        "region": {
+            "id": "3",
+            "name": "Fès-Meknès"
+        }
+    },
+    {
+        "id": "390",
+        "name": "Zaouïat Cheikh",
+        "nameAr": "زاوية الشيخ",
+        "region": {
+            "id": "5",
+            "name": "Béni Mellal-Khénifra"
+        }
+    },
+    {
+        "id": "391",
+        "name": "Zeghanghane",
+        "nameAr": "زغنغان",
+        "region": {
+            "id": "2",
+            "name": "l'Oriental"
+        }
+    },
+    {
+        "id": "393",
+        "name": "Zinat",
+        "nameAr": "زينات",
+        "region": {
+            "id": "1",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        }
+    }
+]

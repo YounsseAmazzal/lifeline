@@ -1,0 +1,84 @@
+[
+  {
+    "Name": "Centre de Transfusion Sanguine Casablanca",
+    "PhoneNumber": "05222-20886",
+    "Email": "contact@crts-casa.ma",
+    "Website": "http://cnts.ma",
+    "Address": {
+      "Area": "Hôpital 20 Août",
+      "City": "Casablanca",
+      "State": "Casablanca-Settat",
+      "Country": "Morocco",
+      "PostalCode": "20000"
+    },
+    "BloodGroups": [
+      { "Group": "O+", "Value": 50 },
+      { "Group": "A+", "Value": 30 },
+      { "Group": "B+", "Value": 20 },
+      { "Group": "AB+", "Value": 10 },
+      { "Group": "O-", "Value": 5 },
+      { "Group": "A-", "Value": 5 },
+      { "Group": "B-", "Value": 2 },
+      { "Group": "AB-", "Value": 1 }
+    ]
+  },
+  {
+    "Name": "Hôpital Militaire Mohammed V",
+    "PhoneNumber": "05377-14444",
+    "Email": "hmimv@far.ma",
+    "Website": "https://www.far.ma",
+    "Address": {
+      "Area": "Hay Riad",
+      "City": "Rabat",
+      "State": "Rabat-Salé-Kénitra",
+      "Country": "Morocco",
+      "PostalCode": "10100"
+    },
+    "BloodGroups": [
+      { "Group": "O+", "Value": 100 },
+      { "Group": "O-", "Value": 20 }
+    ]
+  },
+  {
+    "Name": "CHU Mohammed VI",
+    "PhoneNumber": "05243-00700",
+    "Email": "contact@chumarrakech.ma",
+    "Website": "http://www.chumarrakech.ma",
+    "Address": {
+      "Area": "Guéliz",
+      "City": "Marrakech",
+      "State": "Marrakech-Safi",
+      "Country": "Morocco",
+      "PostalCode": "40000"
+    },
+    "BloodGroups": []
+  },
+  {
+    "Name": "CHU Hassan II",
+    "PhoneNumber": "05356-19000",
+    "Email": "contact@chu-fes.ma",
+    "Website": "http://www.chu-fes.ma",
+    "Address": {
+      "Area": "Route de Sidi Harazem",
+      "City": "Fes",
+      "State": "Fès-Meknès",
+      "Country": "Morocco",
+      "PostalCode": "30000"
+    },
+    "BloodGroups": []
+  },
+  {
+    "Name": "Hôpital Régional Agadir",
+    "PhoneNumber": "05288-41477",
+    "Email": "contact@h-agadir.ma",
+    "Website": "http://sante.gov.ma",
+    "Address": {
+      "Area": "Talborjt",
+      "City": "Agadir",
+      "State": "Souss-Massa",
+      "Country": "Morocco",
+      "PostalCode": "80000"
+    },
+    "BloodGroups": []
+  }
+]
