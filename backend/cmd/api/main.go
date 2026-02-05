@@ -8,12 +8,14 @@ import (
 	"log"
 	"os"
 
+	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
 func main() {
+	fmt.Println("localhost:8080")
 	// Database Connection & Seed
 	database.Connect()
 	database.DB.AutoMigrate(&models.Region{}, &models.City{})
