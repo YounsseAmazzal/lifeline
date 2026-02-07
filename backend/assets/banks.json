@@ -1,84 +1,147 @@
 [
   {
-    "Name": "Centre de Transfusion Sanguine Casablanca",
-    "PhoneNumber": "05222-20886",
-    "Email": "contact@crts-casa.ma",
-    "Website": "http://cnts.ma",
+    "Name": "Centre National de Transfusion Sanguine (Rabat)",
+    "PhoneNumber": "05377-74993",
+    "Email": "contact@cnts.ma",
+    "Website": "http://cntsh.ma",
     "Address": {
-      "Area": "Hôpital 20 Août",
-      "City": "Casablanca",
-      "State": "Casablanca-Settat",
-      "Country": "Morocco",
-      "PostalCode": "20000"
-    },
-    "BloodGroups": [
-      { "Group": "O+", "Value": 50 },
-      { "Group": "A+", "Value": 30 },
-      { "Group": "B+", "Value": 20 },
-      { "Group": "AB+", "Value": 10 },
-      { "Group": "O-", "Value": 5 },
-      { "Group": "A-", "Value": 5 },
-      { "Group": "B-", "Value": 2 },
-      { "Group": "AB-", "Value": 1 }
-    ]
-  },
-  {
-    "Name": "Hôpital Militaire Mohammed V",
-    "PhoneNumber": "05377-14444",
-    "Email": "hmimv@far.ma",
-    "Website": "https://www.far.ma",
-    "Address": {
-      "Area": "Hay Riad",
+      "Area": "Avenue Al Fadila, Madinat Al Irfane",
       "City": "Rabat",
       "State": "Rabat-Salé-Kénitra",
-      "Country": "Morocco",
-      "PostalCode": "10100"
+      "PostalCode": "10000",
+      "Latitude": 33.9716,
+      "Longitude": -6.8498
     },
     "BloodGroups": [
-      { "Group": "O+", "Value": 100 },
-      { "Group": "O-", "Value": 20 }
+      { "Group": "O+", "Value": 45 },
+      { "Group": "O-", "Value": 5 },
+      { "Group": "A+", "Value": 120 },
+      { "Group": "AB-", "Value": 2 }
     ]
   },
   {
-    "Name": "CHU Mohammed VI",
-    "PhoneNumber": "05243-00700",
-    "Email": "contact@chumarrakech.ma",
-    "Website": "http://www.chumarrakech.ma",
+    "Name": "CRTS Casablanca (Hôpital 20 Août)",
+    "PhoneNumber": "05222-03033",
+    "Email": "casa@cnts.ma",
+    "Website": "http://cntsh.ma",
     "Address": {
-      "Area": "Guéliz",
+      "Area": "Quartier des Hôpitaux, Rue Tarik Ibn Ziad",
+      "City": "Casablanca",
+      "State": "Casablanca-Settat",
+      "PostalCode": "20250",
+      "Latitude": 33.5805,
+      "Longitude": -7.6167
+    },
+    "BloodGroups": [
+      { "Group": "O+", "Value": 10 },
+      { "Group": "O-", "Value": 0 },
+      { "Group": "B+", "Value": 50 }
+    ]
+  },
+  {
+    "Name": "CRTS Marrakech (Ibn Tofail)",
+    "PhoneNumber": "05244-48662",
+    "Email": "marrakech@cnts.ma",
+    "Website": "http://cntsh.ma",
+    "Address": {
+      "Area": "Rue Loubnane, Guéliz",
       "City": "Marrakech",
       "State": "Marrakech-Safi",
-      "Country": "Morocco",
-      "PostalCode": "40000"
+      "PostalCode": "40000",
+      "Latitude": 31.6346,
+      "Longitude": -8.0073
     },
-    "BloodGroups": []
+    "BloodGroups": [
+      { "Group": "A+", "Value": 80 },
+      { "Group": "O+", "Value": 60 }
+    ]
   },
   {
-    "Name": "CHU Hassan II",
-    "PhoneNumber": "05356-19000",
-    "Email": "contact@chu-fes.ma",
-    "Website": "http://www.chu-fes.ma",
+    "Name": "CRTS Fès (Hôpital Ghassani)",
+    "PhoneNumber": "05356-22252",
+    "Email": "fes@cnts.ma",
+    "Website": "http://cntsh.ma",
     "Address": {
-      "Area": "Route de Sidi Harazem",
+      "Area": "Route de Sefrou, Dhar El Mehraz",
       "City": "Fes",
       "State": "Fès-Meknès",
-      "Country": "Morocco",
-      "PostalCode": "30000"
+      "PostalCode": "30000",
+      "Latitude": 34.0298,
+      "Longitude": -4.9950
     },
-    "BloodGroups": []
+    "BloodGroups": [
+      { "Group": "AB+", "Value": 30 },
+      { "Group": "O-", "Value": 8 }
+    ]
   },
   {
-    "Name": "Hôpital Régional Agadir",
-    "PhoneNumber": "05288-41477",
-    "Email": "contact@h-agadir.ma",
-    "Website": "http://sante.gov.ma",
+    "Name": "CRTS Tanger",
+    "PhoneNumber": "05399-46060",
+    "Email": "tanger@cnts.ma",
+    "Website": "http://cntsh.ma",
     "Address": {
-      "Area": "Talborjt",
+      "Area": "Val Fleuri, Près de l'Hôpital Mohammed V",
+      "City": "Tangier",
+      "State": "Tanger-Tétouan-Al Hoceïma",
+      "PostalCode": "90000",
+      "Latitude": 35.7721,
+      "Longitude": -5.8124
+    },
+    "BloodGroups": [
+      { "Group": "B-", "Value": 12 },
+      { "Group": "O+", "Value": 100 }
+    ]
+  },
+  {
+    "Name": "CRTS Agadir (Hôpital Hassan II)",
+    "PhoneNumber": "05288-41278",
+    "Email": "agadir@cnts.ma",
+    "Website": "http://cntsh.ma",
+    "Address": {
+      "Area": "Cité Suisse, Près Hôpital Hassan II",
       "City": "Agadir",
       "State": "Souss-Massa",
-      "Country": "Morocco",
-      "PostalCode": "80000"
+      "PostalCode": "80000",
+      "Latitude": 30.4150,
+      "Longitude": -9.5833
     },
-    "BloodGroups": []
+    "BloodGroups": [
+      { "Group": "O+", "Value": 25 },
+      { "Group": "A+", "Value": 40 }
+    ]
+  },
+  {
+    "Name": "CRTS Oujda (Hôpital Al Farabi)",
+    "PhoneNumber": "05366-82715",
+    "Email": "oujda@cnts.ma",
+    "Website": "http://cntsh.ma",
+    "Address": {
+      "Area": "Boulevard Mohammed V",
+      "City": "Oujda",
+      "State": "Oriental",
+      "PostalCode": "60000",
+      "Latitude": 34.6814,
+      "Longitude": -1.9086
+    },
+    "BloodGroups": [
+      { "Group": "O-", "Value": 2 }
+    ]
+  },
+  {
+    "Name": "Centre de Transfusion Tétouan",
+    "PhoneNumber": "05399-63322",
+    "Email": "tetouan@cnts.ma",
+    "Website": "http://cntsh.ma",
+    "Address": {
+      "Area": "Avenue des FAR",
+      "City": "Tetouan",
+      "State": "Tanger-Tétouan-Al Hoceïma",
+      "PostalCode": "93000",
+      "Latitude": 35.5785,
+      "Longitude": -5.3684
+    },
+    "BloodGroups": [
+      { "Group": "A-", "Value": 15 }
+    ]
   }
 ]

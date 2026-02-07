@@ -1,10 +1,11 @@
 package dto
 
-// UserResponse: 
+// UserResponse (Zidna Role)
 type UserResponse struct {
-	UserName string `json:"username"`
-	Token    string `json:"token"`
+	UserName string `json:"userName"`
 	Name     string `json:"name"`
 	Gender   string `json:"gender"`
-	PhotoURL string `json:"photo_url"` 
+	PhotoURL string `json:"photoUrl"`
+	Token    string `json:"token"`
+	Role     string `json:"role"` // <--- ZID HADI
 }

@@ -15,4 +15,6 @@ type Address struct {
 	
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
+	Longitude float32 `json:"longitude"`
+	Latitude float32 `json:"latitude"`
 }

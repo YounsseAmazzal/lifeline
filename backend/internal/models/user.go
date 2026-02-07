@@ -6,11 +6,9 @@ import (
 
 type User struct {
 	ID        uint      `gorm:"primaryKey" json:"id"`
-	
-	// Identity Fields (Replacement for IdentityUser)
-	UserName     string `gorm:"unique;not null" json:"username"`
+		UserName     string `gorm:"unique;not null" json:"username"`
 	Email        string `gorm:"unique;not null" json:"email"`
-	PasswordHash string `json:"-"` // "-" means don't send in JSON response
+	PasswordHash string `json:"-"` 
 	PhoneNumber  string `json:"phone_number"`
 
 	// Profile Fields

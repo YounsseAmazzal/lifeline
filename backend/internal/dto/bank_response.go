@@ -18,7 +18,8 @@ type BankResponse struct {
 	Website     string    `json:"website"`
 	LastUpdated time.Time `json:"last_updated"`
 	PhotoURL    string    `json:"photo_url"`
-	
+	Latitude    float64         `json:"latitude"`  
+	Longitude   float64         `json:"longitude"` 
 	BloodGroups []BloodGroupDto `json:"blood_groups"`
 }
 
