@@ -1,13 +1,401 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLine | المنصة الوطنية للتبرع بالدم</title>
+    
+    <!-- Fonts: Cairo (Arabic) & Plus Jakarta Sans (English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons & Libs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-arabic antialiased overflow-x-hidden pattern-overlay">
+
+    <!-- URGENT BAR -->
+    <div class="bg-gradient-to-r from-morocco-red to-morocco-green text-white text-xs font-bold py-2 px-4 overflow-hidden relative" dir="rtl">
+        <div class="flex items-center gap-4 animate-marquee whitespace-nowrap justify-center">
+            <span><i class="fa-solid fa-heart-pulse mr-1"></i> حملة تبرع عاجلة: مركز تحاقن الدم بالدار البيضاء يحتاج زمرة O-</span>
+            <span class="mx-4 text-morocco-gold">★</span>
+            <span><i class="fa-solid fa-hand-holding-heart mr-1"></i> كل قطرة دم تنقذ حياة</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass-royal transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-morocco-red rounded-xl flex items-center justify-center text-white shadow-lg shadow-red-500/20 border-2 border-white">
+                        <i class="fa-solid fa-star text-sm"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-extrabold tracking-tight text-slate-900 leading-none">LifeLine</span>
+                        <span class="text-[10px] font-bold text-morocco-green uppercase tracking-[0.2em]">Maroc</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 font-semibold">
+                    <a href="#impact" class="text-sm text-slate-600 hover:text-morocco-red transition" data-i18n="nav_impact">أثرنا الاجتماعي</a>
+                    <a href="#banks" class="text-sm text-slate-600 hover:text-morocco-red transition" data-i18n="nav_banks">مراكز التبرع</a>
+                    <a href="#how-it-works" class="text-sm text-slate-600 hover:text-morocco-red transition" data-i18n="nav_how">كيف يعمل؟</a>
+                    <a href="#sponsors" class="text-sm text-slate-600 hover:text-morocco-red transition" data-i18n="nav_partners">شركاؤنا</a>
+                </div>
+
+                <!-- Auth & Language -->
+                <div class="flex items-center gap-4">
+                    <!-- Lang Switcher -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-morocco-green transition px-3 py-2 rounded-lg border border-transparent hover:border-slate-200">
+                            <i class="fa-solid fa-globe text-lg"></i>
+                            <span id="current-lang">العربية</span>
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
+                            <ul class="py-2 text-sm text-slate-700">
+                                <li><button onclick="changeLanguage('ar')" class="w-full text-right px-4 py-2 hover:bg-slate-50 hover:text-morocco-red flex items-center justify-end gap-2">العربية <img src="https://flagcdn.com/w20/ma.png" class="w-4 h-3"></button></li>
+                                <li><button onclick="changeLanguage('en')" class="w-full text-right px-4 py-2 hover:bg-slate-50 hover:text-morocco-red flex items-center justify-end gap-2">English <img src="https://flagcdn.com/w20/gb.png" class="w-4 h-3"></button></li>
+                                <li><button onclick="changeLanguage('fr')" class="w-full text-right px-4 py-2 hover:bg-slate-50 hover:text-morocco-red flex items-center justify-end gap-2">Français <img src="https://flagcdn.com/w20/fr.png" class="w-4 h-3"></button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="./auth/login.html" class="hidden md:block text-sm font-bold text-slate-700 hover:text-morocco-red" data-i18n="btn_login">دخول</a>
+                    <a href="./auth/register.html" class="bg-gradient-to-r from-morocco-red to-red-700 hover:to-morocco-red text-white px-6 py-3 rounded-xl text-sm font-bold transition shadow-xl flex items-center gap-2 group">
+                        <span data-i18n="btn_donate">تبرع الآن</span>
+                        <i class="fa-solid fa-heart group-hover:scale-110 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-24 lg:pt-20 overflow-hidden">
+        <div class="absolute top-0 right-0 w-full h-full bg-royal-gradient -z-10"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-red-600/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-green-600/5 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="text-right order-2 lg:order-1" data-aos="fade-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-morocco-green/20 shadow-sm text-morocco-green text-sm font-bold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-morocco-red animate-pulse"></span>
+                        <span data-i18n="badge_text">مبادرة وطنية تضامنية 100%</span>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.2] mb-6">
+                        <span data-i18n="hero_title_1">تبرع بالدم..</span> <br>
+                        <span class="text-gradient-flag" data-i18n="hero_title_2">أنقذ حياة مغربية.</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-600 mb-8 leading-relaxed" data-i18n="hero_desc">
+                        منصة <strong>LifeLine</strong> تربط المتبرعين بالمرضى والمستشفيات في الوقت الحقيقي. انضم إلى الآلاف من المغاربة الذين يساهمون في إنقاذ الأرواح يومياً.
+                    </p>
+
+                    <!-- Search Box -->
+                    <div class="bg-white p-2 rounded-2xl shadow-xl shadow-morocco-green/5 border border-slate-100 max-w-lg ml-auto">
+                        <div class="flex gap-2 p-1 bg-slate-50 rounded-xl mb-4">
+                            <button class="flex-1 py-3 rounded-lg bg-white shadow-sm text-sm font-bold text-morocco-red border border-slate-100" data-i18n="tab_find_donor">أبحث عن متبرع</button>
+                            <button class="flex-1 py-3 rounded-lg text-sm font-medium text-slate-500 hover:bg-white/50 transition" data-i18n="tab_donate">أريد التبرع</button>
+                        </div>
+                        <form class="flex gap-3 px-2 pb-2">
+                            <div class="relative w-2/3">
+                                <i class="fa-solid fa-location-dot absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                                <select id="heroCitySelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-4 pr-10 pl-4 text-slate-700 font-bold focus:ring-2 focus:ring-morocco-green outline-none appearance-none">
+                                    <option data-i18n="select_city">اختر المدينة...</option>
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+                            <button type="button" class="w-1/3 bg-morocco-green hover:bg-green-800 text-white font-bold rounded-xl shadow-lg transition flex items-center justify-center">
+                                <span data-i18n="btn_search">بحث</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- King's Image -->
+                <div class="relative order-1 lg:order-2" data-aos="fade-right">
+                    <div class="relative z-10 group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-morocco-red to-morocco-green rounded-[2.5rem] rotate-3 opacity-20 group-hover:rotate-1 transition duration-500"></div>
+                        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white h-[500px] w-full bg-slate-200">
+                             <img src="https://1.bp.blogspot.com/-HXuP6yEyVZA/UT7zmdQERHI/AAAAAAAAG2M/2HNiqT0spMI/s640/Mohammed-VI-launches-a-blood-campiagn1.jpg" 
+                             alt="King Mohammed VI Donating Blood" 
+                             class="w-full h-full object-cover transform transition duration-700 group-hover:scale-105">
+                            
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-white text-center">
+                                <p class="text-lg font-bold" data-i18n="quote_text">"التبرع بالدم واجب وطني وإنساني"</p>
+                                <p class="text-sm text-slate-300 mt-1" data-i18n="quote_author">صاحب الجلالة الملك محمد السادس نصره الله</p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -left-6 bg-white p-4 rounded-full shadow-xl border-4 border-morocco-gold animate-bounce">
+                            <i class="fa-solid fa-crown text-3xl text-morocco-gold"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPONSORS (Infinite Marquee with Real Logos) -->
+    <section id="sponsors" class="py-16 bg-white border-y border-slate-100 overflow-hidden">
+        <div class="text-center mb-12">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]" data-i18n="sponsors_title">شركاؤنا في النجاح</p>
+        </div>
+        
+        <div class="relative w-full overflow-hidden group" dir="ltr"> <!-- dir=ltr essential for marquee logic -->
+            <div class="absolute top-0 left-0 z-10 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+            <div class="absolute top-0 right-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+
+            <div class="flex animate-scroll group-hover:paused gap-24 w-max items-center">
+                <!-- LOGOS SET 1 -->
+                <div class="h-16 w-48 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/tijari.jpeg" alt="Attijariwafa" class="h-full w-full object-contain">
+                </div>
+                 <div class="h-16 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/OCP.jpeg" alt="OCP" class="h-full w-full object-contain">
+                </div>
+                <div class="h-20 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/Maroc_Telecom.jpeg" alt="IAM" class="h-full w-full object-contain">
+                </div>
+                <div class="h-14 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/inwi.jpeg" alt="Inwi" class="h-full w-full object-contain">
+                </div>
+                <div class="h-12 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/cih.jpeg" alt="CIH" class="h-full w-full object-contain">
+                </div>
+                <div class="h-16 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/CDG_Maroc.jpeg" alt="CDG" class="h-full w-full object-contain">
+                </div>
+                <div class="h-16 w-48 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/Royal_Air_Maroc.jpeg" alt="RAM" class="h-full w-full object-contain">
+                </div> 
+
+                <!-- LOGOS SET 2 (Duplicate for Loop) -->
+                <div class="h-16 w-48 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/tijari.jpeg" class="h-full w-full object-contain">
+                </div>
+                 <div class="h-16 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/OCP.jpeg" class="h-full w-full object-contain">
+                </div>
+                <div class="h-20 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/Maroc_Telecom.jpeg" class="h-full w-full object-contain">
+                </div>
+                <div class="h-14 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/inwi.jpeg" class="h-full w-full object-contain">
+                </div>
+                <div class="h-12 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/cih.jpeg" class="h-full w-full object-contain">
+                </div>
+                <div class="h-16 w-40 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/CDG_Maroc.jpeg" class="h-full w-full object-contain">
+                </div>
+                <div class="h-16 w-48 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
+                    <img src="./assets/img/sponsors/Royal_Air_Maroc.jpeg" class="h-full w-full object-contain">
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact" class="py-24 relative overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 bg-zellige opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center text-white">
+                <div data-aos="zoom-in">
+                    <div class="text-5xl font-extrabold text-morocco-green mb-2">15K+</div>
+                    <div class="text-slate-400 text-sm font-bold">متبرع مسجل</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-5xl font-extrabold text-white mb-2">3200</div>
+                    <div class="text-slate-400 text-sm font-bold">حياة تم إنقاذها</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-5xl font-extrabold text-morocco-red mb-2">12</div>
+                    <div class="text-slate-400 text-sm font-bold">جهة مغربية</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-5xl font-extrabold text-morocco-gold mb-2">24/7</div>
+                    <div class="text-slate-400 text-sm font-bold">دعم متواصل</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-24 bg-slate-50 pattern-overlay">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4" data-i18n="steps_title">كيفاش تبرع تتخدم؟</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-morocco-red to-morocco-green mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 border-t-4 border-morocco-green group">
+                    <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-3xl text-morocco-green mb-6 mx-auto group-hover:scale-110 transition">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-i18n="step_1_title">1. إنشاء حساب</h3>
+                    <p class="text-slate-500 text-sm text-center leading-relaxed" data-i18n="step_1_desc">سجل ودير البروفيل ديالك، وعطي فصيلة الدم ديالك باش نلقاوك بسهولة.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 border-t-4 border-slate-200 group">
+                    <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center text-3xl text-slate-600 mb-6 mx-auto group-hover:scale-110 transition">
+                        <i class="fa-solid fa-magnifying-glass-location"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-i18n="step_2_title">2. طلب الدم</h3>
+                    <p class="text-slate-500 text-sm text-center leading-relaxed" data-i18n="step_2_desc">محتاج دم؟ حدد الفصيلة والمكان، وحنا نتكلفو بالباقي.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 border-t-4 border-slate-200 group">
+                    <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center text-3xl text-slate-600 mb-6 mx-auto group-hover:scale-110 transition">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-i18n="step_3_title">3. إشعارات ذكية</h3>
+                    <p class="text-slate-500 text-sm text-center leading-relaxed" data-i18n="step_3_desc">السيستيم كيصيفط ميساج غير للناس القراب ليك واللي عندهم نفس الزمرة.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 border-t-4 border-morocco-red group">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-3xl text-morocco-red mb-6 mx-auto group-hover:scale-110 transition">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center" data-i18n="step_4_title">4. إنقاذ حياة</h3>
+                    <p class="text-slate-500 text-sm text-center leading-relaxed" data-i18n="step_4_desc">المتبرع كيوصل للمركز، كيتبرع، وكيرسم البسمة على وجه عائلة مغربية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANKS SECTION -->
+    <section id="banks" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div class="text-right w-full">
+                    <h2 class="text-4xl font-bold text-slate-900 mb-2" data-i18n="banks_title">وضعية مخزون الدم</h2>
+                    <p class="text-slate-500" data-i18n="banks_subtitle">تحديث فوري من قاعدة البيانات الوطنية</p>
+                </div>
+            </div>
+            <div id="banks-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <!-- JS Will load this -->
+                 <div class="col-span-full text-center py-12"><i class="fa-solid fa-spinner fa-spin text-2xl text-morocco-green"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY & TWITTER -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-center text-4xl font-bold text-slate-900 mb-12">قالوا عنا</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="https://pbs.twimg.com/profile_images/1018536835269550080/c_2_0xM-_400x400.jpg" class="w-10 h-10 rounded-full bg-slate-200">
+                            <div>
+                                <h4 class="font-bold text-sm">GeeksBlaBla</h4>
+                                <p class="text-xs text-slate-500">@geeksblabla</p>
+                            </div>
+                        </div>
+                        <i class="fa-brands fa-twitter text-[#1DA1F2]"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        مشاريع زوينة من الكومينيتي المغربية و اللي عندها بعد اجتماعي كبير و مهم بزاف! برافو للفريق ✨ <span class="text-blue-500">#TechForGood</span>
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center font-bold">M</div>
+                            <div>
+                                <h4 class="font-bold text-sm">Medi24Tv</h4>
+                                <p class="text-xs text-slate-500">@Medi24Tv</p>
+                            </div>
+                        </div>
+                        <i class="fa-brands fa-twitter text-[#1DA1F2]"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        ⛔ نتمنى كل واحد منكم يشوف المنشور يبارطاجيه. تم إطلاق موقع LifeLine وهو عبارة عن منصة مغربية 🇲🇦 من أجل التبرع بالدم.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full">
+                            <div>
+                                <h4 class="font-bold text-sm">Simo Ben</h4>
+                                <p class="text-xs text-slate-500">@Simo__Ben</p>
+                            </div>
+                        </div>
+                        <i class="fa-brands fa-twitter text-[#1DA1F2]"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        تم إطلاق المنصة بالتعاون مع @dondesang_maroc و Rotaract. أتمنى نشر الموقع♻️ فتويتر وباقي المنصات.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white py-16 border-t-4 border-morocco-gold relative overflow-hidden">
+        <div class="absolute inset-0 bg-zellige opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 text-right">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-star text-morocco-gold text-2xl"></i>
+                        <span class="text-3xl font-extrabold tracking-tight">LifeLine</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm mb-6" data-i18n="footer_desc">
+                 مشروع مغربي  كيهـدف يرقمن التبرع بالدم، حيت كنآمنو باللي التكنولوجيا تقدر تنقذ الأرواح وتعاون المغاربة وقت الحاجة
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-morocco-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-morocco-red transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-morocco-red transition"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-morocco-gold font-bold mb-6" data-i18n="footer_links">روابط سريعة</h4>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li><a href="#" class="hover:text-white transition">من نحن</a></li>
+                        <li><a href="#" class="hover:text-white transition">مراكز التبرع</a></li>
+                        <li><a href="#" class="hover:text-white transition">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-500 font-sans">
+                <p>&copy; 2025 LifeLine Morocco.</p>
+                <p>Made with <i class="fa-solid fa-heart text-morocco-red mx-1"></i> in Morocco.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <!-- lead data -->
+    <script src="./assets/js/CitiesAndBanks.js" ></script>
+    <script src="./assets/js/transletesystem.js" ></script>
+      <!-- CONFIGURATION -->
+    <script src="./assets/css/tailwindconfig.js"> </script>
+</body>
 </html>

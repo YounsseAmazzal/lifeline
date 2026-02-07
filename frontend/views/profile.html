@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملفي الشخصي - LifeLine</title>
+    <!-- Config Head -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], arabic: ['"Cairo"', 'sans-serif'] },
+                    colors: { morocco: { red: '#C1272D', green: '#006233', gold: '#D4AF37', dark: '#0f172a' } },
+                    backgroundImage: { 'zellige': "url('https://www.transparenttextures.com/patterns/arabesque.png')" }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 font-arabic pb-24">
+
+    <!-- Top Cover -->
+    <div class="h-40 w-full bg-morocco-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-zellige opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+        <a href="../auth/dashboard.html" class="absolute top-6 right-6 text-white bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-sm font-bold hover:bg-white/20 transition flex items-center gap-2">
+            <i class="fa-solid fa-arrow-right"></i> لوحة التحكم
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-3xl mx-auto px-4 -mt-16 relative z-10">
+        
+        <!-- Identity Card -->
+        <div class="bg-white rounded-3xl shadow-xl p-6 border border-slate-100 mb-6">
+            <div class="flex flex-col md:flex-row items-center md:items-end gap-6">
+                <!-- Avatar -->
+                <div class="relative">
+                    <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden bg-slate-200 flex items-center justify-center">
+                        <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=random" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-2 right-2 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center border-4 border-white shadow-sm">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </div>
+
+                <!-- Text Info -->
+                <div class="flex-1 text-center md:text-right">
+                    <h1 id="userName" class="text-3xl font-extrabold text-slate-900 mb-1">جار التحميل...</h1>
+                    <p class="text-slate-500 font-medium mb-4">
+                        <i class="fa-solid fa-location-dot ml-1 text-morocco-red"></i> <span id="userCity">...</span>
+                    </p>
+                    
+                    <!-- Availability Switch -->
+                    <div class="inline-flex items-center gap-3 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        <span class="text-sm font-bold text-slate-700">متاح للتبرع</span>
+                        <label class="relative inline-flex items-center cursor-pointer mr-2">
+                            <input type="checkbox" checked class="sr-only peer" id="availabilityToggle">
+                            <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-morocco-green after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full peer-checked:after:border-white"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Blood Type Badge -->
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-20 h-24 bg-red-50 border-2 border-red-100 rounded-2xl flex flex-col items-center justify-center relative overflow-hidden group">
+                        <div class="absolute top-0 w-full h-2 bg-morocco-red"></div>
+                        <span class="text-xs text-red-400 font-bold uppercase tracking-wider mt-2">الزمرة</span>
+                        <span id="userBlood" class="text-3xl font-black text-morocco-red">--</span>
+                        <i class="fa-solid fa-droplet absolute -bottom-2 -right-2 text-4xl text-red-100 -z-10"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 mb-8">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-center">
+                <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-morocco-green mx-auto mb-2"><i class="fa-solid fa-hand-holding-medical"></i></div>
+                <h3 class="text-2xl font-bold text-slate-900">0</h3>
+                <p class="text-xs text-slate-500 font-bold">تبرعات</p>
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent"></div>
+                <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-morocco-gold mx-auto mb-2"><i class="fa-solid fa-heart"></i></div>
+                <h3 class="text-2xl font-bold text-slate-900">0</h3>
+                <p class="text-xs text-slate-500 font-bold">حياة أُنقذت</p>
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-center">
+                <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-2"><i class="fa-solid fa-clock"></i></div>
+                <h3 class="text-lg font-bold text-slate-900 mt-1">--</h3>
+                <p class="text-[10px] text-slate-500 font-bold">آخر ظهور</p>
+            </div>
+        </div>
+
+        <!-- Logout -->
+        <div class="text-center mt-8">
+            <button onclick="logout()" class="text-red-500 font-bold hover:bg-red-50 px-6 py-2 rounded-xl transition flex items-center justify-center gap-2 mx-auto">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> تسجيل الخروج
+            </button>
+        </div>
+    </div>
+
+    <!-- LOGIC -->
+    <script src="../api/profile/main.js"></script>
+    <script src="../api/api.js"></script>
+    <script src="../assets/css/tailwindconfig.js"> </script>
+
+</body>
+</html>

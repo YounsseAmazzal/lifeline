@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل حساب جديد - LifeLine</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/register.css">
+</head>
+<body class="min-h-screen flex bg-white font-arabic text-slate-800">
+
+    <!-- RIGHT SIDE (Visuals) -->
+    <div class="hidden lg:flex w-1/2 bg-slate-900 relative items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2574&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40">
+        <div class="absolute inset-0 bg-royal-gradient"></div>
+        <div class="absolute inset-0 pattern-overlay"></div>
+        
+        <div class="relative z-10 p-12 text-white max-w-lg text-center">
+            <div class="w-20 h-20 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center mb-8 border border-white/20 mx-auto shadow-2xl">
+                <i class="fa-solid fa-hand-holding-droplet text-4xl text-white"></i>
+            </div>
+            
+            <h2 class="font-bold text-5xl mb-6 leading-tight" data-i18n="hero_title">كن بطلاً، <br> تبرع بالدم.</h2>
+            <p class="text-lg text-slate-100 leading-relaxed mb-8 font-arabic" data-i18n="hero_quote">
+                "قطرة من دمك قد تكون سبباً في إنقاذ حياة إنسان."
+            </p>
+            
+            <!-- Steps -->
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                    <span class="block text-2xl font-bold mb-1">1</span>
+                    <span class="text-xs text-slate-200" data-i18n="step_1">سجل</span>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                    <span class="block text-2xl font-bold mb-1">2</span>
+                    <span class="text-xs text-slate-200" data-i18n="step_2">توصل بإشعار</span>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                    <span class="block text-2xl font-bold mb-1">3</span>
+                    <span class="text-xs text-slate-200" data-i18n="step_3">أنقذ حياة</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEFT SIDE (Form) -->
+    <div class="w-full lg:w-1/2 flex flex-col justify-center p-6 md:p-12 bg-white relative">
+        
+        <!-- Top Bar -->
+        <div class="absolute top-6 left-6 right-6 flex justify-between items-center">
+            <a href="../index.html" class="text-sm font-bold text-slate-500 hover:text-morocco-red flex items-center gap-2 transition">
+                <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+                <span data-i18n="back_home">الرئيسية</span>
+            </a>
+
+            <!-- Language Dropdown -->
+            <div class="relative group">
+                <button class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-morocco-green transition px-3 py-2 rounded-lg border border-slate-100 hover:border-slate-300">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="current-lang">العربية</span>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+                <div class="absolute top-full right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right z-50">
+                    <ul class="py-2 text-sm text-slate-700">
+                        <li><button onclick="changeLanguage('ar')" class="w-full text-right px-4 py-2 hover:bg-slate-50 flex items-center justify-end gap-2">العربية <img src="https://flagcdn.com/w20/ma.png" class="w-4 h-3"></button></li>
+                        <li><button onclick="changeLanguage('en')" class="w-full text-right px-4 py-2 hover:bg-slate-50 flex items-center justify-end gap-2">English <img src="https://flagcdn.com/w20/gb.png" class="w-4 h-3"></button></li>
+                        <li><button onclick="changeLanguage('fr')" class="w-full text-right px-4 py-2 hover:bg-slate-50 flex items-center justify-end gap-2">Français <img src="https://flagcdn.com/w20/fr.png" class="w-4 h-3"></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-xl w-full mx-auto mt-16 lg:mt-0">
+            <!-- Header -->
+            <div class="mb-10">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <div class="w-10 h-10 bg-morocco-red rounded-xl flex items-center justify-center text-white text-sm shadow-lg shadow-red-500/20">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="text-3xl font-extrabold text-slate-900 tracking-tight">LifeLine</span>
+                </div>
+                <h1 class="text-3xl font-bold text-slate-900 mb-2" data-i18n="register_title">إنشاء حساب جديد</h1>
+                <p class="text-slate-500">
+                    <span data-i18n="already_have">لديك حساب بالفعل؟</span> 
+                    <a href="login.html" class="text-morocco-red font-bold hover:underline transition" data-i18n="login_link">تسجيل الدخول</a>
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form id="registerForm" class="space-y-6">
+                
+                <!-- Name Row -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="fname">الاسم الشخصي</label>
+                        <input type="text" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="lname">الاسم العائلي</label>
+                        <input type="text" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none transition" required>
+                    </div>
+                </div>
+
+                <!-- Info Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="email">البريد الإلكتروني</label>
+                        <input type="email" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none transition" placeholder="name@example.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="phone">الهاتف (Whatsapp)</label>
+                        <div class="relative" dir="ltr">
+                            <span class="absolute left-3 top-3.5 text-slate-400 font-bold">+212</span>
+                            <input type="tel" class="w-full pl-14 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none transition" placeholder="6 00 00 00 00">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Info (Blood & City) -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-morocco-red mb-2" data-i18n="blood_type">فصيلة الدم</label>
+                        <div class="relative">
+                            <select class="w-full p-3.5 bg-red-50 border border-red-100 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-morocco-red outline-none appearance-none cursor-pointer">
+                                <option value="" disabled selected>اختر...</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute top-4 left-4 text-morocco-red pointer-events-none rtl:right-auto rtl:left-4 ltr:left-auto ltr:right-4"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="city">المدينة</label>
+                        <div class="relative">
+                            <select id="citySelect" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none appearance-none cursor-pointer">
+                                <option value="" disabled selected>تحميل...</option>
+                                <!-- JS Populated -->
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute top-4 left-4 text-slate-400 pointer-events-none rtl:right-auto rtl:left-4 ltr:left-auto ltr:right-4"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="password">كلمة المرور</label>
+                    <input type="password" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none transition" placeholder="••••••••" required>
+                </div>
+
+                <!-- Terms -->
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="terms" class="mt-1 w-5 h-5 text-morocco-red border-slate-300 rounded focus:ring-morocco-red cursor-pointer">
+                    <label for="terms" class="text-sm text-slate-500 cursor-pointer leading-relaxed">
+                        <span data-i18n="agree_terms">أوافق على استلام إشعارات التبرع بالدم العاجلة في منطقتي.</span>
+                        <a href="#" class="text-morocco-red font-bold underline" data-i18n="privacy">سياسة الخصوصية</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-morocco-green to-green-700 text-white py-4 rounded-xl font-bold shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:scale-[1.02] active:scale-[0.98] transition duration-300 flex items-center justify-center gap-2">
+                    <span data-i18n="register_btn">انضم كمتبرع</span>
+                    <i class="fa-solid fa-check-circle"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TRANSLATION & LOGIC SCRIPT -->
+    <script src="js/api.js"></script>
+    <script>
+        // --- Translation Data ---
+        const i18n = {
+            ar: {
+                hero_title: "كن بطلاً، <br> تبرع بالدم.",
+                hero_quote: "\"قطرة من دمك قد تكون سبباً في إنقاذ حياة إنسان.\"",
+                step_1: "سجل", step_2: "توصل بإشعار", step_3: "أنقذ حياة",
+                back_home: "الرئيسية",
+                register_title: "إنشاء حساب جديد",
+                already_have: "لديك حساب بالفعل؟",
+                login_link: "تسجيل الدخول",
+                fname: "الاسم الشخصي", lname: "الاسم العائلي",
+                email: "البريد الإلكتروني", phone: "الهاتف (Whatsapp)",
+                blood_type: "فصيلة الدم", city: "المدينة",
+                password: "كلمة المرور",
+                agree_terms: "أوافق على استلام إشعارات التبرع بالدم العاجلة في منطقتي.",
+                privacy: "سياسة الخصوصية",
+                register_btn: "انضم كمتبرع"
+            },
+            en: {
+                hero_title: "Be a Hero, <br> Donate Blood.",
+                hero_quote: "\"A drop of your blood could be the reason for saving a human life.\"",
+                step_1: "Register", step_2: "Get Notified", step_3: "Save Life",
+                back_home: "Home",
+                register_title: "Create Account",
+                already_have: "Already have account?",
+                login_link: "Login",
+                fname: "First Name", lname: "Last Name",
+                email: "Email Address", phone: "Phone (Whatsapp)",
+                blood_type: "Blood Group", city: "City",
+                password: "Password",
+                agree_terms: "I agree to receive urgent blood donation alerts in my area.",
+                privacy: "Privacy Policy",
+                register_btn: "Join as Donor"
+            },
+            fr: {
+                hero_title: "Soyez un Héros, <br> Donnez.",
+                hero_quote: "\"Une goutte de votre sang peut sauver une vie humaine.\"",
+                step_1: "S'inscrire", step_2: "Notification", step_3: "Sauver",
+                back_home: "Accueil",
+                register_title: "Créer un compte",
+                already_have: "Déjà un compte ?",
+                login_link: "Connexion",
+                fname: "Prénom", lname: "Nom",
+                email: "Email", phone: "Téléphone (Whatsapp)",
+                blood_type: "Groupe Sanguin", city: "Ville",
+                password: "Mot de passe",
+                agree_terms: "J'accepte de recevoir des alertes de don de sang urgentes dans ma région.",
+                privacy: "Politique de confidentialité",
+                register_btn: "Rejoindre"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+            });
+
+            const body = document.body;
+            const langLabel = document.getElementById('current-lang');
+            
+            if (lang === 'ar') {
+                body.setAttribute('dir', 'rtl');
+                body.classList.remove('font-sans');
+                body.classList.add('font-arabic');
+                langLabel.innerText = "العربية";
+            } else {
+                body.setAttribute('dir', 'ltr');
+                body.classList.remove('font-arabic');
+                body.classList.add('font-sans');
+                langLabel.innerText = lang === 'en' ? "English" : "Français";
+            }
+        }
+
+    </script>
+    <script src="../api/api.js"></script>
+    <script src="../assets/css/tailwindconfig.js"> </script>
+    <script src="../api/auth/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>إدارة بنك الدم - LifeLine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], arabic: ['"Cairo"', 'sans-serif'] },
+                colors: {
+                    morocco: { red: '#C1272D', green: '#006233', gold: '#D4AF37', dark: '#0f172a' }
+                },
+                backgroundImage: {
+                    'zellige': "url('https://www.transparenttextures.com/patterns/arabesque.png')",
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { font-family: 'Cairo', sans-serif; }
+    .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+</style>
+</head>
+<body class="bg-slate-50 p-8 min-h-screen">
+    
+    <header class="flex justify-between items-center mb-10">
+        <h1 class="text-3xl font-bold text-slate-900">مخزون الدم <span class="text-morocco-red text-sm bg-red-100 px-3 py-1 rounded-full">مركز الرباط</span></h1>
+        <button class="bg-morocco-green text-white px-6 py-2 rounded-xl font-bold shadow-lg hover:bg-green-800 transition">+ تسجيل تبرع جديد</button>
+    </header>
+
+    <!-- Stock Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        <!-- Stock Item -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center relative overflow-hidden group">
+            <div class="absolute top-0 w-full h-2 bg-morocco-green"></div> <!-- Green = Good -->
+            <h3 class="text-2xl font-black text-slate-800">A+</h3>
+            <p class="text-4xl font-bold text-green-600 mt-2">120 <span class="text-sm text-slate-400 font-normal">كيس</span></p>
+            <span class="mt-4 text-xs font-bold bg-green-50 text-green-700 px-3 py-1 rounded-full">مستقر</span>
+        </div>
+
+        <!-- Critical Item -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center relative overflow-hidden group">
+            <div class="absolute top-0 w-full h-2 bg-morocco-red animate-pulse"></div> <!-- Red = Critical -->
+            <h3 class="text-2xl font-black text-slate-800">O-</h3>
+            <p class="text-4xl font-bold text-red-600 mt-2">5 <span class="text-sm text-slate-400 font-normal">أكياس</span></p>
+            <span class="mt-4 text-xs font-bold bg-red-50 text-red-700 px-3 py-1 rounded-full animate-pulse">حرج جداً</span>
+        </div>
+        
+        <!-- More items (B+, AB-...) -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center relative">
+            <div class="absolute top-0 w-full h-2 bg-yellow-500"></div>
+            <h3 class="text-2xl font-black text-slate-800">AB+</h3>
+            <p class="text-4xl font-bold text-yellow-600 mt-2">45 <span class="text-sm text-slate-400 font-normal">كيس</span></p>
+            <span class="mt-4 text-xs font-bold bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full">متوسط</span>
+        </div>
+    </div>
+
+    <!-- Recent Requests -->
+    <h2 class="text-xl font-bold text-slate-800 mb-4">طلبات الدم الواردة (Real-time)</h2>
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+        <table class="w-full text-right">
+            <thead class="bg-slate-50 text-xs font-bold text-slate-500">
+                <tr><th class="p-4">المريض</th><th class="p-4">الزمرة</th><th class="p-4">الحالة</th><th class="p-4">الإجراء</th></tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+                <tr>
+                    <td class="p-4 font-bold">محمد بناني</td>
+                    <td class="p-4"><span class="font-black text-red-600">O-</span></td>
+                    <td class="p-4"><span class="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded">انتظار</span></td>
+                    <td class="p-4"><button class="text-green-600 font-bold text-sm">صرف الدم</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

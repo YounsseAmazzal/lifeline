@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>لوحة الشريك - LifeLine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], arabic: ['"Cairo"', 'sans-serif'] },
+                colors: {
+                    morocco: { red: '#C1272D', green: '#006233', gold: '#D4AF37', dark: '#0f172a' }
+                },
+                backgroundImage: {
+                    'zellige': "url('https://www.transparenttextures.com/patterns/arabesque.png')",
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { font-family: 'Cairo', sans-serif; }
+    .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-slate-200 px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-morocco-gold text-white rounded-lg flex items-center justify-center text-xl shadow-lg"><i class="fa-solid fa-crown"></i></div>
+            <div>
+                <h1 class="font-bold text-slate-900">بوابة الشركاء</h1>
+                <p class="text-xs text-slate-500">مرحباً، مجموعة OCP</p>
+            </div>
+        </div>
+        <button class="text-sm font-bold text-slate-500 hover:text-morocco-red">خروج</button>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="max-w-7xl mx-auto p-8">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-r-4 border-morocco-green">
+                <p class="text-sm text-slate-500 font-bold">الأرواح التي ساهمتم بإنقاذها</p>
+                <h3 class="text-4xl font-extrabold text-slate-900 mt-2">3,450</h3>
+                <p class="text-xs text-green-600 mt-2 font-bold">+12% هذا الشهر</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-r-4 border-morocco-gold">
+                <p class="text-sm text-slate-500 font-bold">ظهور العلامة التجارية (Views)</p>
+                <h3 class="text-4xl font-extrabold text-slate-900 mt-2">1.2M</h3>
+                <p class="text-xs text-yellow-600 mt-2 font-bold">تطبيق & ويب</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-r-4 border-morocco-red">
+                <p class="text-sm text-slate-500 font-bold">حملات التبرع المدعومة</p>
+                <h3 class="text-4xl font-extrabold text-slate-900 mt-2">15</h3>
+                <p class="text-xs text-red-600 mt-2 font-bold">في 4 مدن</p>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm">
+            <h3 class="font-bold text-slate-800 mb-6">تأثير الرعاية عبر الزمن</h3>
+            <canvas id="impactChart" height="100"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('impactChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو'],
+                datasets: [{
+                    label: 'عدد المتبرعين الجدد',
+                    data: [120, 190, 300, 500, 800],
+                    borderColor: '#D4AF37',
+                    backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

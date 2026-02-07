@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - LifeLine</title>
+    
+    <!-- Fonts: Cairo & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body class="min-h-screen flex bg-white font-arabic text-slate-800">
+
+    <!-- RIGHT SIDE (Visuals - Hidden on Mobile) -->
+    <!-- NB: Added 'hidden lg:flex' to make it responsive -->
+    <div class="hidden lg:flex w-1/2 bg-slate-900 relative items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=2574&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40">
+        <div class="absolute inset-0 bg-royal-gradient"></div>
+        <div class="absolute inset-0 pattern-overlay"></div>
+        
+        <div class="relative z-10 p-12 text-white max-w-lg text-center">
+            <div class="w-20 h-20 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center mb-8 border border-white/20 mx-auto shadow-2xl">
+                <i class="fa-solid fa-heart-pulse text-4xl text-white"></i>
+            </div>
+            
+            <h2 class="font-bold text-5xl mb-6 leading-tight" data-i18n="hero_title">مرحباً بك، <br> يا بطل.</h2>
+            <p class="text-lg text-slate-100 leading-relaxed mb-8 font-arabic" data-i18n="hero_quote">
+                "من أحياها فكأنما أحيا الناس جميعاً"
+            </p>
+            
+            <div class="inline-flex items-center gap-4 bg-black/20 backdrop-blur px-6 py-3 rounded-full border border-white/10">
+                <div class="flex -space-x-3">
+                    <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://i.pravatar.cc/100?img=11">
+                    <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://i.pravatar.cc/100?img=12">
+                    <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://i.pravatar.cc/100?img=13">
+                </div>
+                <span class="text-sm font-bold text-white" data-i18n="join_us">انضم لـ 15,000+ متبرع</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEFT SIDE (Form - Full width on Mobile) -->
+    <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 bg-white relative">
+        
+        <!-- Top Bar: Back & Language -->
+        <div class="absolute top-6 left-6 right-6 flex justify-between items-center">
+            <a href="../index.html" class="text-sm font-bold text-slate-500 hover:text-morocco-red flex items-center gap-2 transition">
+                <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+                <span data-i18n="back_home">الرئيسية</span>
+            </a>
+
+            <!-- Language Dropdown (Same as Index) -->
+            <div class="relative group">
+                <button class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-morocco-green transition px-3 py-2 rounded-lg border border-slate-100 hover:border-slate-300">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="current-lang">العربية</span>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+                <div class="absolute top-full right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right z-50">
+                    <ul class="py-2 text-sm text-slate-700">
+                        <li><button onclick="changeLanguage('ar')" class="w-full text-right px-4 py-2 hover:bg-slate-50 flex items-center justify-end gap-2">العربية <img src="https://flagcdn.com/w20/ma.png" class="w-4 h-3"></button></li>
+                        <li><button onclick="changeLanguage('en')" class="w-full text-right px-4 py-2 hover:bg-slate-50 flex items-center justify-end gap-2">English <img src="https://flagcdn.com/w20/gb.png" class="w-4 h-3"></button></li>
+                        <li><button onclick="changeLanguage('fr')" class="w-full text-right px-4 py-2 hover:bg-slate-50 flex items-center justify-end gap-2">Français <img src="https://flagcdn.com/w20/fr.png" class="w-4 h-3"></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md w-full mx-auto mt-12 lg:mt-0">
+            <!-- Header -->
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 mb-4 group cursor-pointer">
+                    <div class="w-10 h-10 bg-morocco-red rounded-xl flex items-center justify-center text-white text-sm shadow-lg shadow-red-500/20 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="text-3xl font-extrabold text-slate-900 tracking-tight">LifeLine</span>
+                </div>
+                <h1 class="text-2xl font-bold text-slate-900 mb-2" data-i18n="login_title">تسجيل الدخول لحسابك</h1>
+                <p class="text-slate-500">
+                    <span data-i18n="no_account">ليس لديك حساب؟</span> 
+                    <a href="register.html" class="text-morocco-red font-bold hover:underline transition" data-i18n="register_link">أنشئ حساباً</a>
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form id="loginForm" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="email_label">البريد الإلكتروني</label>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none ltr:left-0 ltr:pl-4 rtl:right-0 rtl:pr-4">
+                            <i class="fa-regular fa-envelope text-slate-400 group-focus-within:text-morocco-red transition"></i>
+                        </div>
+                        <input type="email" id="email" class="w-full ltr:pl-11 ltr:pr-4 rtl:pr-11 rtl:pl-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none transition placeholder:text-slate-400" placeholder="name@example.com" required>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <label class="block text-sm font-bold text-slate-700" data-i18n="pass_label">كلمة المرور</label>
+                        <a href="#" class="text-xs font-bold text-slate-500 hover:text-morocco-red transition" data-i18n="forgot_pass">نسيت الكلمة؟</a>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none ltr:left-0 ltr:pl-4 rtl:right-0 rtl:pr-4">
+                            <i class="fa-solid fa-lock text-slate-400 group-focus-within:text-morocco-red transition"></i>
+                        </div>
+                        <input type="password" id="password" class="w-full ltr:pl-11 ltr:pr-4 rtl:pr-11 rtl:pl-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-morocco-red/20 focus:border-morocco-red outline-none transition placeholder:text-slate-400" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-morocco-red to-red-700 text-white py-4 rounded-xl font-bold shadow-lg shadow-red-500/30 hover:shadow-red-500/50 hover:scale-[1.02] active:scale-[0.98] transition duration-300 flex items-center justify-center gap-2">
+                    <span data-i18n="login_btn">دخول</span>
+                    <i class="fa-solid fa-arrow-left rtl:rotate-0 ltr:rotate-180"></i>
+                </button>
+            </form>
+
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-200"></div></div>
+                <div class="relative flex justify-center text-sm"><span class="px-4 bg-white text-slate-400 font-bold" data-i18n="or_continue">أو تابع بـ</span></div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <button class="flex items-center justify-center gap-2 py-3 border border-slate-200 rounded-xl hover:bg-slate-50 transition">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5">
+                    <span class="text-sm font-bold text-slate-600">Google</span>
+                </button>
+                <button class="flex items-center justify-center gap-2 py-3 border border-slate-200 rounded-xl hover:bg-slate-50 transition">
+                    <i class="fa-brands fa-apple text-xl text-slate-900"></i>
+                    <span class="text-sm font-bold text-slate-600">Apple</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRANSLATION & LOGIC SCRIPT -->
+    <script src="js/api.js"></script>
+    <script>
+        // --- Translation Logic (Same as Index) ---
+        const i18n = {
+            ar: {
+                hero_title: "مرحباً بك، <br> يا بطل.",
+                hero_quote: "\"من أحياها فكأنما أحيا الناس جميعاً\"",
+                join_us: "انضم لـ 15,000+ متبرع",
+                back_home: "الرئيسية",
+                login_title: "تسجيل الدخول",
+                no_account: "ليس لديك حساب؟",
+                register_link: "أنشئ حساباً",
+                email_label: "البريد الإلكتروني",
+                pass_label: "كلمة المرور",
+                forgot_pass: "نسيت الكلمة؟",
+                login_btn: "دخول",
+                or_continue: "أو تابع بـ"
+            },
+            en: {
+                hero_title: "Welcome Back, <br> Hero.",
+                hero_quote: "\"Saving one life is like saving all of humanity.\"",
+                join_us: "Join 15,000+ Donors",
+                back_home: "Home",
+                login_title: "Sign in to account",
+                no_account: "No account?",
+                register_link: "Register now",
+                email_label: "Email Address",
+                pass_label: "Password",
+                forgot_pass: "Forgot Password?",
+                login_btn: "Sign In",
+                or_continue: "Or continue with"
+            },
+            fr: {
+                hero_title: "Bon retour, <br> Héros.",
+                hero_quote: "\"Sauver une vie, c'est sauver l'humanité.\"",
+                join_us: "Rejoignez +15 000 donneurs",
+                back_home: "Accueil",
+                login_title: "Connexion",
+                no_account: "Pas de compte ?",
+                register_link: "S'inscrire",
+                email_label: "Adresse Email",
+                pass_label: "Mot de passe",
+                forgot_pass: "Mot de passe oublié ?",
+                login_btn: "Se connecter",
+                or_continue: "Ou continuer avec"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+            });
+
+            const body = document.body;
+            const langLabel = document.getElementById('current-lang');
+            
+            if (lang === 'ar') {
+                body.setAttribute('dir', 'rtl');
+                body.classList.remove('font-sans');
+                body.classList.add('font-arabic');
+                langLabel.innerText = "العربية";
+            } else {
+                body.setAttribute('dir', 'ltr');
+                body.classList.remove('font-arabic');
+                body.classList.add('font-sans');
+                langLabel.innerText = lang === 'en' ? "English" : "Français";
+            }
+        }
+
+    </script>
+    <script src="../assets/css/tailwindconfig.js"> </script>
+        <script src="../api/api.js"></script>
+        <script src="../api/auth/login.js"></script>
+</body>
+</html>

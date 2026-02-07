@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>لوحة تحكم المشرف - LifeLine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], arabic: ['"Cairo"', 'sans-serif'] },
+                colors: {
+                    morocco: { red: '#C1272D', green: '#006233', gold: '#D4AF37', dark: '#0f172a' }
+                },
+                backgroundImage: {
+                    'zellige': "url('https://www.transparenttextures.com/patterns/arabesque.png')",
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { font-family: 'Cairo', sans-serif; }
+    .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+</style>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-morocco-dark text-white flex flex-col shadow-2xl relative">
+        <div class="absolute inset-0 bg-zellige opacity-10 pointer-events-none"></div>
+        <div class="p-6 text-center border-b border-slate-700 z-10">
+            <h1 class="text-2xl font-bold text-morocco-red">LifeLine <span class="text-white text-sm block">Admin Panel</span></h1>
+        </div>
+        <nav class="flex-1 p-4 space-y-2 z-10 text-sm">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-morocco-red rounded-xl font-bold shadow-lg shadow-red-900/50">
+                <i class="fa-solid fa-users-gear"></i> إدارة المستخدمين
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-white/10 rounded-xl transition">
+                <i class="fa-solid fa-file-circle-check"></i> طلبات التحقق <span class="bg-red-600 text-xs px-2 py-0.5 rounded-full">3</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-white/10 rounded-xl transition">
+                <i class="fa-solid fa-hospital"></i> بنوك الدم
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Content -->
+    <main class="flex-1 p-8 overflow-y-auto">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6">المستخدمين والصلاحيات (RBAC)</h2>
+        
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <table class="w-full text-right">
+                <thead class="bg-slate-50 text-slate-500 text-xs uppercase font-bold border-b border-slate-200">
+                    <tr>
+                        <th class="p-4">المستخدم</th>
+                        <th class="p-4">الدور الحالي</th>
+                        <th class="p-4">الحالة</th>
+                        <th class="p-4">إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-sm">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-4 flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/150?img=12" class="w-8 h-8 rounded-full">
+                            <div>
+                                <p class="font-bold text-slate-900">Hamza El Idrissi</p>
+                                <p class="text-xs text-slate-500">hamza@dev.ma</p>
+                            </div>
+                        </td>
+                        <td class="p-4"><span class="px-3 py-1 bg-red-100 text-red-700 rounded-full font-bold text-xs">Admin</span></td>
+                        <td class="p-4 text-green-600 font-bold">نشط</td>
+                        <td class="p-4"><button class="text-slate-400 hover:text-morocco-red"><i class="fa-solid fa-pen-to-square"></i> تعديل</button></td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-4 flex items-center gap-3">
+                            <div class="w-8 h-8 bg-morocco-gold text-white rounded-full flex items-center justify-center font-bold">A</div>
+                            <div>
+                                <p class="font-bold text-slate-900">Attijari Bank</p>
+                                <p class="text-xs text-slate-500">sponsor@attijari.ma</p>
+                            </div>
+                        </td>
+                        <td class="p-4"><span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full font-bold text-xs">Sponsor</span></td>
+                        <td class="p-4 text-green-600 font-bold">نشط</td>
+                        <td class="p-4"><button class="text-slate-400 hover:text-morocco-red"><i class="fa-solid fa-pen-to-square"></i> تعديل</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

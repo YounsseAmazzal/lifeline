@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LifeLine App</title>
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        body, html { height: 100%; margin: 0; overflow: hidden; }
+        #map { height: 100%; width: 100%; z-index: 0; }
+        .glass-panel { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
+        
+        /* Custom Marker Pulse */
+        .user-marker {
+            width: 20px; height: 20px; background: #3b82f6; border-radius: 50%;
+            border: 3px solid white; box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.2);
+            animation: pulse-blue 2s infinite;
+        }
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MAP BACKGROUND -->
+    <div id="map"></div>
+
+    <!-- TOP BAR (Profile Link) -->
+    <div class="absolute top-4 left-4 right-4 z-10 flex justify-between items-start pointer-events-none">
+        <button onclick="sidebarToggle()" class="pointer-events-auto bg-white p-3 rounded-full shadow-lg text-slate-800 hover:bg-slate-50 transition">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+        
+        <a href="../views/profile.html" class="pointer-events-auto bg-white p-1.5 pr-4 rounded-full shadow-lg flex items-center gap-3 cursor-pointer hover:bg-slate-50 transition">
+            <img id="navAvatar" src="https://ui-avatars.com/api/?name=User" class="w-8 h-8 rounded-full border border-slate-200">
+            <span id="navName" class="text-sm font-bold text-slate-700">Loading...</span>
+        </a>
+    </div>
+
+    <!-- BOTTOM SHEET (Actions) -->
+    <div class="absolute bottom-0 left-0 right-0 z-10 bg-white rounded-t-3xl shadow-[0_-5px_30px_rgba(0,0,0,0.15)] p-6 transition-transform duration-300 transform translate-y-0">
+        <div class="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mb-6"></div>
+
+        <h2 class="text-xl font-bold text-slate-900 mb-4">Hello, <span id="welcomeName">Hero</span> 👋</h2>
+        
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Donate Btn -->
+            <button class="bg-[#C1272D] hover:bg-red-700 text-white p-4 rounded-2xl flex flex-col items-center gap-2 shadow-lg shadow-red-500/30 transition transform active:scale-95">
+                <i class="fa-solid fa-hand-holding-droplet text-2xl"></i>
+                <span class="font-bold">Donate Now</span>
+            </button>
+            <!-- Request Btn -->
+            <button class="bg-slate-100 hover:bg-slate-200 text-slate-800 p-4 rounded-2xl flex flex-col items-center gap-2 transition transform active:scale-95">
+                <i class="fa-solid fa-bed-pulse text-2xl text-slate-600"></i>
+                <span class="font-bold">Request Blood</span>
+            </button>
+        </div>
+
+        <!-- Nearby Alert (Static for now) -->
+        <div class="mt-6">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="font-bold text-slate-700 text-sm">Nearby Urgent Requests</h3>
+                <span class="text-xs text-red-600 font-bold animate-pulse">● Live</span>
+            </div>
+            <div class="bg-red-50 border border-red-100 p-4 rounded-xl flex items-center gap-4">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold">O-</div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-slate-900 text-sm">Ibn Sina Hospital</h4>
+                    <p class="text-xs text-slate-500">2.5 km away • Accident</p>
+                </div>
+                <button class="bg-slate-900 text-white px-3 py-1.5 rounded-lg text-xs font-bold">Details</button>
+            </div>
+        </div>
+    </div>
+    <!-- Pagination Container -->
+<div class="mt-8 flex justify-center items-center gap-2" id="paginationControls">
+    <!-- JS will inject buttons here -->
+</div>
+
+    <!-- LOGIC -->
+    <script src="../api/api.js"></script>
+    <script src="../api/pasination.js"></script>
+    <script src="../api/dashbord/main.js"></script>
+</body>
+</html>
