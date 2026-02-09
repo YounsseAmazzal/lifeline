@@ -1,13 +1,21 @@
- //  Load Cities (Mockup for now)
-    document.addEventListener("DOMContentLoaded", () => {
-        const citySelect = document.getElementById('citySelect');
-        const cities = ["الدار البيضاء", "الرباط", "مراكش", "فاس", "طنجة"];
-        citySelect.innerHTML = '<option value="" disabled selected>اختر المدينة...</option>';
-        cities.forEach(c => {
-            let opt = document.createElement('option');
-            opt.value = c; opt.innerText = c; citySelect.appendChild(opt);
+// Load cities from backend database
+document.addEventListener("DOMContentLoaded", async () => {
+    const citySelect = document.getElementById('citySelect');
+    citySelect.innerHTML = '<option value="" disabled selected>Loading...</option>';
+
+    try {
+        const cities = await geoApi.cities();
+        citySelect.innerHTML = '<option value="" disabled selected>Select city...</option>';
+        cities.forEach((c) => {
+            const opt = document.createElement('option');
+            opt.value = c.name;
+            opt.innerText = c.name;
+            citySelect.appendChild(opt);
         });
-    });
+    } catch (error) {
+        citySelect.innerHTML = '<option value="" disabled selected>Failed to load cities</option>';
+    }
+});
 
     //  Handle Registration
     document.getElementById('registerForm').addEventListener('submit', async (e) => {
@@ -29,19 +37,29 @@
         const blood = selects[0].value; 
         const city  = selects[1].value; 
 
-        const registerData = {
-            name: `${fname} ${lname}`,      
-            userName: email,                 
-            email: email,
-            phoneNumber: phone,
-            password: pass,
-            bloodGroup: blood,
-            city: city,
-            country: "Morocco"              
-        };
+        const formData = new FormData();
+        formData.append("name", `${fname} ${lname}`);
+        formData.append("userName", email);
+        formData.append("email", email);
+        formData.append("phoneNumber", phone);
+        formData.append("password", pass);
+        formData.append("bloodGroup", blood);
+        formData.append("city", city);
+        formData.append("country", "Morocco");
+        if (typeof getPreferredLanguage === "function") {
+            formData.append("language", getPreferredLanguage());
+        }
+
+        const photoInput = document.getElementById("profilePhoto");
+        if (photoInput && photoInput.files && photoInput.files[0]) {
+            formData.append("photo", photoInput.files[0]);
+        }
 
         try {
-            const response = await auth.register(registerData);
+            const response = await auth.register(formData);
+            if (response.language && typeof persistLanguage === "function") {
+                persistLanguage(response.language);
+            }
             
             // Success
             localStorage.setItem("lifeline_token", response.token);

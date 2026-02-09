@@ -15,6 +15,9 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const response = await auth.login(email, password);
     
     localStorage.setItem("lifeline_token", response.token);
+    if (response.language && typeof persistLanguage === "function") {
+        persistLanguage(response.language);
+    }
     
     if (response.role === "Admin") {
         window.location.href = "admin.html";

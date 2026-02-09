@@ -2,12 +2,24 @@
         document.addEventListener("DOMContentLoaded", () => {
             // Load Cities
             const citySelect = document.getElementById('heroCitySelect');
-            const cities = ["الدار البيضاء", "الرباط", "مراكش", "فاس", "طنجة", "أكادير"];
-            cities.forEach(city => {
-                const opt = document.createElement('option');
-                opt.textContent = city;
-                citySelect.appendChild(opt);
-            });
+            if (citySelect && typeof geoApi !== "undefined") {
+                geoApi.cities().then((cities) => {
+                    cities.forEach(city => {
+                        const opt = document.createElement('option');
+                        opt.textContent = city.name;
+                        opt.value = city.name;
+                        citySelect.appendChild(opt);
+                    });
+                }).catch(() => {
+                    const fallback = ["Casablanca", "Rabat", "Marrakech", "Fes", "Tangier", "Agadir"];
+                    fallback.forEach(city => {
+                        const opt = document.createElement('option');
+                        opt.textContent = city;
+                        opt.value = city;
+                        citySelect.appendChild(opt);
+                    });
+                });
+            }
 
             // Load Banks
             const banksContainer = document.getElementById('banks-grid');

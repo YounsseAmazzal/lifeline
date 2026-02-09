@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }).addTo(map);
 
     try {
-        const user = await apiRequest('/account/profile', 'GET');
+        const user = await accountApi.profile();
         const firstName = user.name.split(' ')[0];
         const welcomeEl = document.getElementById('welcomeName');
         const navNameEl = document.getElementById('navName');
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if(welcomeEl) welcomeEl.innerText = firstName;
         if(navNameEl) navNameEl.innerText = firstName;
-        if(navAvatar && user.photoUrl) navAvatar.src = user.photoUrl;
+        if(navAvatar && user.photo_url) navAvatar.src = user.photo_url;
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(pos => {

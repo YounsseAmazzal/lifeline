@@ -100,6 +100,46 @@
             </div>
         </div>
 
+        <div class="bg-white rounded-3xl shadow-xl p-6 border border-slate-100 mb-6">
+            <h2 class="text-xl font-bold text-slate-900 mb-4">Update Profile</h2>
+            <form id="profileForm" class="grid grid-cols-1 md:grid-cols-2 gap-4" onsubmit="updateProfile(event)">
+                <input name="name" class="p-3 rounded-xl border border-slate-200" placeholder="Full name" />
+                <input name="email" type="email" class="p-3 rounded-xl border border-slate-200" placeholder="Email" />
+                <input name="phone_number" class="p-3 rounded-xl border border-slate-200" placeholder="Phone number" />
+                <select id="profileCitySelect" name="city" class="p-3 rounded-xl border border-slate-200">
+                    <option value="">Loading...</option>
+                </select>
+                <input name="area" class="p-3 rounded-xl border border-slate-200" placeholder="Area" />
+                <input name="state" class="p-3 rounded-xl border border-slate-200" placeholder="State" />
+                <input name="country" class="p-3 rounded-xl border border-slate-200" placeholder="Country" />
+                <input name="postal_code" class="p-3 rounded-xl border border-slate-200" placeholder="Postal code" />
+                <select name="gender" class="p-3 rounded-xl border border-slate-200">
+                    <option value="">Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <select name="blood_group" class="p-3 rounded-xl border border-slate-200">
+                    <option value="">Blood group</option>
+                    <option value="A+">A+</option><option value="A-">A-</option>
+                    <option value="B+">B+</option><option value="B-">B-</option>
+                    <option value="O+">O+</option><option value="O-">O-</option>
+                    <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                </select>
+                <input name="date_of_birth" type="date" class="p-3 rounded-xl border border-slate-200" />
+                <select name="language" class="p-3 rounded-xl border border-slate-200">
+                    <option value="ar">Arabic</option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                </select>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200">
+                    <input name="available" type="checkbox" />
+                    <span>Available for donation</span>
+                </label>
+                <input id="newProfilePhoto" type="file" accept="image/*" class="p-3 rounded-xl border border-slate-200 md:col-span-2" />
+                <button id="saveProfileBtn" type="submit" class="md:col-span-2 bg-morocco-green text-white py-3 rounded-xl font-bold">Save changes</button>
+            </form>
+        </div>
+
         <!-- Logout -->
         <div class="text-center mt-8">
             <button onclick="logout()" class="text-red-500 font-bold hover:bg-red-50 px-6 py-2 rounded-xl transition flex items-center justify-center gap-2 mx-auto">
@@ -109,8 +149,9 @@
     </div>
 
     <!-- LOGIC -->
-    <script src="../api/profile/main.js"></script>
+    <script src="../assets/js/lang.js"></script>
     <script src="../api/api.js"></script>
+    <script src="../api/profile/main.js"></script>
     <script src="../assets/css/tailwindconfig.js"> </script>
 
 </body>

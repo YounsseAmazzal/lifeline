@@ -101,6 +101,10 @@
         };
 
         function changeLanguage(lang) {
+            if (typeof persistLanguage === "function") {
+                persistLanguage(lang);
+            }
+
             // 1. Update Text
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
@@ -126,3 +130,8 @@
                 langLabel.innerText = lang === 'en' ? "English" : "Français";
             }
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const preferred = typeof getPreferredLanguage === "function" ? getPreferredLanguage() : "ar";
+            changeLanguage(preferred);
+        });
