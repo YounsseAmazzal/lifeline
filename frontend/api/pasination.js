@@ -4,7 +4,9 @@ const itemsPerPage = 6;
 async function loadBanks(page = 1) {
     try {
         const container = document.getElementById('banks-grid'); 
-             container.innerHTML = '<div class="col-span-full text-center py-12"><i class="fa-solid fa-spinner fa-spin text-2xl text-morocco-green"></i></div>';
+        if (!container) return; 
+
+        container.innerHTML = '<div class="col-span-full text-center py-12"><i class="fa-solid fa-spinner fa-spin text-2xl text-morocco-green"></i></div>';
 
         const response = await fetch(`${API_URL}/banks?pageNumber=${page}&pageSize=${itemsPerPage}`, {
             headers: { 'Authorization': `Bearer ${localStorage.getItem('lifeline_token')}` }
