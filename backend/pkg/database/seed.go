@@ -26,6 +26,8 @@ type JsonAddress struct {
 	City       string `json:"City"`
 	State      string `json:"State"`
 	PostalCode string `json:"PostalCode"`
+	Latitude   float64 `json:"Latitude"`  // <--- زيد هادي
+	Longitude  float64 `json:"Longitude"`
 }
 
 type JsonBloodGroup struct {
@@ -40,6 +42,7 @@ type JsonBank struct {
 	Website     string           `json:"Website"`
 	Address     JsonAddress      `json:"Address"`
 	BloodGroups []JsonBloodGroup `json:"BloodGroups"`
+	
 }
 
 // --- Seeding Functions ---
@@ -159,7 +162,9 @@ func SeedBanks(db *gorm.DB) {
 				State:      b.Address.State,
 				Country:    "Morocco",
 				PostalCode: b.Address.PostalCode,
-			},
+				Latitude:   float32(b.Address.Latitude),
+				Longitude: float32(b.Address.Longitude),
+				},
 			BloodGroups: stock,
 		}
 

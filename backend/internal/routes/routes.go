@@ -22,6 +22,9 @@ func SetupRoutes(app *fiber.App) {
 	// 3. Init Handlers (Inject Repos & Services)
 	authHandler := handlers.NewAuthHandler(tokenService, photoService)
 	userHandler := handlers.NewUserHandler(userRepo) 
+
+	//geo 
+	geoHandler := handlers.NewGeoHandler() 
 	
 	bankHandler := &handlers.BankHandler{} 
 	adminHandler := &handlers.AdminHandler{}
@@ -40,7 +43,10 @@ func SetupRoutes(app *fiber.App) {
 
 	//profile
 	//  routes.go
-	api.Get("/account/profile", middleware.Protected(), authHandler.GetUserProfile)
+	//cites
+	geo := api.Group("/geo")
+	geo.Get("/cities", geoHandler.GetCities)
+		api.Get("/account/profile", middleware.Protected(), authHandler.GetUserProfile)
 	admin := api.Group("/admin", middleware.Protected(), middleware.RequireRole("Admin"))
 	admin.Get("/users-with-roles", adminHandler.GetUsersWithRoles)
 	admin.Post("/edit-roles/:username", adminHandler.EditRoles)
