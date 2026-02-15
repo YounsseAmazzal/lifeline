@@ -3,7 +3,7 @@ package dto
 // BankRegisterInput:
 type BankRegisterInput struct {
 	Name string `json:"name" validate:"required"`
-
+	
 	// Address Info
 	Area       string `json:"area" validate:"required"`
 	City       string `json:"city" validate:"required"`

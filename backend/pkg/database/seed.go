@@ -4,8 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"lifeline/internal/models"
-	"os" 
+	"os"
 
+	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
@@ -22,11 +23,11 @@ type JsonCity struct {
 }
 
 type JsonAddress struct {
-	Area       string `json:"Area"`
-	City       string `json:"City"`
-	State      string `json:"State"`
-	PostalCode string `json:"PostalCode"`
-	Latitude   float64 `json:"Latitude"`  // <--- زيد هادي
+	Area       string  `json:"Area"`
+	City      string    `json:"city"`
+	State      string  `json:"State"`
+	PostalCode string  `json:"PostalCode"`
+	Latitude   float64 `json:"Latitude"`
 	Longitude  float64 `json:"Longitude"`
 }
 
@@ -37,17 +38,16 @@ type JsonBloodGroup struct {
 
 type JsonBank struct {
 	Name        string           `json:"Name"`
+	City        string          `json:"City"`
 	PhoneNumber string           `json:"PhoneNumber"`
 	Email       string           `json:"Email"`
 	Website     string           `json:"Website"`
 	Address     JsonAddress      `json:"Address"`
 	BloodGroups []JsonBloodGroup `json:"BloodGroups"`
-	
 }
 
 // --- Seeding Functions ---
 
-//  Seed Cities & Regions
 func SeedMoroccanCities(db *gorm.DB) {
 	var count int64
 	db.Model(&models.Region{}).Count(&count)
@@ -58,7 +58,6 @@ func SeedMoroccanCities(db *gorm.DB) {
 
 	fmt.Println("⏳ Seeding Regions & Cities...")
 
-	// 1. Regions
 	dataRegion, err := os.ReadFile("assets/sql-moroccan-cities/json/region.json")
 	if err != nil {
 		fmt.Println("❌ Error reading region.json:", err)
@@ -73,12 +72,11 @@ func SeedMoroccanCities(db *gorm.DB) {
 	for _, r := range jsonRegions {
 		region := models.Region{Region: r.Region}
 		if err := db.Create(&region).Error; err == nil {
-			regionMap[r.ID] = region.ID // 
+			regionMap[r.ID] = region.ID
 		}
 	}
 	fmt.Println("✅ Regions Imported.")
 
-	//  Cities
 	dataCity, err := os.ReadFile("assets/sql-moroccan-cities/json/ville.json")
 	if err != nil {
 		fmt.Println("❌ Error reading ville.json:", err)
@@ -105,7 +103,6 @@ func SeedMoroccanCities(db *gorm.DB) {
 	fmt.Println("✅ Cities Imported Successfully.")
 }
 
-//  Seed Banks
 func SeedBanks(db *gorm.DB) {
 	var count int64
 	db.Model(&models.Bank{}).Count(&count)
@@ -129,9 +126,7 @@ func SeedBanks(db *gorm.DB) {
 	}
 
 	for _, b := range jsonBanks {
-		// Prepare Stock
 		var stock []models.BloodGroup
-
 		stockMap := make(map[string]int)
 		for _, bg := range b.BloodGroups {
 			stockMap[bg.Group] = bg.Value
@@ -148,23 +143,22 @@ func SeedBanks(db *gorm.DB) {
 				Quantity: quantity,
 			})
 		}
-
-		// Create Bank Object
+		    fmt.Printf("📥 Reading JSON: Name='%s', City='%s'\n", b.Name, )
 		bank := models.Bank{
 			Name:        b.Name,
+			City: 		b.City,
 			Email:       b.Email,
 			PhoneNumber: b.PhoneNumber,
 			Website:     b.Website,
-			// GORM غايتكلف بإنشاء Address و BloodGroups أوتوماتيكيا
 			Address: models.Address{
 				Area:       b.Address.Area,
-				City:       b.Address.City,
+				City:      b.Address.City,
 				State:      b.Address.State,
 				Country:    "Morocco",
 				PostalCode: b.Address.PostalCode,
-				Latitude:   float32(b.Address.Latitude),
-				Longitude: float32(b.Address.Longitude),
-				},
+				Latitude:   b.Address.Latitude,
+				Longitude:  b.Address.Longitude,
+			},
 			BloodGroups: stock,
 		}
 
@@ -173,4 +167,66 @@ func SeedBanks(db *gorm.DB) {
 		}
 	}
 	fmt.Println("✅ Hospitals Seeded Successfully.")
+}
+
+func SeedRolesAndAdmin(db *gorm.DB) {
+	roles := []string{"Admin", "Sponsor", "Donor", "Moderator"}
+	for _, r := range roles {
+		var count int64
+		db.Model(&models.Role{}).Where("name = ?", r).Count(&count)
+		if count == 0 {
+			db.Create(&models.Role{Name: r})
+			fmt.Printf("✅ Role Created: %s\n", r)
+		}
+	}
+
+	var adminCount int64
+	db.Model(&models.User{}).Where("user_name = ?", "admin").Count(&adminCount)
+
+	if adminCount == 0 {
+		hash, _ := bcrypt.GenerateFromPassword([]byte("younsse1234"), bcrypt.DefaultCost)
+
+		admin := models.User{
+			UserName:     "admin",
+			Email:        "admin@lifeline.ma",
+			PasswordHash: string(hash),
+			Name:         "Super Admin",
+			BloodGroup:   "O+",
+		}
+
+		db.Create(&admin)
+
+		var adminRole models.Role
+		db.Where("name = ?", "Admin").First(&adminRole)
+		db.Model(&admin).Association("Roles").Append(&adminRole)
+
+		fmt.Println(" Admin Account Created: admin / younsse1234")
+	}
+}
+
+func SeedFakeUsers(db *gorm.DB) {
+	var count int64
+	db.Model(&models.User{}).Where("email LIKE ?", "%@fake.com").Count(&count)
+	if count > 0 { return }
+
+	fmt.Println("🌱 Seeding Fake Users...")
+	
+	pass, _ := bcrypt.GenerateFromPassword([]byte("123456"), bcrypt.DefaultCost)
+
+	// Fetch Donor Role ONCE (Optimized)
+	var donorRole models.Role
+	db.Where("name = ?", "Donor").First(&donorRole)
+
+	users := []models.User{
+		{Name: "Karim O+", UserName: "karim", Email: "karim@fake.com", BloodGroup: "O+", PasswordHash: string(pass)},
+		{Name: "Fatima A-", UserName: "fatima", Email: "fatima@fake.com", BloodGroup: "A-", PasswordHash: string(pass)},
+		{Name: "Said AB+", UserName: "said", Email: "said@fake.com", BloodGroup: "AB+", PasswordHash: string(pass)},
+		{Name: "Anass AB+", UserName: "anass", Email: "anass@fake.com", BloodGroup: "AB+", PasswordHash: string(pass)},
+	}
+
+	for _, u := range users {
+		db.Create(&u)
+		db.Model(&u).Association("Roles").Append(&donorRole)
+	}
+	fmt.Println("✅ Fake Users Created (Pass: 123456)")
 }

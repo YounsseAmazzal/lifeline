@@ -81,9 +81,9 @@ func mapUserToMemberDto(user models.User) dto.MemberResponse {
 	}
 
 	city := "Unknown"
-	if user.Address.City != "" {
-		city = user.Address.City
-	}
+	// if user.Address.City != "" {
+	// 	city = user.Address.City
+	// }
 
 	return dto.MemberResponse{
 		ID:       user.ID,

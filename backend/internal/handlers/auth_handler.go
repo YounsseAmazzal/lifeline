@@ -40,10 +40,9 @@ func (h *AuthHandler) Register(c *fiber.Ctx) error {
 	if input.DateOfBirth != "" {
 		dob, _ = time.Parse("2006-01-02", input.DateOfBirth)
 	} else {
-		dob = time.Now() // Default
+		dob = time.Now() 
 	}
 
-	// Set Defaults for missing address fields
 	country := input.Country
 	if country == "" {
 		country = "Morocco"
@@ -62,7 +61,7 @@ func (h *AuthHandler) Register(c *fiber.Ctx) error {
 		LastActive:   time.Now(),
 		Available:    true, 
 		Address: models.Address{
-			City:       input.City,
+			// City:       input.City,
 			Area:       input.Area,
 			State:      input.State,
 			Country:    country,
@@ -105,7 +104,7 @@ func (h *AuthHandler) Login(c *fiber.Ctx) error {
 		return c.Status(401).JSON(fiber.Map{"error": "Invalid credentials"})
 	}
 
-	userRole := "Donor" // Default
+	userRole := "Donor"
 	for _, r := range user.Roles {
 		if r.Name == "Admin" {
 			userRole = "Admin"
@@ -144,7 +143,7 @@ func (h *AuthHandler) GetUserProfile(c *fiber.Ctx) error {
 		ID:        user.ID,
 		Name:      user.Name,
 		UserName:  user.UserName,
-		City:      user.Address.City,
+		// City:      user.Address.City,
 		Available: user.Available,
 		PhotoURL:  user.Photo.URL,
 		BloodGroup:user.BloodGroup,

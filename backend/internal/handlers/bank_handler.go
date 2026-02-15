@@ -2,50 +2,40 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"lifeline/internal/dto"
 	"lifeline/internal/models"
 	"lifeline/pkg/database"
 	"math"
 	"net/url"
 	"strconv"
+	"strings"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 type BankHandler struct{}
 
+// GetBanks: Main Handler
 func (h *BankHandler) GetBanks(c *fiber.Ctx) error {
-	// 1. Pagination Inputs
-	page, _ := strconv.Atoi(c.Query("pageNumber", "1"))
-	if page < 1 {
-		page = 1
-	}
-	
-	pageSize, _ := strconv.Atoi(c.Query("pageSize", "10"))
-	switch {
-	case pageSize > 100:
+	// 1. Pagination Params
+	page := getIntQuery(c, "pageNumber", 1)
+	pageSize := getIntQuery(c, "pageSize", 10)
+	if pageSize > 100 {
 		pageSize = 100
-	case pageSize <= 0:
-		pageSize = 10
 	}
-	
 	offset := (page - 1) * pageSize
 
-	// Filters
+	// 2. Filters Params
 	bloodGroup := c.Query("bloodGroup")
 	bloodGroup, _ = url.QueryUnescape(bloodGroup)
 	city := c.Query("city")
 
-	var banks []models.Bank
-	var totalCount int64
-
-	// Start Query
+	// Bda query jdida bla ma tkhllet "Address" join daba
 	query := database.DB.Model(&models.Bank{})
 
-	// 2. Filters
 	if city != "" {
-		query = query.Joins("JOIN addresses ON addresses.bank_id = banks.id").
-			Where("addresses.city = ?", city)
+		query = query.Where("LOWER(city) = ?", strings.ToLower(city))
 	}
 
 	if bloodGroup != "" {
@@ -53,40 +43,51 @@ func (h *BankHandler) GetBanks(c *fiber.Ctx) error {
 			Where("blood_groups.group = ? AND blood_groups.quantity > 0", bloodGroup)
 	}
 
-	// 3. Count (Distinct IDs)
+	var totalCount int64
 	if err := query.Distinct("banks.id").Count(&totalCount).Error; err != nil {
 		return c.Status(500).JSON(fiber.Map{"error": "Database error"})
 	}
 
-	// 4. Check Empty
+	// Set Pagination Headers
+	totalPages := int(math.Ceil(float64(totalCount) / float64(pageSize)))
+	setPaginationHeader(c, page, pageSize, totalCount, totalPages)
+
 	if totalCount == 0 {
-		return c.JSON([]dto.BankResponse{}) // Return empty array
+		return c.JSON([]dto.BankResponse{})
 	}
 
-	// 5. Fetch Data
-	err := query.Preload("Address").Preload("BloodGroups").Preload("Photo").
+	var banks []models.Bank
+	err := query.
+		Select("banks.*"). 
+		Group("banks.id"). 
+		Preload("Address").
+		Preload("BloodGroups").
+		Preload("Photo").
 		Order("created_at desc").
-		Offset(offset).Limit(pageSize).
+		Offset(offset).
+		Limit(pageSize).
 		Find(&banks).Error
 
 	if err != nil {
+		fmt.Println("Error finding banks:", err) // Debug
 		return c.Status(500).JSON(fiber.Map{"error": "Failed to fetch banks"})
 	}
 
-	// 6. Pagination Header
-	totalPages := int(math.Ceil(float64(totalCount) / float64(pageSize)))
-	paginationData, _ := json.Marshal(map[string]interface{}{
-		"currentPage":  page,
-		"itemsPerPage": pageSize,
-		"totalItems":   totalCount,
-		"totalPages":   totalPages,
-	})
-	c.Set("X-Pagination", string(paginationData))
-	c.Set("Access-Control-Expose-Headers", "X-Pagination")
+	// --- DEBUG ---
+	if len(banks) > 0 {
+		fmt.Println(" DEBUG SUCCESS:")
+		fmt.Printf("ID: %d, Name: '%s', City: '%s'\n", banks[0].ID, banks[0].Name, banks[0].City)
+	}
 
-	// 7. Mapping
+	response := h.mapToResponse(banks)
+	return c.JSON(response)
+}
+
+
+// Helper: Convert Database Models to JSON DTOs
+func (h *BankHandler) mapToResponse(banks []models.Bank) []dto.BankResponse {
 	response := make([]dto.BankResponse, 0)
-	
+
 	for _, b := range banks {
 		var bgDTOs []dto.BloodGroupDto
 		for _, bg := range b.BloodGroups {
@@ -94,21 +95,45 @@ func (h *BankHandler) GetBanks(c *fiber.Ctx) error {
 				ID: bg.ID, Group: bg.Group, Quantity: bg.Quantity,
 			})
 		}
-
+		fmt.Println("--the name howa hada --",b.Name)
 		response = append(response, dto.BankResponse{
 			ID:          b.ID,
 			Name:        b.Name,
-			City:        b.Address.City,
+			// City:        b.Address.City,
 			PhoneNumber: b.PhoneNumber,
-			LastUpdated: b.CreatedAt,
+			Email:       b.Email,
+			Website:     b.Website,
+			LastUpdated: b.CreatedAt, // Or LastUpdated
 			PhotoURL:    b.Photo.URL,
 			BloodGroups: bgDTOs,
-			
-			// --- FIX IS HERE ---
-			Latitude:    float64(b.Address.Latitude), 
+			Latitude:    float64(b.Address.Latitude),
 			Longitude:   float64(b.Address.Longitude),
 		})
 	}
+	return response
+}
 
-	return c.JSON(response)
+// Helper: Get Int from Query
+func getIntQuery(c *fiber.Ctx, key string, defaultVal int) int {
+	val := c.Query(key)
+	if val == "" {
+		return defaultVal
+	}
+	num, err := strconv.Atoi(val)
+	if err != nil || num < 1 {
+		return defaultVal
+	}
+	return num
+}
+
+// Helper: Set Headers
+func setPaginationHeader(c *fiber.Ctx, page, size int, total int64, pages int) {
+	data, _ := json.Marshal(map[string]interface{}{
+		"currentPage":  page,
+		"itemsPerPage": size,
+		"totalItems":   total,
+		"totalPages":   pages,
+	})
+	c.Set("X-Pagination", string(data))
+	c.Set("Access-Control-Expose-Headers", "X-Pagination")
 }

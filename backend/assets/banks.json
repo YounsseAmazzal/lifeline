@@ -1,147 +1,533 @@
 [
   {
-    "Name": "Centre National de Transfusion Sanguine (Rabat)",
-    "PhoneNumber": "05377-74993",
-    "Email": "contact@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Avenue Al Fadila, Madinat Al Irfane",
-      "City": "Rabat",
-      "State": "Rabat-Salé-Kénitra",
-      "PostalCode": "10000",
-      "Latitude": 33.9716,
-      "Longitude": -6.8498
-    },
-    "BloodGroups": [
-      { "Group": "O+", "Value": 45 },
-      { "Group": "O-", "Value": 5 },
-      { "Group": "A+", "Value": 120 },
-      { "Group": "AB-", "Value": 2 }
-    ]
+    "city": "Rabat",
+    "name": "CRTS Rabat (Centre National)",
+    "phone_number": "05377-74993",
+    "email": "rabat@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Madinat Al Irfane", "city": "Rabat", "state": "Rabat-Salé-Kénitra", "postal_code": "10100", "latitude": 33.9776, "longitude": -6.8662 },
+    "blood_groups": [{"group": "O+", "quantity": 100}, {"group": "A+", "quantity": 150}]
   },
   {
-    "Name": "CRTS Casablanca (Hôpital 20 Août)",
-    "PhoneNumber": "05222-03033",
-    "Email": "casa@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Quartier des Hôpitaux, Rue Tarik Ibn Ziad",
-      "City": "Casablanca",
-      "State": "Casablanca-Settat",
-      "PostalCode": "20250",
-      "Latitude": 33.5805,
-      "Longitude": -7.6167
-    },
-    "BloodGroups": [
-      { "Group": "O+", "Value": 10 },
-      { "Group": "O-", "Value": 0 },
-      { "Group": "B+", "Value": 50 }
-    ]
+    "city": "Casablanca",
+    "name": "CRTS Casablanca",
+    "phone_number": "05222-03033",
+    "email": "casa@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Hôpital 20 Août", "city": "Casablanca", "state": "Casablanca-Settat", "postal_code": "20250", "latitude": 33.5805, "longitude": -7.6167 },
+    "blood_groups": [{"group": "O-", "quantity": 5}]
   },
   {
-    "Name": "CRTS Marrakech (Ibn Tofail)",
-    "PhoneNumber": "05244-48662",
-    "Email": "marrakech@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Rue Loubnane, Guéliz",
-      "City": "Marrakech",
-      "State": "Marrakech-Safi",
-      "PostalCode": "40000",
-      "Latitude": 31.6346,
-      "Longitude": -8.0073
-    },
-    "BloodGroups": [
-      { "Group": "A+", "Value": 80 },
-      { "Group": "O+", "Value": 60 }
-    ]
+    "city": "Marrakech",
+    "name": "CRTS Marrakech",
+    "phone_number": "05244-48662",
+    "email": "kech@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Guéliz", "city": "Marrakech", "state": "Marrakech-Safi", "postal_code": "40000", "latitude": 31.6397, "longitude": -8.0163 },
+    "blood_groups": [{"group": "A+", "quantity": 80}]
   },
   {
-    "Name": "CRTS Fès (Hôpital Ghassani)",
-    "PhoneNumber": "05356-22252",
-    "Email": "fes@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Route de Sefrou, Dhar El Mehraz",
-      "City": "Fes",
-      "State": "Fès-Meknès",
-      "PostalCode": "30000",
-      "Latitude": 34.0298,
-      "Longitude": -4.9950
-    },
-    "BloodGroups": [
-      { "Group": "AB+", "Value": 30 },
-      { "Group": "O-", "Value": 8 }
-    ]
+    "city": "Fes",
+    "name": "CRTS Fès",
+    "phone_number": "05356-22252",
+    "email": "fes@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Dhar Mehraz", "city": "Fes", "state": "Fès-Meknès", "postal_code": "30000", "latitude": 34.0333, "longitude": -4.9994 },
+    "blood_groups": []
   },
   {
-    "Name": "CRTS Tanger",
-    "PhoneNumber": "05399-46060",
-    "Email": "tanger@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Val Fleuri, Près de l'Hôpital Mohammed V",
-      "City": "Tangier",
-      "State": "Tanger-Tétouan-Al Hoceïma",
-      "PostalCode": "90000",
-      "Latitude": 35.7721,
-      "Longitude": -5.8124
-    },
-    "BloodGroups": [
-      { "Group": "B-", "Value": 12 },
-      { "Group": "O+", "Value": 100 }
-    ]
+    "city": "Tanger",
+    "name": "CRTS Tanger",
+    "phone_number": "05399-46060",
+    "email": "tanger@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Val Fleuri", "city": "Tanger", "state": "Tanger-Tétouan-Al Hoceïma", "postal_code": "90000", "latitude": 35.7736, "longitude": -5.8111 },
+    "blood_groups": [{"group": "B+", "quantity": 20}]
   },
   {
-    "Name": "CRTS Agadir (Hôpital Hassan II)",
-    "PhoneNumber": "05288-41278",
-    "Email": "agadir@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Cité Suisse, Près Hôpital Hassan II",
-      "City": "Agadir",
-      "State": "Souss-Massa",
-      "PostalCode": "80000",
-      "Latitude": 30.4150,
-      "Longitude": -9.5833
-    },
-    "BloodGroups": [
-      { "Group": "O+", "Value": 25 },
-      { "Group": "A+", "Value": 40 }
-    ]
+    "city": "Agadir",
+    "name": "CRTS Agadir",
+    "phone_number": "05288-41278",
+    "email": "agadir@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Hôpital Hassan II", "city": "Agadir", "state": "Souss-Massa", "postal_code": "80000", "latitude": 30.4158, "longitude": -9.5833 },
+    "blood_groups": []
   },
   {
-    "Name": "CRTS Oujda (Hôpital Al Farabi)",
-    "PhoneNumber": "05366-82715",
-    "Email": "oujda@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Boulevard Mohammed V",
-      "City": "Oujda",
-      "State": "Oriental",
-      "PostalCode": "60000",
-      "Latitude": 34.6814,
-      "Longitude": -1.9086
-    },
-    "BloodGroups": [
-      { "Group": "O-", "Value": 2 }
-    ]
+    "city": "Oujda",
+    "name": "CRTS Oujda",
+    "phone_number": "05366-82715",
+    "email": "oujda@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Hôpital Al Farabi", "city": "Oujda", "state": "Oriental", "postal_code": "60000", "latitude": 34.6813, "longitude": -1.9086 },
+    "blood_groups": []
   },
   {
-    "Name": "Centre de Transfusion Tétouan",
-    "PhoneNumber": "05399-63322",
-    "Email": "tetouan@cnts.ma",
-    "Website": "http://cntsh.ma",
-    "Address": {
-      "Area": "Avenue des FAR",
-      "City": "Tetouan",
-      "State": "Tanger-Tétouan-Al Hoceïma",
-      "PostalCode": "93000",
-      "Latitude": 35.5785,
-      "Longitude": -5.3684
-    },
-    "BloodGroups": [
-      { "Group": "A-", "Value": 15 }
-    ]
+    "city": "Salé",
+    "name": "Hôpital Provincial Prince Moulay Abdellah",
+    "phone_number": "05233-22222",
+    "email": "sale@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Route de Meknès", "city": "Salé", "state": "Rabat-Salé-Kénitra", "postal_code": "11000", "latitude": 34.0375, "longitude": -6.8166 },
+    "blood_groups": []
+  },
+  {
+    "city": "Meknes",
+    "name": "Hôpital Mohamed V - Meknès",
+    "phone_number": "05355-22020",
+    "email": "meknes@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Ville Nouvelle", "city": "Meknes", "state": "Fès-Meknès", "postal_code": "50000", "latitude": 33.8965, "longitude": -5.5489 },
+    "blood_groups": [{"group": "AB-", "quantity": 2}]
+  },
+  {
+    "city": "Kenitra",
+    "name": "Hôpital Provincial de Kénitra",
+    "phone_number": "05373-77777",
+    "email": "kenitra@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre Ville", "city": "Kenitra", "state": "Rabat-Salé-Kénitra", "postal_code": "14000", "latitude": 34.2541, "longitude": -6.5890 },
+    "blood_groups": []
+  },
+  {
+    "city": "El Jadida",
+    "name": "Hôpital Mohammed V - El Jadida",
+    "phone_number": "05233-44444",
+    "email": "eljadida@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Plateau", "city": "El Jadida", "state": "Casablanca-Settat", "postal_code": "24000", "latitude": 33.2458, "longitude": -8.5064 },
+    "blood_groups": []
+  },
+  {
+    "city": "Settat",
+    "name": "Hôpital Hassan II - Settat",
+    "phone_number": "05234-02222",
+    "email": "settat@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Route de Casa", "city": "Settat", "state": "Casablanca-Settat", "postal_code": "26000", "latitude": 33.0010, "longitude": -7.6166 },
+    "blood_groups": []
+  },
+  {
+    "city": "Mohammedia",
+    "name": "Hôpital Provincial de Mohammedia",
+    "phone_number": "05233-11111",
+    "email": "mohammedia@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Alia", "city": "Mohammedia", "state": "Casablanca-Settat", "postal_code": "28800", "latitude": 33.6877, "longitude": -7.3918 },
+    "blood_groups": []
+  },
+  {
+    "city": "Berrechid",
+    "name": "Hôpital Provincial de Berrechid",
+    "phone_number": "05222-99999",
+    "email": "berrechid@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Berrechid", "state": "Casablanca-Settat", "postal_code": "26100", "latitude": 33.2662, "longitude": -7.5875 },
+    "blood_groups": []
+  },
+  {
+    "city": "Khouribga",
+    "name": "Hôpital Provincial Khouribga",
+    "phone_number": "05234-93030",
+    "email": "khouribga@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Khouribga", "state": "Béni Mellal-Khénifra", "postal_code": "25000", "latitude": 32.8867, "longitude": -6.9090 },
+    "blood_groups": []
+  },
+  {
+    "city": "Beni Mellal",
+    "name": "Hôpital de Beni Mellal",
+    "phone_number": "05234-82222",
+    "email": "benimellal@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Beni Mellal", "state": "Béni Mellal-Khénifra", "postal_code": "23000", "latitude": 32.3278, "longitude": -6.3708 },
+    "blood_groups": []
+  },
+  {
+    "city": "Azilal",
+    "name": "Hôpital Provincial Azilal",
+    "phone_number": "05234-55555",
+    "email": "azilal@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Haut Atlas", "city": "Azilal", "state": "Béni Mellal-Khénifra", "postal_code": "22000", "latitude": 31.9632, "longitude": -6.5696 },
+    "blood_groups": []
+  },
+  {
+    "city": "Khenifra",
+    "name": "Hôpital Provincial Khenifra",
+    "phone_number": "05355-88888",
+    "email": "khenifra@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Khenifra", "state": "Béni Mellal-Khénifra", "postal_code": "54000", "latitude": 32.9377, "longitude": -5.6674 },
+    "blood_groups": []
+  },
+  {
+    "city": "Tetouan",
+    "name": "Hôpital Saniat Rmel - Tétouan",
+    "phone_number": "05399-63322",
+    "email": "tetouan@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Avenue des FAR", "city": "Tetouan", "state": "Tanger-Tétouan-Al Hoceïma", "postal_code": "93000", "latitude": 35.5706, "longitude": -5.3589 },
+    "blood_groups": []
+  },
+  {
+    "city": "Larache",
+    "name": "Hôpital Provincial Larache",
+    "phone_number": "05399-14141",
+    "email": "larache@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Larache", "state": "Tanger-Tétouan-Al Hoceïma", "postal_code": "92000", "latitude": 35.1932, "longitude": -6.1557 },
+    "blood_groups": []
+  },
+  {
+    "city": "Al Hoceima",
+    "name": "Hôpital Mohammed V - Al Hoceima",
+    "phone_number": "05399-82222",
+    "email": "alhoceima@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Al Hoceima", "state": "Tanger-Tétouan-Al Hoceïma", "postal_code": "32000", "latitude": 35.2436, "longitude": -3.9314 },
+    "blood_groups": []
+  },
+  {
+    "city": "Chefchaouen",
+    "name": "Hôpital Mohammed V - Chefchaouen",
+    "phone_number": "05399-88888",
+    "email": "chefchaouen@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Chefchaouen", "state": "Tanger-Tétouan-Al Hoceïma", "postal_code": "91000", "latitude": 35.1687, "longitude": -5.2636 },
+    "blood_groups": []
+  },
+  {
+    "city": "Nador",
+    "name": "Hôpital Al Hassani - Nador",
+    "phone_number": "05366-02222",
+    "email": "nador@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Nador", "state": "Oriental", "postal_code": "62000", "latitude": 35.1681, "longitude": -2.9335 },
+    "blood_groups": []
+  },
+  {
+    "city": "Berkane",
+    "name": "Hôpital Provincial Berkane",
+    "phone_number": "05366-15151",
+    "email": "berkane@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Berkane", "state": "Oriental", "postal_code": "63300", "latitude": 34.9200, "longitude": -2.3200 },
+    "blood_groups": []
+  },
+  {
+    "city": "Taza",
+    "name": "Hôpital Provincial Taza",
+    "phone_number": "05356-72222",
+    "email": "taza@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Ibn Baja", "city": "Taza", "state": "Fès-Meknès", "postal_code": "35000", "latitude": 34.2166, "longitude": -4.0166 },
+    "blood_groups": []
+  },
+  {
+    "city": "Taourirt",
+    "name": "Hôpital Provincial Taourirt",
+    "phone_number": "05366-99999",
+    "email": "taourirt@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Taourirt", "state": "Oriental", "postal_code": "66000", "latitude": 34.4073, "longitude": -2.8907 },
+    "blood_groups": []
+  },
+  {
+    "city": "Safi",
+    "name": "Hôpital Mohammed V - Safi",
+    "phone_number": "05246-23333",
+    "email": "safi@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Route de Casa", "city": "Safi", "state": "Marrakech-Safi", "postal_code": "46000", "latitude": 32.3094, "longitude": -9.2372 },
+    "blood_groups": []
+  },
+  {
+    "city": "Essaouira",
+    "name": "Hôpital Provincial Essaouira",
+    "phone_number": "05244-77777",
+    "email": "essaouira@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Sidi Mohamed Ben Abdellah", "city": "Essaouira", "state": "Marrakech-Safi", "postal_code": "44000", "latitude": 31.5085, "Longitude": -9.7595 },
+    "blood_groups": []
+  },
+  {
+    "city": "Tahannaout",
+    "name": "Hôpital Provincial Al Haouz",
+    "phone_number": "05244-88888",
+    "email": "tahannaout@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Tahannaout", "city": "Tahannaout", "state": "Marrakech-Safi", "postal_code": "42000", "latitude": 31.3533, "longitude": -7.9511 },
+    "blood_groups": []
+  },
+  {
+    "city": "Taroudant",
+    "name": "Hôpital Provincial Taroudant",
+    "phone_number": "05288-55555",
+    "email": "taroudant@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Mokhtar Soussi", "city": "Taroudant", "state": "Souss-Massa", "postal_code": "83000", "latitude": 30.4703, "longitude": -8.8770 },
+    "blood_groups": []
+  },
+  {
+    "city": "Tiznit",
+    "name": "Hôpital Provincial Tiznit",
+    "phone_number": "05288-66666",
+    "email": "tiznit@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Hassan I", "city": "Tiznit", "state": "Souss-Massa", "postal_code": "85000", "latitude": 29.6974, "longitude": -9.7316 },
+    "blood_groups": []
+  },
+  {
+    "city": "Inezgane",
+    "name": "Hôpital Provincial Inezgane",
+    "phone_number": "05288-33333",
+    "email": "inezgane@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Inezgane", "state": "Souss-Massa", "postal_code": "80350", "latitude": 30.3552, "longitude": -9.5358 },
+    "blood_groups": []
+  },
+  {
+    "city": "Tata",
+    "name": "Hôpital Provincial Tata",
+    "phone_number": "05288-00000",
+    "email": "tata@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Tata", "state": "Souss-Massa", "postal_code": "84000", "latitude": 29.7434, "longitude": -7.9733 },
+    "blood_groups": []
+  },
+  {
+    "city": "Errachidia",
+    "name": "Hôpital Moulay Ali Cherif - Errachidia",
+    "phone_number": "05355-72222",
+    "email": "errachidia@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Errachidia", "state": "Drâa-Tafilalet", "postal_code": "52000", "latitude": 31.9317, "longitude": -4.4244 },
+    "blood_groups": []
+  },
+  {
+    "city": "Ouarzazate",
+    "name": "Hôpital Sidi Hssain - Ouarzazate",
+    "phone_number": "05248-82222",
+    "email": "ouarzazate@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Ouarzazate", "state": "Drâa-Tafilalet", "postal_code": "45000", "latitude": 30.9335, "longitude": -6.9370 },
+    "blood_groups": []
+  },
+  {
+    "city": "Zagora",
+    "name": "Hôpital Provincial Zagora",
+    "phone_number": "05248-44444",
+    "email": "zagora@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Zagora", "state": "Drâa-Tafilalet", "postal_code": "47900", "latitude": 30.3324, "longitude": -5.8384 },
+    "blood_groups": []
+  },
+  {
+    "city": "Tinghir",
+    "name": "Hôpital Provincial Tinghir",
+    "phone_number": "05248-33333",
+    "email": "tinghir@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Tinghir", "state": "Drâa-Tafilalet", "postal_code": "45800", "latitude": 31.5147, "longitude": -5.5328 },
+    "blood_groups": []
+  },
+  {
+    "city": "Guelmim",
+    "name": "Hôpital Régional Guelmim",
+    "phone_number": "05288-72222",
+    "email": "guelmim@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Guelmim", "state": "Guelmim-Oued Noun", "postal_code": "81000", "latitude": 28.9869, "longitude": -10.0573 },
+    "blood_groups": []
+  },
+  {
+    "city": "Tan-Tan",
+    "name": "Hôpital Provincial Tan-Tan",
+    "phone_number": "05288-77777",
+    "email": "tantan@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Tan-Tan", "state": "Guelmim-Oued Noun", "postal_code": "82000", "latitude": 28.4380, "longitude": -11.1032 },
+    "blood_groups": []
+  },
+  {
+    "city": "Sidi Ifni",
+    "name": "Hôpital Provincial Sidi Ifni",
+    "phone_number": "05288-78888",
+    "email": "sidiifni@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Sidi Ifni", "state": "Guelmim-Oued Noun", "postal_code": "85200", "latitude": 29.3797, "longitude": -10.1730 },
+    "blood_groups": []
+  },
+  {
+    "city": "Laayoune",
+    "name": "Hôpital Moulay Hassan Ben Mehdi - Laayoune",
+    "phone_number": "05288-93333",
+    "email": "laayoune@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Laayoune", "state": "Laâyoune-Sakia El Hamra", "postal_code": "70000", "latitude": 27.1500, "longitude": -13.1991 },
+    "blood_groups": [{"group": "O+", "quantity": 50}]
+  },
+  {
+    "city": "Es-Semara",
+    "name": "Hôpital Provincial Es-Semara",
+    "phone_number": "05288-99999",
+    "email": "semara@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Es-Semara", "state": "Laâyoune-Sakia El Hamra", "postal_code": "72000", "latitude": 26.7423, "longitude": -11.6713 },
+    "blood_groups": []
+  },
+  {
+    "city": "Boujdour",
+    "name": "Hôpital Provincial Boujdour",
+    "phone_number": "05288-91111",
+    "email": "boujdour@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Boujdour", "state": "Laâyoune-Sakia El Hamra", "postal_code": "71000", "latitude": 26.1263, "longitude": -14.4838 },
+    "blood_groups": []
+  },
+  {
+    "city": "Dakhla",
+    "name": "Hôpital Hassan II - Dakhla",
+    "phone_number": "05289-30000",
+    "email": "dakhla@cnts.ma",
+    "website": "http://cntsh.ma",
+    "address": { "area": "Centre", "city": "Dakhla", "state": "Dakhla-Oued Ed-Dahab", "postal_code": "73000", "latitude": 23.7056, "longitude": -15.9419 },
+    "blood_groups": []
+  },
+  {
+    "city": "Sidi Kacem",
+    "name": "Hôpital Provincial Sidi Kacem",
+    "phone_number": "05373-55555",
+    "email": "sidikacem@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Sidi Kacem", "state": "Rabat-Salé-Kénitra", "postal_code": "16000", "latitude": 34.2265, "longitude": -5.7114 },
+    "blood_groups": []
+  },
+  {
+    "city": "Khemisset",
+    "name": "Hôpital Provincial Khemisset",
+    "phone_number": "05375-55555",
+    "email": "khemisset@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Khemisset", "state": "Rabat-Salé-Kénitra", "postal_code": "15000", "latitude": 33.8232, "longitude": -6.0725 },
+    "blood_groups": []
+  },
+  {
+    "city": "Benslimane",
+    "name": "Hôpital Provincial Benslimane",
+    "phone_number": "05232-99999",
+    "email": "benslimane@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Benslimane", "state": "Casablanca-Settat", "postal_code": "13000", "latitude": 33.6150, "longitude": -7.1228 },
+    "blood_groups": []
+  },
+  {
+    "city": "Sidi Bennour",
+    "name": "Hôpital Provincial Sidi Bennour",
+    "phone_number": "05233-00000",
+    "email": "sidibennour@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Sidi Bennour", "state": "Casablanca-Settat", "postal_code": "24350", "latitude": 32.6533, "longitude": -8.4294 },
+    "blood_groups": []
+  },
+  {
+    "city": "Youssoufia",
+    "name": "Hôpital Provincial Youssoufia",
+    "phone_number": "05246-44444",
+    "email": "youssoufia@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Youssoufia", "state": "Marrakech-Safi", "postal_code": "46300", "latitude": 32.2462, "longitude": -8.5292 },
+    "blood_groups": []
+  },
+  {
+    "city": "Midelt",
+    "name": "Hôpital Provincial Midelt",
+    "phone_number": "05355-82222",
+    "email": "midelt@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Midelt", "state": "Drâa-Tafilalet", "postal_code": "54350", "latitude": 32.6853, "longitude": -4.7451 },
+    "blood_groups": []
+  },
+  {
+    "city": "Azrou",
+    "name": "Hôpital Provincial Ifrane/Azrou",
+    "phone_number": "05355-66666",
+    "email": "azrou@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "20 Août", "city": "Azrou", "state": "Fès-Meknès", "postal_code": "53100", "latitude": 33.4344, "longitude": -5.2213 },
+    "blood_groups": []
+  },
+  {
+    "city": "El Hajeb",
+    "name": "Hôpital Provincial El Hajeb",
+    "phone_number": "05355-44444",
+    "email": "elhajeb@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "El Hajeb", "state": "Fès-Meknès", "postal_code": "51000", "latitude": 33.6933, "longitude": -5.3719 },
+    "blood_groups": []
+  },
+  {
+    "city": "Sefrou",
+    "name": "Hôpital Provincial Sefrou",
+    "phone_number": "05356-66666",
+    "email": "sefrou@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Sefrou", "state": "Fès-Meknès", "postal_code": "31000", "latitude": 33.8305, "longitude": -4.8283 },
+    "blood_groups": []
+  },
+  {
+    "city": "Taounate",
+    "name": "Hôpital Provincial Taounate",
+    "phone_number": "05356-88888",
+    "email": "taounate@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Taounate", "state": "Fès-Meknès", "postal_code": "34000", "latitude": 34.5367, "longitude": -4.6403 },
+    "blood_groups": []
+  },
+  {
+    "city": "Guercif",
+    "name": "Hôpital Provincial Guercif",
+    "phone_number": "05356-77777",
+    "email": "guercif@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Guercif", "state": "Oriental", "postal_code": "36000", "latitude": 34.2257, "longitude": -3.3536 },
+    "blood_groups": []
+  },
+  {
+    "city": "Driouch",
+    "name": "Hôpital Provincial Driouch",
+    "phone_number": "05366-00000",
+    "email": "driouch@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Driouch", "state": "Oriental", "postal_code": "62200", "latitude": 34.9814, "longitude": -3.3853 },
+    "blood_groups": []
+  },
+  {
+    "city": "Bouarfa",
+    "name": "Hôpital Provincial Figuig (Bouarfa)",
+    "phone_number": "05366-98888",
+    "email": "bouarfa@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Bouarfa", "state": "Oriental", "postal_code": "61000", "latitude": 32.5300, "longitude": -1.9667 },
+    "blood_groups": []
+  },
+  {
+    "city": "Ouezzane",
+    "name": "Hôpital Provincial Ouezzane",
+    "phone_number": "05379-00000",
+    "email": "ouezzane@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Ouezzane", "state": "Tanger-Tétouan-Al Hoceïma", "postal_code": "33000", "latitude": 34.7967, "longitude": -5.5786 },
+    "blood_groups": []
+  },
+  {
+    "city": "Ksar El Kebir",
+    "name": "Hôpital Provincial Ksar El Kebir",
+    "phone_number": "05399-19191",
+    "email": "ksarelkebir@sante.ma",
+    "website": "http://sante.gov.ma",
+    "address": { "area": "Centre", "city": "Ksar El Kebir", "state": "Tanger-Tétouan-Al Hoceïma", "postal_code": "92100", "latitude": 35.0017, "longitude": -5.9036 },
+    "blood_groups": []
   }
 ]

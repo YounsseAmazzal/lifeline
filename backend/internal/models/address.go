@@ -10,11 +10,14 @@ type Address struct {
 	Country    string    `json:"country"`
 	PostalCode string    `json:"postal_code"`
 	
-	UserID *uint `json:"user_id"` // Nullable
-	BankID *uint `json:"bank_id"` // Nullable
+	// Nullable FKs (Mzyan, hit Address t9der tkoun dyal User aw Bank)
+	UserID *uint `json:"user_id"` 
+	BankID *uint `json:"bank_id"` 
 	
+	// ✅ FIX: float64 for GPS Precision
+	Latitude  float64 `json:"latitude"`
+	Longitude float64 `json:"longitude"`
+
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
-	Longitude float32 `json:"longitude"`
-	Latitude float32 `json:"latitude"`
 }

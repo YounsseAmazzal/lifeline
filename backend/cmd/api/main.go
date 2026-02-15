@@ -21,9 +21,12 @@ func main() {
 	database.DB.AutoMigrate(&models.Region{}, &models.City{})
 	// SeedMoroccanCities
 	database.SeedMoroccanCities(database.DB) 
+	//seedamiandRoles
+	database.SeedRolesAndAdmin(database.DB) 
 	// banks
 	database.SeedBanks(database.DB)          
-
+	//fake users 
+	database.SeedFakeUsers(database.DB)
 	//  Fiber Config (Startup.cs ConfigureServices)
 	app := fiber.New(fiber.Config{
 		ErrorHandler: middleware.ErrorHandler,

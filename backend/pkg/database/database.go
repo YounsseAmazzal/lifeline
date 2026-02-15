@@ -39,6 +39,8 @@ func Connect() {
 		// Moroccan Geo Data
 		&models.Region{},
 		&models.City{},
+		&models.BloodRequest{},
+		&models.Notification{},
 	)
 
 	if err != nil {
