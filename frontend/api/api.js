@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080/api"; 
 
-async function apiRequest(endpoint, method, data = null) {
+ async function apiRequest(endpoint, method, data = null) {
     const headers = { "Content-Type": "application/json" };
 
     const token = localStorage.getItem("lifeline_token");
@@ -36,7 +36,7 @@ async function apiRequest(endpoint, method, data = null) {
     return result;
 }
 
-async function apiRequestForm(endpoint, method, formData) {
+ async function apiRequestForm(endpoint, method, formData) {
     const headers = {};
     const token = localStorage.getItem("lifeline_token");
     if (token) {
@@ -83,3 +83,4 @@ const accountApi = {
 const geoApi = {
     cities: () => apiRequest("/geo/cities", "GET")
 };
+console.log(geoApi)

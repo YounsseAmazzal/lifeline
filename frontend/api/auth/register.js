@@ -5,11 +5,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         const cities = await geoApi.cities();
+        // console.log(cities[0])
+        // for (let i=0;i<4;i++){
+        //     console.log(cities[i])
+        // }
         citySelect.innerHTML = '<option value="" disabled selected>Select city...</option>';
         cities.forEach((c) => {
             const opt = document.createElement('option');
-            opt.value = c.name;
-            opt.innerText = c.name;
+            opt.value = c.ville;
+        // console.log(c.name)
+            opt.innerText = c.ville;
             citySelect.appendChild(opt);
         });
     } catch (error) {

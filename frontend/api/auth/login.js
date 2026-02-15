@@ -20,7 +20,8 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     }
     
     if (response.role === "Admin") {
-        window.location.href = "admin.html";
+
+        window.location.href = "../views/admin.html";
     } else if (response.role === "Sponsor") {
         window.location.href = "sponsor.html";
     } else {

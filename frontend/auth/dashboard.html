@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LifeLine App</title>
-    <!-- Styles -->
+    <title>LifeLine Dashboard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], arabic: ['"Cairo"', 'sans-serif'] },
+                    colors: { brand: { red: '#C1272D', dark: '#0f172a' } }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body, html { height: 100%; margin: 0; overflow: hidden; }
+        body, html { height: 100%; overflow: hidden; }
         #map { height: 100%; width: 100%; z-index: 0; }
-        .glass-panel { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
         
-        /* Custom Marker Pulse */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Marker Animation */
         .user-marker {
             width: 20px; height: 20px; background: #3b82f6; border-radius: 50%;
             border: 3px solid white; box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.2);
@@ -23,73 +48,197 @@
         }
         @keyframes pulse-blue {
             0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-100 relative">
 
-    <!-- MAP BACKGROUND -->
     <div id="map"></div>
 
-    <!-- TOP BAR (Profile Link) -->
-    <div class="absolute top-4 left-4 right-4 z-10 flex justify-between items-start pointer-events-none">
-        <button onclick="sidebarToggle()" class="pointer-events-auto bg-white p-3 rounded-full shadow-lg text-slate-800 hover:bg-slate-50 transition">
-            <i class="fa-solid fa-bars text-xl"></i>
-        </button>
-        
-        <a href="../views/profile.html" class="pointer-events-auto bg-white p-1.5 pr-4 rounded-full shadow-lg flex items-center gap-3 cursor-pointer hover:bg-slate-50 transition">
-            <img id="navAvatar" src="https://ui-avatars.com/api/?name=User" class="w-8 h-8 rounded-full border border-slate-200">
-            <span id="navName" class="text-sm font-bold text-slate-700">Loading...</span>
+    <div class="absolute top-4 right-4 z-[1000]">
+        <a href="../views/profile.html" class="glass-panel p-2 md:px-2 md:py-2 md:pr-5 rounded-full flex items-center gap-3 cursor-pointer hover:bg-white transition-all shadow-lg group">
+            <div class="relative">
+                <img id="navAvatar" src="https://ui-avatars.com/api/?name=User" class="w-10 h-10 rounded-full border-2 border-white shadow-sm object-cover">
+                <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+            </div>
+            <div class="hidden md:block">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Welcome,</p>
+                <p id="navName" class="text-sm font-bold text-slate-800 group-hover:text-brand-red transition">Loading...</p>
+            </div>
         </a>
     </div>
+    <!-- Notification Bell -->
+<div class="absolute top-4 right-20 z-[1000]"> 
+    <button onclick="toggleNotifPanel()" class="glass-panel p-2 rounded-full relative hover:bg-white text-slate-700 shadow-lg">
+        <i class="fa-solid fa-bell text-xl"></i>
+        <!-- Red Dot (Hidden by default) -->
+        <span id="notifBadge" class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-white hidden animate-pulse"></span>
+    </button>
 
-    <!-- BOTTOM SHEET (Actions) -->
-    <div class="absolute bottom-0 left-0 right-0 z-10 bg-white rounded-t-3xl shadow-[0_-5px_30px_rgba(0,0,0,0.15)] p-6 transition-transform duration-300 transform translate-y-0">
-        <div class="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mb-6"></div>
-
-        <h2 class="text-xl font-bold text-slate-900 mb-4">Hello, <span id="welcomeName">Hero</span> 👋</h2>
-        
-        <div class="grid grid-cols-2 gap-4">
-            <!-- Donate Btn -->
-            <button class="bg-[#C1272D] hover:bg-red-700 text-white p-4 rounded-2xl flex flex-col items-center gap-2 shadow-lg shadow-red-500/30 transition transform active:scale-95">
-                <i class="fa-solid fa-hand-holding-droplet text-2xl"></i>
-                <span class="font-bold">Donate Now</span>
-            </button>
-            <!-- Request Btn -->
-            <button class="bg-slate-100 hover:bg-slate-200 text-slate-800 p-4 rounded-2xl flex flex-col items-center gap-2 transition transform active:scale-95">
-                <i class="fa-solid fa-bed-pulse text-2xl text-slate-600"></i>
-                <span class="font-bold">Request Blood</span>
-            </button>
+    <!-- Dropdown Panel (Hidden) -->
+    <div id="notifPanel" class="hidden absolute top-12 right-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 max-h-96 overflow-y-auto font-sans">
+        <h3 class="font-bold text-slate-900 mb-3 border-b pb-2">Notifications</h3>
+        <div id="notifList" class="space-y-2">
+            <!-- JS will fill this -->
+            <p class="text-xs text-slate-400 text-center py-4">No new notifications</p>
         </div>
+    </div>
+</div>
 
-        <!-- Nearby Alert (Static for now) -->
-        <div class="mt-6">
-            <div class="flex justify-between items-center mb-3">
-                <h3 class="font-bold text-slate-700 text-sm">Nearby Urgent Requests</h3>
-                <span class="text-xs text-red-600 font-bold animate-pulse">● Live</span>
+    <!-- 3. MAIN PANEL (Sidebar / Bottom Sheet) -->
+    <div class="absolute z-[999] 
+                bottom-0 left-0 right-0 h-[60dvh] /* Mobile */
+                md:top-6 md:left-6 md:bottom-6 md:w-96 md:h-auto /* Desktop */
+                flex flex-col transition-all duration-300 pointer-events-none md:pointer-events-auto"
+                id="mainPanel">
+        
+        <div class="glass-panel w-full h-full flex flex-col pointer-events-auto rounded-t-3xl md:rounded-3xl shadow-2xl">
+            
+            <!-- Mobile Drag Handle -->
+            <div class="md:hidden w-full flex justify-center pt-3 pb-1 shrink-0" onclick="toggleMobileSheet()">
+                <div class="w-12 h-1.5 bg-slate-300 rounded-full cursor-pointer"></div>
             </div>
-            <div class="bg-red-50 border border-red-100 p-4 rounded-xl flex items-center gap-4">
-                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold">O-</div>
-                <div class="flex-1">
-                    <h4 class="font-bold text-slate-900 text-sm">Ibn Sina Hospital</h4>
-                    <p class="text-xs text-slate-500">2.5 km away • Accident</p>
+
+            <div class="p-6 pt-2 md:pt-6 flex flex-col h-full overflow-hidden">
+                
+                <!-- Logo & Buttons -->
+                <div class="shrink-0">
+                    <div class="hidden md:flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-brand-red rounded-lg flex items-center justify-center text-white shadow-lg"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <span class="text-xl font-extrabold text-slate-900 tracking-tight">LifeLine</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <button class="bg-[#C1272D] text-white p-3 rounded-2xl flex flex-col items-center gap-1 shadow-lg shadow-red-600/20 active:scale-95 transition">
+                            <i class="fa-solid fa-hand-holding-droplet text-lg"></i><span class="font-bold text-xs">Donate</span>
+                        </button>
+                        <!-- Button triggers Modal -->
+                        <button onclick="toggleRequestModal()" class="bg-white border border-slate-200 text-slate-700 p-3 rounded-2xl flex flex-col items-center gap-1 active:bg-slate-50 active:scale-95 transition hover:border-brand-red hover:text-brand-red">
+                            <i class="fa-solid fa-bed-pulse text-lg"></i><span class="font-bold text-xs">Request</span>
+                        </button>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="flex border-b border-slate-200 mb-2">
+                        <button onclick="switchTab('banks')" id="tab-banks" class="flex-1 pb-2 text-sm font-bold text-brand-red border-b-2 border-brand-red transition">Banks</button>
+                        <button onclick="switchTab('requests')" id="tab-requests" class="flex-1 pb-2 text-sm font-bold text-slate-400 hover:text-slate-600 transition">Requests</button>
+                    </div>
                 </div>
-                <button class="bg-slate-900 text-white px-3 py-1.5 rounded-lg text-xs font-bold">Details</button>
+
+                <!-- Lists Container -->
+                <div class="flex-1 overflow-y-auto no-scrollbar pb-20 md:pb-4 relative">
+                    
+                    <!-- Banks List -->
+                    <div id="banksList" class="space-y-3">
+                        <div class="flex flex-col items-center justify-center h-32 text-slate-400">
+                            <i class="fa-solid fa-circle-notch fa-spin text-2xl mb-2 text-brand-red"></i>
+                            <p class="text-xs">Locating centers...</p>
+                        </div>
+                    </div>
+
+                    <div id="requestsList" class="space-y-3 hidden">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Pagination Container -->
-<div class="mt-8 flex justify-center items-center gap-2" id="paginationControls">
-    <!-- JS will inject buttons here -->
+
+    <div id="requestModal" class="fixed inset-0 z-[2000] hidden bg-slate-900/60 backdrop-blur-sm flex items-end md:items-center justify-center transition-all duration-300">
+        <div class="bg-white w-full md:w-[500px] md:rounded-3xl rounded-t-3xl p-8 relative shadow-2xl animate-bounce-up font-arabic" dir="rtl">
+            
+            <button onclick="toggleRequestModal()" class="absolute top-6 left-6 text-slate-400 hover:text-red-500 bg-slate-50 p-2 rounded-full"><i class="fa-solid fa-xmark text-lg"></i></button>
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-brand-red"><i class="fa-solid fa-bed-pulse text-xl"></i></div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">طلب تبرع بالدم</h2>
+                    <p class="text-xs text-slate-500 font-bold">إشعار المتبرعين القريبين</p>
+                </div>
+            </div>
+            
+            <form id="requestForm" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-3">فصيلة الدم</label>
+                    <div class="grid grid-cols-4 gap-3 text-center font-sans" dir="ltr">
+                        <!-- Options -->
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="O+" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">O+</div></label>
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="A+" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">A+</div></label>
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="B+" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">B+</div></label>
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="AB+" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">AB+</div></label>
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="O-" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">O-</div></label>
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="A-" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">A-</div></label>
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="B-" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">B-</div></label>
+                        <label class="cursor-pointer group"><input type="radio" name="bloodType" value="AB-" class="peer sr-only"><div class="p-2 rounded-xl border-2 border-slate-100 font-bold text-slate-600 peer-checked:bg-brand-red peer-checked:text-white transition">AB-</div></label>
+                    </div>
+                </div>
+
+
+<div>
+    <label class="block text-sm font-bold text-slate-700 mb-2">المدينة</label>
+    <div class="relative">
+        <select id="reqCity" onchange="loadHospitalsByCity()" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-brand-red appearance-none">
+            <option value="" disabled selected>اختر المدينة...</option>
+        </select>
+        <i class="fa-solid fa-chevron-down absolute left-4 top-4 text-slate-400"></i>
+    </div>
 </div>
 
-    <!-- LOGIC -->
-    <script src="../assets/js/lang.js"></script>
+<div>
+    <label class="block text-sm font-bold text-slate-700 mb-2">المستشفى / المركز</label>
+    <div class="relative">
+        <select id="reqHospital" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-brand-red appearance-none disabled:bg-slate-100 disabled:text-slate-400" disabled>
+            <option value="" disabled selected>اختر المدينة أولاً</option>
+        </select>
+        <i class="fa-solid fa-hospital absolute left-4 top-4 text-slate-400"></i>
+    </div>
+</div>
+
+                <label class="flex items-center gap-3 p-3 bg-red-50 rounded-xl cursor-pointer">
+                    <input type="checkbox" id="reqUrgent" class="w-5 h-5 text-red-600 rounded focus:ring-red-500">
+                    <span class="font-bold text-red-700 text-sm">حالة طارئة جداً</span>
+                </label>
+
+                <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold shadow-xl hover:bg-slate-800 transition">إرسال الطلب</button>
+            </form>
+        </div>
+    </div>
+<div id="trackingCard" class="hidden absolute z-[1000] bg-white p-4 rounded-2xl shadow-2xl border-l-4 border-green-500 animate-slide-down
+     top-20 left-4 right-4 
+     md:top-24 md:left-auto md:right-6 md:w-96">
+    
+    <!-- Header: Status + Badge -->
+    <div class="flex justify-between items-center mb-2">
+        <h3 class="font-bold text-slate-900 text-sm">Status Update</h3>
+        <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap">
+            On the way
+        </span>
+    </div>
+
+    <!-- Message -->
+    <p class="text-xs text-slate-500 mb-3" id="trackingMsg">
+        A donor has accepted your request!
+    </p>
+
+    <!-- Progress Bar -->
+    <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+        <div class="bg-green-500 h-1.5 rounded-full w-3/4 animate-progress-stripes"></div>
+    </div>
+</div>
+    <!-- SCRIPTS -->
     <script src="../api/api.js"></script>
-    <script src="../api/pasination.js"></script>
     <script src="../api/dashbord/main.js"></script>
-    <script src="../api/profile/main.js"></script>
+    <script>
+        function toggleMobileSheet() {
+            const el = document.getElementById('mainPanel');
+            if(el.classList.contains('h-[60dvh]')) {
+                el.classList.remove('h-[60dvh]');
+                el.classList.add('h-[90dvh]');
+            } else {
+                el.classList.add('h-[60dvh]');
+                el.classList.remove('h-[90dvh]');
+            }
+        }
+    </script>
 </body>
 </html>
