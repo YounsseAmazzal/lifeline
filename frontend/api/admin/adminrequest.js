@@ -6,7 +6,7 @@ async function loadAdminRequests() {
 
     try {
         const requests = await apiRequest('/admin/requests', 'GET');
-        console.log(requests)
+        // console.log(requests)
         tbody.innerHTML = '';
 
         requests.forEach(req => {
@@ -37,6 +37,7 @@ async function loadAdminRequests() {
         });
     } catch (e) {
         console.error(e,"there is many problems ");
+     window.showAutoAlert("Error: " + e,"error");
     }
 }
 
@@ -47,9 +48,11 @@ async function loadAdminRequests() {
     try {
         await apiRequest(`/admin/requests/${id}`, 'PUT', { status: newStatus });
         loadAdminRequests(); 
-        alert("تم تحديث الحالة بنجاح");
+        // alert("تم تحديث الحالة بنجاح");
+    window.showAutoAlert("تم تحديث الحالة بنجاح","success");
     } catch (e) {
-        alert("خطأ: " + e.message);
+        // alert("خطأ: " + e.message);
+    window.showAutoAlert("there error"+e.message,"error");
     }
 }
 

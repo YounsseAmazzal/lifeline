@@ -19,18 +19,20 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         persistLanguage(response.language);
     }
     
-    if (response.role === "Admin") {
 
-        window.location.href = "../views/admin.html";
+    window.showAutoAlert(`your welcome${response.name}`, "success");
+    if (response.role === "Admin") {
+                window.location.href = "../views/admin.html";
     } else if (response.role === "Sponsor") {
-        window.location.href = "sponsor.html";
+        
+            window.location.href = "sponsor.html";
     } else {
         window.location.href = "dashboard.html";
     }
 
 } catch (error) {
-    alert("Error: " + error.message);
-            btn.innerHTML = originalText;
+    window.showAutoAlert("Error: " + error.message,"error");
+    btn.innerHTML = originalText;
             btn.disabled = false;
         }
     });

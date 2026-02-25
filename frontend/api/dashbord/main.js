@@ -150,7 +150,7 @@ window.switchTab = function(tabName) {
 function loadRequests() {
     const container = document.getElementById('requestsList');
     
-    //ghadi njibhouum min api min ba3d fuck you 
+    //ghadi njibhouum min api min 
     const requests = [
         { name: "Fatima Z.", hospital: "Ibn Sina", blood: "O+", dist: "2km", urgent: true },
         { name: "Karim M.", hospital: "Cheikh Zaid", blood: "AB-", dist: "5km", urgent: false },
@@ -198,13 +198,15 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
         const isUrgent = document.getElementById('reqUrgent').checked;
 
         if (!bloodTypeInput) {
-            alert("المرجو اختيار فصيلة الدم");
+            // alert("المرجو اختيار فصيلة الدم");
+            window.showAutoAlert("المرجو اختيار مستشفى صحيح من القائمة","error");
             throw new Error("Blood type missing");
         }
 
         const selectedOption = hospitalSelect.options[hospitalSelect.selectedIndex];
         if (!selectedOption || selectedOption.disabled || !selectedOption.hasAttribute('data-lat')) {
-            alert("المرجو اختيار مستشفى صحيح من القائمة");
+            // alert("المرجو اختيار مستشفى صحيح من القائمة");
+            window.showAutoAlert("المرجو اختيار مستشفى صحيح من القائمة","error");
             throw new Error("Invalid hospital selection");
         }
 
@@ -224,7 +226,8 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
         await apiRequest('/requests', 'POST', payload);
         
         // Success Feedback
-        alert("تم إرسال طلبك بنجاح! سنقوم بإشعار المتبرعين القريبين من " + hospitalName);
+        // alert("تم إرسال طلبك بنجاح! سنقوم بإشعار المتبرعين القريبين من " + hospitalName)
+    window.showAutoAlert("تم إرسال طلبك بنجاح! سنقوم بإشعار المتبرعين القريبين من " + hospitalName,"success");
         toggleRequestModal(); 
         e.target.reset();     
         
@@ -233,7 +236,8 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
 
     } catch (error) {
         if (error.message !== "Blood type missing" && error.message !== "Invalid hospital selection") {
-            alert("فشل إرسال الطلب: " + error.message);
+            // alert("فشل إرسال الطلب: " + error.message);
+            window.showAutoAlert("فشل إرسال الطلب: " + error.message,"error");
         }
     } finally {
         // Restore Button
@@ -273,7 +277,8 @@ async function checkNotifications() {
             });
         }
     } catch (e) {
-        console.log("No notifications");
+        // console.log("No notifications");
+            window.showAutoAlert("No notifications","error");
     }
 }
 
@@ -335,11 +340,13 @@ async function acceptRequest(id, lat, lng) {
         const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
         window.open(url, '_blank'); 
         
-        alert("Thank you! Follow the map to the hospital.");
+        // alert("Thank you! Follow the map to the hospital.");
+            window.showAutoAlert("Thank you! Follow the map to the hospital.","success");
         loadRequests(); 
 
     } catch (e) {
-        alert("Error: " + e.message);
+        // alert("Error: " + e.message);
+     window.showAutoAlert("Error: " + e.message,"success");
     }
 }
 document.addEventListener("DOMContentLoaded", async () => {
@@ -382,7 +389,7 @@ window.loadHospitalsByCity = async function() {
         // Fetch Banks in this City
         const banks = await apiRequest(`/banks?city=${city}&pageSize=50`, 'GET');
         // console.log(city)
-        console.log(banks)
+        // console.log(banks)
         hospitalSelect.innerHTML = '<option value="" disabled selected>اختر المستشفى</option>';
         
         if (banks.length === 0) {

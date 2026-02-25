@@ -5,7 +5,8 @@ type RegisterInput struct {
 	UserName    string `json:"userName" validate:"required"`
 	Email       string `json:"email" validate:"omitempty,email"`
 	Password    string `json:"password" validate:"required,min=6"` 
-	PhoneNumber string `json:"phoneNumber" validate:"required"`   
+	PhoneNumber string `json:"phoneNumber" validate:"required"`
+	Photo     string   `json:"photo" validate:"required"`
 	BloodGroup  string `json:"bloodGroup" validate:"required"`   
 	Gender      string `json:"gender" validate:"omitempty"`       
 

@@ -83,4 +83,4 @@ const accountApi = {
 const geoApi = {
     cities: () => apiRequest("/geo/cities", "GET")
 };
-console.log(geoApi)
+// console.log(geoApi.cities().then(cities=>console.log(cities)))

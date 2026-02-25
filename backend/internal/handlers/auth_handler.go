@@ -5,11 +5,14 @@ import (
 	"lifeline/internal/models"
 	"lifeline/internal/services"
 	"lifeline/pkg/database"
+	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
+	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -23,57 +26,71 @@ func NewAuthHandler(t services.TokenService, p services.PhotoService) *AuthHandl
 }
 
 func (h *AuthHandler) Register(c *fiber.Ctx) error {
-	input := new(dto.RegisterInput)
-	if err := c.BodyParser(input); err != nil {
-		return c.Status(400).JSON(fiber.Map{"error": "Invalid Data Format"})
-	}
+
+	userName := strings.ToLower(c.FormValue("userName"))
+	password := c.FormValue("password")
+	name := c.FormValue("name")
+	email := c.FormValue("email")
+	phone := c.FormValue("phoneNumber")
+	blood := c.FormValue("bloodGroup")
+	city := c.FormValue("city")
+	country := c.FormValue("country")
+
+	// Check username
 	var count int64
-	database.DB.Model(&models.User{}).Where("user_name = ?", strings.ToLower(input.UserName)).Count(&count)
+	database.DB.Model(&models.User{}).
+		Where("user_name = ?", userName).
+		Count(&count)
+
 	if count > 0 {
 		return c.Status(400).JSON(fiber.Map{"error": "Username is taken"})
 	}
 
-	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte(input.Password), bcrypt.DefaultCost)
+	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 
-	// Handle Date Parsing (Frontend sends string "YYYY-MM-DD")
-	var dob time.Time
-	if input.DateOfBirth != "" {
-		dob, _ = time.Parse("2006-01-02", input.DateOfBirth)
-	} else {
-		dob = time.Now() 
+	// ======================
+	// HANDLE PHOTO
+	// ======================
+
+	var photoPath string
+
+	file, err := c.FormFile("photo")
+	if err == nil {
+
+		// Create uploads folder if not exists
+		os.MkdirAll("./uploads", os.ModePerm)
+
+		ext := filepath.Ext(file.Filename)
+		filename := uuid.New().String() + ext
+
+		photoPath = "/uploads/" + filename
+
+		if err := c.SaveFile(file, "./uploads/"+filename); err != nil {
+			return c.Status(500).JSON(fiber.Map{"error": "Failed to save photo"})
+		}
 	}
 
-	country := input.Country
-	if country == "" {
-		country = "Morocco"
-	}
+	// ======================
 
-	//  Map DTO to Model
 	user := models.User{
-		UserName:     strings.ToLower(input.UserName),
+		UserName:     userName,
 		PasswordHash: string(hashedPassword),
-		Name:         input.Name,
-		Gender:       input.Gender, 
-		BloodGroup:   input.BloodGroup,
-		Email:        input.Email,
-		PhoneNumber:  input.PhoneNumber,
-		DateOfBirth:  dob,
+		Name:         name,
+		Email:        email,
+		PhoneNumber:  phone,
+		BloodGroup:   blood,
+		Photoprofile: photoPath,
 		LastActive:   time.Now(),
-		Available:    true, 
+		Available:    true,
 		Address: models.Address{
-			// City:       input.City,
-			Area:       input.Area,
-			State:      input.State,
-			Country:    country,
-			PostalCode: input.PostalCode,
+			City:    city,
+			Country: country,
 		},
 	}
 
 	if err := database.DB.Create(&user).Error; err != nil {
 		return c.Status(500).JSON(fiber.Map{"error": "Could not create user"})
 	}
-
-	database.DB.Model(&user).Association("Roles").Append(&models.Role{Name: "Donor"})
 
 	token, _ := h.tokenService.CreateToken(&user, "")
 
@@ -84,7 +101,7 @@ func (h *AuthHandler) Register(c *fiber.Ctx) error {
 	})
 }
 
-// Login:  
+// Login:
 func (h *AuthHandler) Login(c *fiber.Ctx) error {
 	input := new(dto.LoginInput)
 	if err := c.BodyParser(input); err != nil {
@@ -97,7 +114,7 @@ func (h *AuthHandler) Login(c *fiber.Ctx) error {
 		First(&user).Error
 
 	if err != nil {
-		return c.Status(401).JSON(fiber.Map{"error": "Invalid credentials"}) 
+		return c.Status(401).JSON(fiber.Map{"error": "Invalid credentials"})
 	}
 
 	if err := bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(input.Password)); err != nil {
@@ -128,7 +145,7 @@ func (h *AuthHandler) Login(c *fiber.Ctx) error {
 		Gender:   user.Gender,
 		Token:    token,
 		PhotoURL: user.Photo.URL,
-		Role:     userRole, 
+		Role:     userRole,
 	})
 }
 
@@ -140,18 +157,95 @@ func (h *AuthHandler) GetUserProfile(c *fiber.Ctx) error {
 	database.DB.Preload("Address").Preload("Photo").First(&user, userID)
 
 	response := dto.UserProfile{
-		ID:        user.ID,
-		Name:      user.Name,
-		UserName:  user.UserName,
-		// City:      user.Address.City,
-		Available: user.Available,
-		PhotoURL:  user.Photo.URL,
-		BloodGroup:user.BloodGroup,
+		ID:         user.ID,
+		Name:       user.Name,
+		UserName:   user.UserName,
+		City:       user.Address.City,
+		Available:  user.Available,
+		PhotoURL:   user.Photoprofile,
+		BloodGroup: user.BloodGroup,
 		// ... Complete other fields
 	}
 
 	return c.JSON(response)
 }
+
+// func (h *AuthHandler) GetUserProfile(c *fiber.Ctx) error {
+
+// 	userID := getUserIDFromToken(c)
+
+// 	var user models.User
+// 	if err := database.DB.First(&user, userID).Error; err != nil {
+// 		return c.Status(404).JSON(fiber.Map{"error": "User not found"})
+// 	}
+
+// 	// =========================
+// 	// UPDATE TEXT FIELDS
+// 	// =========================
+
+// 	user.Name = c.FormValue("name")
+// 	user.Email = c.FormValue("email")
+// 	user.PhoneNumber = c.FormValue("phone_number")
+// 	user.Gender = c.FormValue("gender")
+// 	user.BloodGroup = c.FormValue("blood_group")
+// 	user.Available = c.FormValue("available") == "true"
+
+// 	// Date parsing
+// 	if dobStr := c.FormValue("date_of_birth"); dobStr != "" {
+// 		if dob, err := time.Parse("2006-01-02", dobStr); err == nil {
+// 			user.DateOfBirth = dob
+// 		}
+// 	}
+
+// 	// Address
+// 	user.Address.City = c.FormValue("city")
+// 	user.Address.Area = c.FormValue("area")
+// 	user.Address.State = c.FormValue("state")
+// 	user.Address.Country = c.FormValue("country")
+// 	user.Address.PostalCode = c.FormValue("postal_code")
+
+// 	// =========================
+// 	// HANDLE PHOTO UPDATE
+// 	// =========================
+
+// 	file, err := c.FormFile("photo")
+// 	if err == nil {
+
+// 		// حدف الصورة القديمة إلا كانت
+// 		if user.Photoprofile != "" {
+// 			oldPath := "." + user.Photoprofile
+// 			os.Remove(oldPath)
+// 		}
+
+// 		os.MkdirAll("./uploads", os.ModePerm)
+
+// 		ext := filepath.Ext(file.Filename)
+// 		filename := uuid.New().String() + ext
+
+// 		newPath := "/uploads/" + filename
+
+// 		if err := c.SaveFile(file, "./uploads/"+filename); err != nil {
+// 			return c.Status(500).JSON(fiber.Map{"error": "Failed to save photo"})
+// 		}
+
+// 		user.Photoprofile = newPath
+// 	}
+
+// 	// =========================
+
+// 	if err := database.DB.Session(&gorm.Session{FullSaveAssociations: true}).Updates(&user).Error; err != nil {
+// 		return c.Status(500).JSON(fiber.Map{"error": "Update failed"})
+// 	}
+
+// 	return c.JSON(dto.UserProfile{
+// 		ID:         user.ID,
+// 		Name:       user.Name,
+// 		City:       user.Address.City,
+// 		Available:  user.Available,
+// 		BloodGroup: user.BloodGroup,
+// 		PhotoURL:   user.Photoprofile,
+// 	})
+// }
 
 // Helper:
 func getUserIDFromToken(c *fiber.Ctx) uint {

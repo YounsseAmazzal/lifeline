@@ -218,10 +218,10 @@ func SeedFakeUsers(db *gorm.DB) {
 	db.Where("name = ?", "Donor").First(&donorRole)
 
 	users := []models.User{
-		{Name: "Karim O+", UserName: "karim", Email: "karim@fake.com", BloodGroup: "O+", PasswordHash: string(pass)},
-		{Name: "Fatima A-", UserName: "fatima", Email: "fatima@fake.com", BloodGroup: "A-", PasswordHash: string(pass)},
-		{Name: "Said AB+", UserName: "said", Email: "said@fake.com", BloodGroup: "AB+", PasswordHash: string(pass)},
-		{Name: "Anass AB+", UserName: "anass", Email: "anass@fake.com", BloodGroup: "AB+", PasswordHash: string(pass)},
+		{Name: "Karim O+", UserName: "karim", Email: "karim@fake.com",Photoprofile: "", BloodGroup: "O+", PasswordHash: string(pass)},
+		{Name: "Fatima A-", UserName: "fatima", Email: "fatima@fake.com", Photoprofile: "",BloodGroup: "A-", PasswordHash: string(pass)},
+		{Name: "Said AB+", UserName: "said", Email: "said@fake.com", Photoprofile: "",BloodGroup: "AB+", PasswordHash: string(pass)},
+		{Name: "Anass AB+", UserName: "anass", Email: "anass@fake.com",Photoprofile: "", BloodGroup: "AB+", PasswordHash: string(pass)},
 	}
 
 	for _, u := range users {

@@ -10,7 +10,7 @@ type User struct {
 	Email        string `gorm:"unique;not null" json:"email"`
 	PasswordHash string `json:"-"` 
 	PhoneNumber  string `json:"phone_number"`
-
+	Photoprofile     string   `json:"profile"`
 	// Profile Fields
 	Name        string    `json:"name"`
 	DateOfBirth time.Time `json:"date_of_birth"`
