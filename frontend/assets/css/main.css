@@ -1,24 +1,149 @@
+:root {
+    /* Define Brand Colors for consistency */
+    --primary-red: #C1272D;
+    --primary-green: #006233;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
 
+/* 1. Improved Glass Effect 
+   UX Improvement: Added saturation to blur to make background colors pop, 
+   and a white border for better definition against light backgrounds. */
+.glass-royal {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+}
 
-        .glass-royal {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
-        }
-        
-        .pattern-overlay {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23006233' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
+.pattern-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23006233' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+}
 
-        .text-gradient-flag {
-            background: linear-gradient(to right, #C1272D, #006233);
-           background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* 2. Text Styling
+   UX Improvement: Smoother gradient angle and added tracking for elegance. */
+.text-gradient-flag {
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
 
-        /* Logic to pause logos on hover */
-        .group:hover .group-hover\:paused {
-            animation-play-state: paused;
-        }
+/* Logic to pause logos on hover */
+.group:hover .group-hover\:paused {
+    animation-play-state: paused;
+}
+
+/* 3. Modal Overlay 
+   UX Improvement: Added backdrop blur to the overlay itself to hide distractions behind the modal. */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px); /* Focuses user attention */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.confirm-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 4. Modal Box
+   UX Improvement: Softer corners, better whitespace, and a "spring" animation entry. */
+.confirm-box {
+    background: #fff;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 24px; /* More modern rounded look */
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy effect */
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.confirm-overlay.active .confirm-box {
+    transform: scale(1) translateY(0);
+}
+
+/* Typography */
+.confirm-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.confirm-message {
+    margin-bottom: 32px;
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 5. Buttons 
+   UX Improvement: Large touch targets, clear primary/secondary hierarchy, and hover transforms. */
+.confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    flex: 1; /* Make buttons equal width */
+}
+
+/* Cancel Button: Subtle/Ghost style */
+.btn.cancel {
+    background: #f3f4f6;
+    color: var(--text-dark);
+}
+
+.btn.cancel:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+/* Confirm Button: Uses your brand gradient */
+.btn.confirm {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-green));
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 98, 51, 0.3);
+}
+
+.btn.confirm:hover {
+    box-shadow: 0 6px 16px rgba(0, 98, 51, 0.4);
+    transform: translateY(-2px);
+    filter: brightness(110%);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}

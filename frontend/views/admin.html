@@ -5,10 +5,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
 <body class="bg-slate-100 flex h-screen overflow-hidden">
-
+    <!-- Global Confirm Modal -->
+<div id="globalConfirmModal" class="confirm-overlay">
+  <div class="confirm-box">
+    <div class="confirm-title">تأكيد</div>
+    <div class="confirm-message" id="confirmMessage"></div>
+    <div class="confirm-buttons">
+      <button id="confirmCancel" class="btn cancel">إلغاء</button>
+      <button id="confirmOk" class="btn confirm">تأكيد</button>
+    </div>
+  </div>
+</div>
     <!-- Sidebar -->
     <aside class="w-64 bg-[#0f172a] text-white flex flex-col shadow-2xl">
         <div class="p-6 text-center border-b border-slate-800">

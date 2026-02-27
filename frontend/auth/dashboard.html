@@ -8,7 +8,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../assets/css/main.css">
+
     <!-- Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -53,7 +54,17 @@
     </style>
 </head>
 <body class="bg-slate-100 relative">
-
+    <!-- Global Confirm Modal -->
+<div id="globalConfirmModal" class="confirm-overlay">
+  <div class="confirm-box">
+    <div class="confirm-title">تأكيد</div>
+    <div class="confirm-message" id="confirmMessage"></div>
+    <div class="confirm-buttons">
+      <button id="confirmCancel" class="btn cancel">إلغاء</button>
+      <button id="confirmOk" class="btn confirm">تأكيد</button>
+    </div>
+  </div>
+</div>
     <div id="map"></div>
 
     <div class="absolute top-4 right-4 z-[1000]">
