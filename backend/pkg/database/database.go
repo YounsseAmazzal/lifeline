@@ -14,7 +14,7 @@ var DB *gorm.DB
 
 func Connect() {
 
-	db, err := gorm.Open(sqlite.Open("lifeline.db"), &gorm.Config{
+	db, err := gorm.Open(sqlite.Open("../../lifeline.db"), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info), 
 	})
 

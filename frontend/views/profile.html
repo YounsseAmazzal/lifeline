@@ -1,158 +1,311 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملفي الشخصي - LifeLine</title>
-    <!-- Config Head -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>My Profile - LifeLine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], arabic: ['"Cairo"', 'sans-serif'] },
-                    colors: { morocco: { red: '#C1272D', green: '#006233', gold: '#D4AF37', dark: '#0f172a' } },
-                    backgroundImage: { 'zellige': "url('https://www.transparenttextures.com/patterns/arabesque.png')" }
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { brand: { red: '#C1272D', green: '#006233', dark: '#0f172a' } }
                 }
             }
         }
     </script>
+    <style>
+        .input-field {
+            width: 100%;
+            padding: 11px 14px;
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #1e293b;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+            font-family: inherit;
+        }
+        .input-field:focus {
+            background: #fff;
+            border-color: #C1272D;
+            box-shadow: 0 0 0 3px rgba(193, 39, 45, 0.1);
+        }
+        .input-field::placeholder { color: #94a3b8; }
+        .field-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 6px;
+        }
+        select.input-field { cursor: pointer; }
+        .section-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            border: 1px solid #f1f5f9;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .section-title i { color: #C1272D; font-size: 13px; }
+    </style>
 </head>
-<body class="bg-slate-50 font-arabic pb-24">
+<body class="bg-slate-50 font-sans pb-12">
 
-    <!-- Top Cover -->
-    <div class="h-40 w-full bg-morocco-dark relative overflow-hidden">
-        <div class="absolute inset-0 bg-zellige opacity-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-        <a href="../auth/dashboard.html" class="absolute top-6 right-6 text-white bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-sm font-bold hover:bg-white/20 transition flex items-center gap-2">
-            <i class="fa-solid fa-arrow-right"></i> لوحة التحكم
-        </a>
+    <!-- Hero Cover -->
+    <div class="h-44 relative overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, rgba(193,39,45,0.15) 100%)">
+        <div class="absolute inset-0 opacity-5" style="background-image:url('https://www.transparenttextures.com/patterns/arabesque.png')"></div>
+        <div class="relative z-10 h-full flex items-start justify-between px-5 pt-8">
+            <a href="../auth/dashboard.html" class="flex items-center gap-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 rounded-xl text-sm font-semibold transition-all">
+                <i class="fa-solid fa-arrow-left text-xs"></i>
+                Dashboard
+            </a>
+            <div class="flex items-center gap-2 text-white">
+                <div class="w-7 h-7 bg-brand-red rounded-lg flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-heart-pulse text-xs"></i>
+                </div>
+                <span class="text-base font-extrabold tracking-tight">LifeLine</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Main Container -->
-    <div class="max-w-3xl mx-auto px-4 -mt-16 relative z-10">
-        
+    <div class="max-w-2xl mx-auto px-4 -mt-20 relative z-10">
+
         <!-- Identity Card -->
-        <div class="bg-white rounded-3xl shadow-xl p-6 border border-slate-100 mb-6">
-            <div class="flex flex-col md:flex-row items-center md:items-end gap-6">
-                <!-- Avatar -->
-                <div class="relative">
-                    <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden bg-slate-200 flex items-center justify-center">
-                        <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=random" class="w-full h-full object-cover">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 mb-4">
+            <div class="flex flex-col sm:flex-row items-center sm:items-end gap-5">
+
+                <!-- Avatar with camera button -->
+                <div class="relative shrink-0">
+                    <div class="w-28 h-28 rounded-2xl border-4 border-white shadow-lg overflow-hidden bg-slate-100">
+                        <img id="userAvatar" src="https://ui-avatars.com/api/?name=User&background=e2e8f0&color=64748b" class="w-full h-full object-cover">
                     </div>
-                    <div class="absolute bottom-2 right-2 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center border-4 border-white shadow-sm">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
+                    <label for="newProfilePhoto" class="absolute -bottom-2 -right-2 bg-brand-red text-white w-9 h-9 rounded-full flex items-center justify-center border-2 border-white shadow-md cursor-pointer hover:bg-red-700 active:scale-95 transition-all" title="Change photo">
+                        <i class="fa-solid fa-camera text-sm"></i>
+                    </label>
                 </div>
 
-                <!-- Text Info -->
-                <div class="flex-1 text-center md:text-right">
-                    <h1 id="userName" class="text-3xl font-extrabold text-slate-900 mb-1">جار التحميل...</h1>
-                    <p class="text-slate-500 font-medium mb-4">
-                        <i class="fa-solid fa-location-dot ml-1 text-morocco-red"></i> <span id="userCity">...</span>
+                <!-- Name & status -->
+                <div class="flex-1 text-center sm:text-left">
+                    <h1 id="userName" class="text-2xl font-extrabold text-slate-900 mb-0.5">Loading...</h1>
+                    <p class="text-sm text-slate-500 mb-3 flex items-center justify-center sm:justify-start gap-1.5">
+                        <i class="fa-solid fa-location-dot text-brand-red text-xs"></i>
+                        <span id="userCity">—</span>
                     </p>
-                    
-                    <!-- Availability Switch -->
-                    <div class="inline-flex items-center gap-3 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-                        <span class="relative flex h-3 w-3">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    <div id="availBadge" class="inline-flex items-center gap-2.5 bg-green-50 border border-green-100 px-3 py-1.5 rounded-full">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span id="availPing" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span id="availDot" class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
                         </span>
-                        <span class="text-sm font-bold text-slate-700">متاح للتبرع</span>
-                        <label class="relative inline-flex items-center cursor-pointer mr-2">
-                            <input type="checkbox" checked class="sr-only peer" id="availabilityToggle">
-                            <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-morocco-green after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full peer-checked:after:border-white"></div>
-                        </label>
+                        <span id="availText" class="text-xs font-bold text-green-700">Available to donate</span>
                     </div>
                 </div>
 
-                <!-- Blood Type Badge -->
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-20 h-24 bg-red-50 border-2 border-red-100 rounded-2xl flex flex-col items-center justify-center relative overflow-hidden group">
-                        <div class="absolute top-0 w-full h-2 bg-morocco-red"></div>
-                        <span class="text-xs text-red-400 font-bold uppercase tracking-wider mt-2">الزمرة</span>
-                        <span id="userBlood" class="text-3xl font-black text-morocco-red">--</span>
-                        <i class="fa-solid fa-droplet absolute -bottom-2 -right-2 text-4xl text-red-100 -z-10"></i>
-                    </div>
+                <!-- Blood badge -->
+                <div class="w-16 h-20 bg-red-50 border-2 border-red-100 rounded-2xl flex flex-col items-center justify-center shrink-0 relative overflow-hidden">
+                    <div class="absolute top-0 w-full h-1.5 bg-brand-red"></div>
+                    <span class="text-[9px] text-red-400 font-bold uppercase tracking-wider mt-2">Type</span>
+                    <span id="userBlood" class="text-2xl font-black text-brand-red">--</span>
+                    <i class="fa-solid fa-droplet absolute -bottom-1 -right-1 text-3xl text-red-100 -z-10"></i>
                 </div>
             </div>
         </div>
 
         <!-- Stats -->
-        <div class="grid grid-cols-3 gap-4 mb-8">
+        <div class="grid grid-cols-3 gap-3 mb-4">
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-center">
-                <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-morocco-green mx-auto mb-2"><i class="fa-solid fa-hand-holding-medical"></i></div>
-                <h3 class="text-2xl font-bold text-slate-900">0</h3>
-                <p class="text-xs text-slate-500 font-bold">تبرعات</p>
+                <div class="w-9 h-9 bg-green-50 rounded-full flex items-center justify-center text-brand-green mx-auto mb-2">
+                    <i class="fa-solid fa-hand-holding-medical text-sm"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">0</h3>
+                <p class="text-[11px] text-slate-500 font-semibold mt-0.5">Donations</p>
             </div>
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-center relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent"></div>
-                <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-morocco-gold mx-auto mb-2"><i class="fa-solid fa-heart"></i></div>
-                <h3 class="text-2xl font-bold text-slate-900">0</h3>
-                <p class="text-xs text-slate-500 font-bold">حياة أُنقذت</p>
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent pointer-events-none"></div>
+                <div class="w-9 h-9 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 mx-auto mb-2">
+                    <i class="fa-solid fa-heart text-sm"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">0</h3>
+                <p class="text-[11px] text-slate-500 font-semibold mt-0.5">Lives Saved</p>
             </div>
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-center">
-                <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-2"><i class="fa-solid fa-clock"></i></div>
-                <h3 class="text-lg font-bold text-slate-900 mt-1">--</h3>
-                <p class="text-[10px] text-slate-500 font-bold">آخر ظهور</p>
+                <div class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 mx-auto mb-2">
+                    <i class="fa-solid fa-clock text-sm"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">—</h3>
+                <p class="text-[11px] text-slate-500 font-semibold mt-0.5">Last Active</p>
             </div>
         </div>
 
-        <div class="bg-white rounded-3xl shadow-xl p-6 border border-slate-100 mb-6">
-            <h2 class="text-xl font-bold text-slate-900 mb-4">Update Profile</h2>
-            <form id="profileForm" class="grid grid-cols-1 md:grid-cols-2 gap-4" onsubmit="updateProfile(event)">
-                <input name="name" class="p-3 rounded-xl border border-slate-200" placeholder="Full name" />
-                <input name="email" type="email" class="p-3 rounded-xl border border-slate-200" placeholder="Email" />
-                <input name="phone_number" class="p-3 rounded-xl border border-slate-200" placeholder="Phone number" />
-                <select id="profileCitySelect" name="city" class="p-3 rounded-xl border border-slate-200">
-                    <option value="">Loading...</option>
-                </select>
-                <input name="area" class="p-3 rounded-xl border border-slate-200" placeholder="Area" />
-                <input name="state" class="p-3 rounded-xl border border-slate-200" placeholder="State" />
-                <input name="country" class="p-3 rounded-xl border border-slate-200" placeholder="Country" />
-                <input name="postal_code" class="p-3 rounded-xl border border-slate-200" placeholder="Postal code" />
-                <select name="gender" class="p-3 rounded-xl border border-slate-200">
-                    <option value="">Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <select name="blood_group" class="p-3 rounded-xl border border-slate-200">
-                    <option value="">Blood group</option>
-                    <option value="A+">A+</option><option value="A-">A-</option>
-                    <option value="B+">B+</option><option value="B-">B-</option>
-                    <option value="O+">O+</option><option value="O-">O-</option>
-                    <option value="AB+">AB+</option><option value="AB-">AB-</option>
-                </select>
-                <input name="date_of_birth" type="date" class="p-3 rounded-xl border border-slate-200" />
-                <select name="language" class="p-3 rounded-xl border border-slate-200">
-                    <option value="ar">Arabic</option>
-                    <option value="en">English</option>
-                    <option value="fr">French</option>
-                </select>
-                <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200">
-                    <input name="available" type="checkbox" />
-                    <span>Available for donation</span>
-                </label>
-                <input id="newProfilePhoto" type="file" accept="image/*" class="p-3 rounded-xl border border-slate-200 md:col-span-2" />
-                <button id="saveProfileBtn" type="submit" class="md:col-span-2 bg-morocco-green text-white py-3 rounded-xl font-bold">Save changes</button>
-            </form>
-        </div>
+        <!-- Profile Form -->
+        <form id="profileForm" onsubmit="updateProfile(event)">
 
-        <!-- Logout -->
-        <div class="text-center mt-8">
-            <button onclick="logout()" class="text-red-500 font-bold hover:bg-red-50 px-6 py-2 rounded-xl transition flex items-center justify-center gap-2 mx-auto">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i> تسجيل الخروج
+            <!-- Personal Information -->
+            <div class="section-card">
+                <div class="section-title">
+                    <i class="fa-solid fa-user"></i> Personal Information
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="field-label">Full Name</label>
+                        <input name="name" type="text" class="input-field" placeholder="Your full name">
+                    </div>
+                    <div>
+                        <label class="field-label">Email</label>
+                        <input name="email" type="email" class="input-field" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="field-label">Phone Number</label>
+                        <input name="phone_number" type="tel" class="input-field" placeholder="+212 6XX XXX XXX">
+                    </div>
+                    <div>
+                        <label class="field-label">Date of Birth</label>
+                        <input name="date_of_birth" type="date" class="input-field">
+                    </div>
+                    <div>
+                        <label class="field-label">Gender</label>
+                        <select name="gender" class="input-field">
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="field-label">Blood Group</label>
+                        <select name="blood_group" class="input-field">
+                            <option value="">Select blood group</option>
+                            <option value="A+">A+</option><option value="A-">A-</option>
+                            <option value="B+">B+</option><option value="B-">B-</option>
+                            <option value="O+">O+</option><option value="O-">O-</option>
+                            <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="section-card">
+                <div class="section-title">
+                    <i class="fa-solid fa-location-dot"></i> Location
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="sm:col-span-2">
+                        <label class="field-label">City</label>
+                        <select id="profileCitySelect" name="city" class="input-field">
+                            <option value="">Loading cities...</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="field-label">Area / Neighborhood</label>
+                        <input name="area" class="input-field" placeholder="Area or neighborhood">
+                    </div>
+                    <div>
+                        <label class="field-label">State / Region</label>
+                        <input name="state" class="input-field" placeholder="State or region">
+                    </div>
+                    <div>
+                        <label class="field-label">Country</label>
+                        <input name="country" class="input-field" placeholder="Country">
+                    </div>
+                    <div>
+                        <label class="field-label">Postal Code</label>
+                        <input name="postal_code" class="input-field" placeholder="Postal code">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferences -->
+            <div class="section-card">
+                <div class="section-title">
+                    <i class="fa-solid fa-sliders"></i> Preferences
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="field-label">Language</label>
+                        <select name="language" class="input-field">
+                            <option value="ar">Arabic</option>
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                        </select>
+                    </div>
+
+                    <!-- Availability toggle -->
+                    <label class="flex items-center gap-4 p-4 bg-green-50 border border-green-100 rounded-2xl cursor-pointer hover:bg-green-100 transition-colors group">
+                        <div class="relative shrink-0">
+                            <input name="available" type="checkbox" id="availabilityToggle" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-200 peer-checked:bg-brand-green rounded-full transition-colors after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:shadow-sm after:transition-all peer-checked:after:translate-x-5"></div>
+                        </div>
+                        <div>
+                            <span class="font-bold text-sm text-slate-800 block">Available for Donation</span>
+                            <span class="text-xs text-slate-500 mt-0.5 block">Allow donors nearby to contact you</span>
+                        </div>
+                    </label>
+
+                    <!-- Photo upload -->
+                    <div>
+                        <label class="field-label">Profile Photo</label>
+                        <label for="newProfilePhoto" class="flex items-center gap-4 p-3.5 bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl cursor-pointer hover:border-brand-red hover:bg-red-50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-slate-200 group-hover:bg-red-100 flex items-center justify-center transition-colors overflow-hidden shrink-0" id="photoPreviewThumb">
+                                <i class="fa-solid fa-camera text-slate-400 group-hover:text-brand-red transition-colors"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm font-semibold text-slate-700 group-hover:text-brand-red transition-colors block">Upload new photo</span>
+                                <span class="text-xs text-slate-400">JPG, PNG — max 5 MB</span>
+                            </div>
+                            <input id="newProfilePhoto" type="file" accept="image/*" class="hidden" onchange="previewPhoto(this)">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save -->
+            <button id="saveProfileBtn" type="submit"
+                class="w-full bg-brand-red text-white py-4 rounded-2xl font-bold text-sm shadow-lg shadow-red-600/20 hover:bg-red-700 active:scale-[0.99] transition-all flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-check"></i>
+                Save Changes
+            </button>
+        </form>
+
+        <!-- Sign out -->
+        <div class="text-center pb-2">
+            <button onclick="logout()"
+                class="text-slate-400 hover:text-red-500 font-semibold text-sm hover:bg-red-50 px-6 py-2 rounded-xl transition-all flex items-center justify-center gap-2 mx-auto">
+                <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i>
+                Sign out
             </button>
         </div>
     </div>
 
-    <!-- LOGIC -->
-    <script src="../assets/js/lang.js"></script>
     <script src="../api/api.js"></script>
+    <script src="../api/globalalert.js"></script>
     <script src="../api/profile/main.js"></script>
-    <script src="../assets/css/tailwindconfig.js"> </script>
-
+    <script>
+        function previewPhoto(input) {
+            if (!input.files || !input.files[0]) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                document.getElementById('userAvatar').src = e.target.result;
+                const thumb = document.getElementById('photoPreviewThumb');
+                thumb.innerHTML = `<img src="${e.target.result}" class="w-full h-full object-cover rounded-xl">`;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    </script>
 </body>
 </html>

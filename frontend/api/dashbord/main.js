@@ -246,45 +246,85 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
     }
 });
 
-// Add this logic
-
-//  Toggle Panel
+// Toggle notification panel with outside-click-to-close
+let _notifOutsideHandler = null;
 window.toggleNotifPanel = function() {
-    document.getElementById('notifPanel').classList.toggle('hidden');
+    const panel = document.getElementById('notifPanel');
+    const isHidden = panel.classList.contains('hidden');
+    panel.classList.toggle('hidden');
+
+    if (isHidden) {
+        setTimeout(() => {
+            _notifOutsideHandler = (e) => {
+                if (!document.getElementById('notifContainer').contains(e.target)) {
+                    panel.classList.add('hidden');
+                    document.removeEventListener('click', _notifOutsideHandler);
+                    _notifOutsideHandler = null;
+                }
+            };
+            document.addEventListener('click', _notifOutsideHandler);
+        }, 0);
+    } else if (_notifOutsideHandler) {
+        document.removeEventListener('click', _notifOutsideHandler);
+        _notifOutsideHandler = null;
+    }
 }
 
-// Fetch Notifications
+// Fetch and render notifications
 async function checkNotifications() {
     try {
         const notifs = await apiRequest('/notifications', 'GET');
         const list = document.getElementById('notifList');
         const badge = document.getElementById('notifBadge');
 
-        if (notifs.length > 0) {
-            badge.classList.remove('hidden'); // Show Red Dot
+        if (notifs && notifs.length > 0) {
+            const unread = notifs.filter(n => !n.is_read).length;
+            badge.classList.remove('hidden');
+            badge.classList.add('flex');
+            badge.textContent = unread > 9 ? '9+' : String(unread || notifs.length);
+
             list.innerHTML = '';
-            
             notifs.forEach(n => {
-                const item = `
-                    <div class="bg-red-50 p-3 rounded-xl border border-red-100 relative group">
-                        <h4 class="font-bold text-sm text-red-700">${n.title}</h4>
-                        <p class="text-xs text-slate-600 mt-1">${n.message}</p>
-                        <span class="text-[10px] text-slate-400 block mt-2">${new Date(n.created_at).toLocaleTimeString()}</span>
-                        ${!n.is_read ? '<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>' : ''}
+                const item = document.createElement('div');
+                item.className = `flex gap-3 p-3 cursor-pointer hover:bg-slate-50 transition-colors ${!n.is_read ? 'bg-red-50/40' : ''}`;
+                item.innerHTML = `
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${!n.is_read ? 'bg-red-100 text-red-500' : 'bg-slate-100 text-slate-400'}">
+                        <i class="fa-solid fa-bell text-xs"></i>
                     </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-semibold text-sm text-slate-900 leading-tight">${n.title}</h4>
+                        <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">${n.message}</p>
+                        <span class="text-[10px] text-slate-400 mt-1 block">${new Date(n.created_at).toLocaleTimeString()}</span>
+                    </div>
+                    ${!n.is_read ? '<span class="w-2 h-2 bg-red-400 rounded-full shrink-0 mt-2 self-start"></span>' : ''}
                 `;
-                list.innerHTML += item;
+                item.addEventListener('click', () => markNotifRead(n.id, item));
+                list.appendChild(item);
             });
+        } else {
+            badge.classList.add('hidden');
+            badge.classList.remove('flex');
+            list.innerHTML = '<p class="text-xs text-slate-400 text-center py-6">No new notifications</p>';
         }
     } catch (e) {
-        // console.log("No notifications");
-            window.showAutoAlert("No notifications","error");
+        // silent — don't alert on failed fetch
     }
 }
 
-// Check every 10 seconds (Polling)
-setInterval(checkNotifications, 10000);
-// Check on Load
+async function markNotifRead(id, el) {
+    try {
+        await apiRequest(`/notifications/${id}/read`, 'PUT');
+        el.classList.remove('bg-red-50/40');
+        const iconWrap = el.querySelector('.bg-red-100');
+        if (iconWrap) { iconWrap.classList.replace('bg-red-100', 'bg-slate-100'); iconWrap.classList.replace('text-red-500', 'text-slate-400'); }
+        const dot = el.querySelector('.bg-red-400.rounded-full.shrink-0');
+        if (dot) dot.remove();
+        checkNotifications();
+    } catch (_) {}
+}
+
+// Poll every 30 seconds
+setInterval(checkNotifications, 30000);
 checkNotifications();
 
 // --- RENDER REQUESTS ---
