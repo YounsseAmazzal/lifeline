@@ -44,7 +44,7 @@ func main() {
 
 	//  Routes
 	routes.SetupRoutes(app)
-	app.Static("/uploads", "./backend/uploads")	//  Start Server
+	app.Static("/uploads", "./uploads")	//  Start Server
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"

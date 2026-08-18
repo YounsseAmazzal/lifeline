@@ -56,6 +56,15 @@ Lifeline is a Moroccan national blood donation platform that replaces chaotic Fa
 
 ---
 
+## Documentation
+
+Detailed, code-accurate docs live in the `docs/` folder:
+
+- [Backend](docs/backend.md) — architecture, models, seeding, auth, full API reference
+- [Frontend](docs/frontend.md) — pages, API layer, i18n, design system, UI features
+
+---
+
 ## Tech Stack
 
 ### Backend
@@ -167,6 +176,30 @@ npx serve frontend
 ```
 
 Then open the URL shown in your terminal (usually `http://localhost:3000`).
+
+---
+
+## Run with Docker
+
+A `docker-compose.yml` at the repo root builds and runs both services.
+
+```bash
+docker compose up --build
+```
+
+- **Backend API** → http://localhost:8080
+- **Frontend** → http://localhost:3000
+
+Configuration (optional): create a `.env` file at the repo root to override defaults:
+
+```bash
+TOKEN_KEY=your_long_random_secret
+CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@CLOUD_NAME
+```
+
+Persistent data lives in two named volumes (`backend_data` for SQLite, `backend_uploads` for photos).
+
+> Note: the frontend calls the API at the hardcoded `http://localhost:8080/api` (see `frontend/api/api.js`), which matches the published backend port above.
 
 ---
 

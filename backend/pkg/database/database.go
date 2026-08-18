@@ -3,6 +3,7 @@ package database
 import (
 	"fmt"
 	"log"
+	"os"
 	"lifeline/internal/models"
 	
 	"gorm.io/driver/sqlite"   
@@ -13,9 +14,13 @@ import (
 var DB *gorm.DB
 
 func Connect() {
+	dbPath := os.Getenv("DB_PATH")
+	if dbPath == "" {
+		dbPath = "lifeline.db"
+	}
 
-	db, err := gorm.Open(sqlite.Open("../../lifeline.db"), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Info), 
+	db, err := gorm.Open(sqlite.Open(dbPath), &gorm.Config{
+		Logger: logger.Default.LogMode(logger.Info),
 	})
 
 	if err != nil {

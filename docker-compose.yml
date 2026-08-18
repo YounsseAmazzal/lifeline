@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: lifeline-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      TOKEN_KEY: "${TOKEN_KEY:-change_me_to_a_long_random_secret}"
+      CLOUDINARY_URL: "${CLOUDINARY_URL:-}"
+      DB_PATH: "/app/data/lifeline.db"
+    volumes:
+      - backend_data:/app/data           
+      - backend_uploads:/app/backend/uploads  
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:8080/api/geo/cities"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: lifeline-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  backend_data:
+  backend_uploads:
